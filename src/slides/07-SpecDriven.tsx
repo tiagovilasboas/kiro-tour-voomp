@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FileText, Paintbrush, ListChecks, ArrowRight, Sparkles } from 'lucide-react'
+import { FileText, Paintbrush, ListChecks, ArrowRight, Sparkles, Bug, Wrench, ShieldCheck } from 'lucide-react'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -15,7 +15,7 @@ const steps = [
     icon: FileText,
     step: '01',
     title: 'Requirements',
-    description: 'O agente levanta e documenta os requisitos com você. User stories, critérios de aceite, restrições.',
+    description: 'Levanta requisitos, restrições e critérios de aceite com o agente.',
     color: 'text-primary',
     bg: 'bg-primary/15',
     border: 'border-primary/30',
@@ -24,7 +24,7 @@ const steps = [
     icon: Paintbrush,
     step: '02',
     title: 'Design',
-    description: 'Arquitetura, componentes, fluxo de dados. O design técnico emerge dos requisitos, não do improviso.',
+    description: 'Arquitetura e fluxo de dados — decisões técnicas antes de codar.',
     color: 'text-accent',
     bg: 'bg-accent/15',
     border: 'border-accent/30',
@@ -33,19 +33,40 @@ const steps = [
     icon: ListChecks,
     step: '03',
     title: 'Tasks',
-    description: 'Lista de tarefas executáveis com dependências. Cada task tem contexto suficiente pra ser implementada.',
+    description: 'Tarefas executáveis com dependências — cada uma com contexto completo.',
     color: 'text-success',
     bg: 'bg-success/15',
     border: 'border-success/30',
   },
 ]
 
+const whenToUse = [
+  {
+    icon: Bug,
+    scenario: 'Bug complexo com múltiplos fluxos afetados',
+    example: 'VSUS-701: push notification falhando silenciosamente em 3 cenários diferentes',
+    color: 'text-danger',
+  },
+  {
+    icon: Wrench,
+    scenario: 'Melhoria que toca vários arquivos/tabelas',
+    example: 'Adicionar idempotência no upsell — afeta middleware, controller, testes',
+    color: 'text-warning',
+  },
+  {
+    icon: ShieldCheck,
+    scenario: 'Fix que precisa de rastreabilidade e clareza pra QA',
+    example: 'Alteração em gateway de pagamento onde QA precisa saber exatamente o que testar',
+    color: 'text-success',
+  },
+]
+
 export function SpecDriven() {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center px-8 gap-6">
+    <div className="w-full h-full flex flex-col items-center justify-center px-8 gap-5">
       <motion.div custom={0} variants={fadeUp} initial="hidden" animate="visible"
         className="flex items-center gap-3">
-        <Sparkles size={28} className="text-primary" />
+        <Sparkles size={26} className="text-primary" />
         <h2 className="text-3xl md:text-5xl font-bold gradient-text">
           Spec Driven Development
         </h2>
@@ -53,8 +74,8 @@ export function SpecDriven() {
 
       <motion.p custom={1} variants={fadeUp} initial="hidden" animate="visible"
         className="text-base md:text-lg text-text-muted text-center max-w-3xl">
-        Antes de codar, o Kiro ajuda a pensar. O fluxo de specs transforma uma ideia vaga
-        em um plano executável — com rastreabilidade do requisito até a implementação.
+        Antes de codar, o Kiro ajuda a pensar. O fluxo transforma uma task vaga
+        em um plano executável — com contexto dos Steerings já carregado.
       </motion.p>
 
       {/* Steps */}
@@ -64,37 +85,55 @@ export function SpecDriven() {
           return (
             <motion.div key={s.title} custom={i + 2} variants={fadeUp} initial="hidden" animate="visible"
               className="flex items-center gap-3 flex-1 w-full">
-              <div className={`glass ${s.border} p-5 flex flex-col gap-3 flex-1`}>
+              <div className={`glass ${s.border} p-4 flex flex-col gap-2 flex-1`}>
                 <div className="flex items-center gap-3">
-                  <div className={`rounded-xl p-2.5 ${s.bg} ${s.color} flex-shrink-0`}>
-                    <Icon size={22} />
+                  <div className={`rounded-xl p-2 ${s.bg} ${s.color} flex-shrink-0`}>
+                    <Icon size={18} />
                   </div>
                   <div>
-                    <span className={`text-xs font-mono font-bold ${s.color}`}>FASE {s.step}</span>
-                    <h3 className={`font-bold text-lg ${s.color}`}>{s.title}</h3>
+                    <span className={`text-[10px] font-mono font-bold ${s.color}`}>FASE {s.step}</span>
+                    <h3 className={`font-bold text-base ${s.color}`}>{s.title}</h3>
                   </div>
                 </div>
-                <p className="text-sm text-text-muted leading-relaxed">{s.description}</p>
+                <p className="text-xs text-text-muted leading-relaxed">{s.description}</p>
               </div>
               {i < steps.length - 1 && (
-                <ArrowRight size={20} className="text-text-muted/30 flex-shrink-0 hidden md:block" />
+                <ArrowRight size={18} className="text-text-muted/30 flex-shrink-0 hidden md:block" />
               )}
             </motion.div>
           )
         })}
       </div>
 
-      {/* Bottom insight */}
+      {/* When to use */}
+      <motion.div custom={5} variants={fadeUp} initial="hidden" animate="visible"
+        className="glass p-4 w-full max-w-6xl">
+        <p className="text-xs text-text-muted/60 uppercase tracking-wider font-mono mb-3">Quando usar no dia a dia do N3?</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          {whenToUse.map(w => {
+            const Icon = w.icon
+            return (
+              <div key={w.scenario} className="flex items-start gap-2">
+                <Icon size={14} className={`${w.color} flex-shrink-0 mt-0.5`} />
+                <div>
+                  <p className="text-sm font-semibold text-text">{w.scenario}</p>
+                  <p className="text-xs text-text-muted mt-0.5 leading-relaxed italic">{w.example}</p>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </motion.div>
+
+      {/* Context insight */}
       <motion.div custom={6} variants={fadeUp} initial="hidden" animate="visible"
-        className="glass-accent p-4 w-full max-w-6xl flex items-start gap-3">
-        <Sparkles size={18} className="text-primary flex-shrink-0 mt-0.5" />
-        <p className="text-sm text-text-muted leading-relaxed">
-          <span className="text-text font-semibold">No contexto do N3:</span>{' '}
-          quando você abre uma task VSUS no Kiro e usa o fluxo de spec, o agente cria requirements, design e tasks
-          já com o contexto do <code className="text-primary font-mono text-xs">contexto-projeto.md</code>,{' '}
-          <code className="text-primary font-mono text-xs">jira-sustentacao.md</code> e{' '}
-          <code className="text-primary font-mono text-xs">boas-praticas-codigo.md</code> carregados —
-          sem você precisar explicar a stack, as tabelas ou o formato de Causa Raiz. Qualquer dev do time pode continuar de onde outro parou.
+        className="glass-accent p-3 w-full max-w-6xl flex items-start gap-2">
+        <Sparkles size={14} className="text-primary flex-shrink-0 mt-0.5" />
+        <p className="text-xs text-text-muted leading-relaxed">
+          O agente já carrega <code className="text-primary font-mono">contexto-projeto.md</code>,{' '}
+          <code className="text-primary font-mono">jira-sustentacao.md</code> e{' '}
+          <code className="text-primary font-mono">boas-praticas-codigo.md</code> automaticamente.
+          Qualquer dev do time pode continuar uma spec de onde outro parou.
         </p>
       </motion.div>
     </div>

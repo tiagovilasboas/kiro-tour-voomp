@@ -8,6 +8,7 @@ import { Capa } from './slides/01-Capa'
 import { EvolucaoIA } from './slides/02-EvolucaoIA'
 import { Tokens } from './slides/03-Tokens'
 import { LLMs } from './slides/04-LLMs'
+import { IlusaoPensamento } from './slides/05-IlusaoPensamento'
 import { Embeddings } from './slides/05-Embeddings'
 import { ContextWindow } from './slides/06-ContextWindow'
 import { SpecDriven } from './slides/07-SpecDriven'
@@ -19,19 +20,20 @@ import { Encerramento } from './slides/11-Encerramento'
 import { Recursos } from './slides/12-Recursos'
 
 const slides = [
-  Capa,
-  EvolucaoIA,
-  Tokens,
-  LLMs,
-  Embeddings,
-  ContextWindow,
-  SpecDriven,
-  IntroKiro,
-  Steerings,
-  Skills,
-  AgentHooks,
-  Encerramento,
-  Recursos,
+  Capa,            // 1. Abertura
+  EvolucaoIA,      // 2. 70 anos de IA em 3 momentos
+  Tokens,          // 3. Unidade fundamental + billing
+  LLMs,            // 4. O que são, modelos conhecidos
+  IlusaoPensamento,// 5. Desmitificar: não pensam, reconhecem padrões
+  Embeddings,      // 6. Como "entendem" significado
+  ContextWindow,   // 7. Limites e por que Steerings são eficientes
+  SpecDriven,      // 8. Requirements → Design → Tasks
+  IntroKiro,       // 9. Kiro & Seus Superpoderes
+  Steerings,       // 10. Os 8 steerings reais do N3
+  Skills,          // 11. 4 skills vantajosas
+  AgentHooks,      // 12. 10 hooks categorizados
+  Encerramento,    // 13. CTA + prática
+  Recursos,        // 14. Links de estudo
 ]
 
 function App() {
