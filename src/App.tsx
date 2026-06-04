@@ -16,6 +16,7 @@ import { Steerings } from './slides/08-Steerings'
 import { Skills } from './slides/09-Skills'
 import { AgentHooks } from './slides/10-AgentHooks'
 import { Encerramento } from './slides/11-Encerramento'
+import { Recursos } from './slides/12-Recursos'
 
 const slides = [
   Capa,
@@ -30,6 +31,7 @@ const slides = [
   Skills,
   AgentHooks,
   Encerramento,
+  Recursos,
 ]
 
 function App() {
