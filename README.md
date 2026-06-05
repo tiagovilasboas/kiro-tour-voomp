@@ -1,8 +1,8 @@
-# Da IA aos Agentes: Como chegamos até aqui
+# Kiro com Intenção
 
-Apresentação interativa para o time de Sustentação N3 da Cogna/Voomp sobre **Inteligência Artificial e Kiro**.
+O que está por baixo dos modelos — e por que isso muda tudo na hora de usar o Kiro.
 
-O objetivo não é vender uma ferramenta. É construir entendimento real sobre o que está por trás dos modelos de linguagem — para que o time use Steerings, Skills e Agent Hooks com intenção, não apenas por instinto.
+Apresentação para o time de Sustentação N3 da Cogna/Voomp.
 
 > "Quem entende o que está por trás usa melhor a ferramenta."
 
@@ -28,18 +28,19 @@ Para usar Kiro bem, o time precisa entender três coisas fundamentais:
 | 2 | **Evolução da IA** | 70 anos em 3 momentos — onde estamos | 1min |
 | 3 | **O que é um Token** | A unidade fundamental + billing | 2min |
 | 4 | **Large Language Models** | Como funciona por dentro + modelos conhecidos | 2min |
-| 5 | **A Ilusão do Pensamento** | Desmitificar: pattern matching, não raciocínio (Apple Research) | 2min |
-| 6 | **Embeddings** | Como o modelo "entende" significado — por geometria | 1min |
-| 7 | **Context Window** | Limites + por que Steerings são mais eficientes que chat | 1-2min |
-| 8 | **Spec Driven Development** | Requirements → Design → Tasks (quando usar no dia a dia) | 1-2min |
-| 9 | **Kiro & Seus Superpoderes** | O que é, os três pilares | 1-2min |
-| 10 | **Steerings** | Auto-gerados + os 8 steerings reais do time | 2min |
+| 5 | **Embeddings** | Como o modelo "entende" significado — por geometria | 1min |
+| 6 | **Context Window** | Limites + por que Steerings são mais eficientes que chat | 1-2min |
+| 7 | **A Ilusão do Pensamento** | Desmitificar: pattern matching, não raciocínio (Apple Research) | 2min |
+| 8 | **Kiro & Seus Superpoderes** | O que é, os três pilares — por que foram desenhados assim | 1-2min |
+| 9 | **Spec Driven Development** | Requirements → Design → Tasks (quando usar no dia a dia) | 1-2min |
+| 10 | **Steerings** | Auto-gerados + os 7 steerings reais do time | 2min |
 | 11 | **Skills** | 4 skills vantajosas com fluxo detalhado | 2min |
-| 12 | **Agent Hooks** | 10 hooks reais categorizados (Jira/Código/War Room) | 3min |
+| 12 | **Agent Hooks** | Hooks reais categorizados (Jira/Código/War Room) | 3min |
 | 13 | **E agora?** | CTA com 3 ações concretas + "vamos pra prática" | 1min |
-| 14 | **Recursos** | Links de estudo curados (Rocketseat, DeepLearning.AI, Kiro docs) | 30s |
+| 14 | **Hands-on: Kiro Playbook** | 3 comandos para instalar o ponto de partida do time | 2min |
+| 15 | **Recursos** | Links de estudo curados (Rocketseat, DeepLearning.AI, Kiro docs) | 30s |
 
-**Tempo total estimado:** 20–25 minutos (com perguntas) + prática ao vivo depois
+**Tempo total estimado:** 22–27 minutos (com perguntas) + prática ao vivo depois
 
 ---
 

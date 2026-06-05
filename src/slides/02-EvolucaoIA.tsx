@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { Brain, BarChart3, Sparkles } from 'lucide-react'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -12,43 +11,43 @@ const fadeUp = {
 
 const eras = [
   {
-    icon: Brain,
     period: '1950–1990s',
     title: 'O Começo (e os invernos)',
-    description: 'Turing e o teste de inteligência. Primeiras tentativas com regras escritas à mão. Seguidas de dois "invernos da IA" — promessas não cumpridas, financiamento cortado. A área quase morreu duas vezes por excesso de hype.',
-    sub: 'Regras programadas → resultados limitados',
+    description: 'Turing propõe máquinas que pensam. Pesquisadores constroem regras à mão — "se X então Y". Funcionou para xadrez, não para o mundo real. Dois invernos: financiamento cortado, promessas não cumpridas. A área quase morreu duas vezes — não por falta de inteligência dos pesquisadores, mas porque a abordagem estava errada.',
+    sub: 'Regras programadas → escala impossível',
+    dot: 'bg-white/30 border-white/20',
+    dotSize: 'w-5 h-5',
     highlight: false,
     color: 'text-text-muted',
-    iconBg: 'bg-white/5 text-text-muted',
-    border: '',
+    border: 'border-white/10',
   },
   {
-    icon: BarChart3,
     period: '2000–2021',
     title: 'A Virada: dados + GPUs',
-    description: 'Big data e GPUs baratas viabilizam redes neurais profundas. ImageNet, Word2Vec, AlexNet. Em 2017, "Attention is All You Need" introduce os Transformers — a arquitetura que está na base de 99% dos modelos modernos.',
-    sub: 'Padrões extraídos dos dados, não programados',
+    description: 'Em vez de programar regras, deixa o modelo aprender dos dados. GPUs baratas + internet + redes neurais profundas. Em 2017, "Attention is All You Need" inventa os Transformers — a inovação foi a atenção: relacionar qualquer palavra com qualquer outra na sequência, independente da distância. Base do GPT, Claude e Gemini.',
+    sub: 'Padrões aprendidos dos dados, não programados',
+    dot: 'bg-white/60 border-white/40',
+    dotSize: 'w-5 h-5',
     highlight: false,
     color: 'text-text',
-    iconBg: 'bg-white/5 text-text-muted',
-    border: '',
+    border: 'border-white/10',
   },
   {
-    icon: Sparkles,
     period: '2022–Hoje',
     title: 'Era dos Agentes',
-    description: 'ChatGPT, Claude, Gemini. LLMs que raciocinam, escrevem código, usam ferramentas e se integram ao IDE. Não são apenas chatbots — são agentes que agem no seu ambiente de desenvolvimento.',
+    description: 'ChatGPT — 1 milhão de usuários em 5 dias. Pela primeira vez, IA útil para qualquer pessoa. Depois: modelos que não só respondem, mas agem — editam arquivos, executam comandos, usam ferramentas, se integram ao IDE.',
     sub: '← É aqui que o Kiro vive',
+    dot: 'bg-primary border-primary/60',
+    dotSize: 'w-6 h-6',
     highlight: true,
     color: 'text-primary',
-    iconBg: 'bg-primary/20 text-primary',
     border: 'border-primary/30 glow',
   },
 ]
 
 export function EvolucaoIA() {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center px-8 gap-6">
+    <div className="w-full h-full flex flex-col items-center justify-center px-8 gap-8">
       <motion.h2 custom={0} variants={fadeUp} initial="hidden" animate="visible"
         className="text-3xl md:text-5xl font-bold gradient-text text-center">
         Evolução da Inteligência Artificial
@@ -59,35 +58,43 @@ export function EvolucaoIA() {
         70 anos condensados em 3 momentos — o padrão se repete: hype, inverno, avanço real.
       </motion.p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full max-w-6xl">
-        {eras.map((era, i) => {
-          const Icon = era.icon
-          return (
+      {/* Timeline */}
+      <div className="w-full max-w-5xl relative">
+
+        {/* Linha horizontal */}
+        <div className="absolute top-[10px] left-12 right-12 h-px bg-white/10" />
+
+        {/* 3 eras */}
+        <div className="grid grid-cols-3 gap-6">
+          {eras.map((era, i) => (
             <motion.div key={era.title} custom={i + 2} variants={fadeUp} initial="hidden" animate="visible"
-              className={`glass p-6 flex flex-col gap-4 ${era.border}`}>
-              <div className="flex items-center gap-3">
-                <div className={`rounded-xl p-2.5 flex-shrink-0 ${era.iconBg}`}>
-                  <Icon size={22} />
-                </div>
-                <span className={`text-xs font-mono font-semibold uppercase tracking-wider ${era.highlight ? 'text-primary' : 'text-text-muted/60'}`}>
+              className="flex flex-col items-center gap-4">
+
+              {/* Dot na linha */}
+              <div className="relative z-10 flex flex-col items-center gap-2">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.4 + i * 0.15, type: 'spring', stiffness: 300, damping: 18 }}
+                  className={`rounded-full border-2 flex-shrink-0 ${era.dot} ${era.dotSize} ${era.highlight ? 'shadow-[0_0_16px_rgba(144,70,255,0.7)]' : ''}`}
+                />
+                <span className={`text-xs font-mono font-semibold ${era.highlight ? 'text-primary' : 'text-text-muted/60'}`}>
                   {era.period}
                 </span>
               </div>
 
-              <h3 className={`font-bold text-lg leading-tight ${era.color}`}>
-                {era.title}
-              </h3>
+              {/* Card */}
+              <div className={`glass border w-full p-5 flex flex-col gap-3 ${era.border}`}>
+                <h3 className={`font-bold text-lg leading-tight ${era.color}`}>{era.title}</h3>
+                <p className="text-sm text-text-muted leading-relaxed">{era.description}</p>
+                <p className={`text-xs font-medium pt-3 border-t ${era.highlight ? 'text-primary border-primary/20' : 'text-text-muted/40 border-white/5'}`}>
+                  {era.sub}
+                </p>
+              </div>
 
-              <p className="text-sm text-text-muted leading-relaxed flex-1">
-                {era.description}
-              </p>
-
-              <p className={`text-xs font-medium pt-3 border-t ${era.highlight ? 'text-primary border-primary/20' : 'text-text-muted/40 border-white/5'}`}>
-                {era.sub}
-              </p>
             </motion.div>
-          )
-        })}
+          ))}
+        </div>
       </div>
 
       <motion.p custom={6} variants={fadeUp} initial="hidden" animate="visible"

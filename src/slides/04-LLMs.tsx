@@ -15,7 +15,7 @@ const flow = [
   { arrow: true },
   { label: 'Tokens', isText: true },
   { arrow: true },
-  { icon: Cpu, label: 'Modelo' },
+  { icon: Cpu, label: 'Atenção + Predição' },
   { arrow: true },
   { icon: Sparkles, label: 'Resposta' },
 ]
@@ -121,6 +121,7 @@ export function LLMs() {
           <span className="text-text font-semibold">Como funcionam:</span>{' '}
           recebem texto → tokenizam → processam com bilhões de parâmetros → geram resposta token a token.
           Não "sabem" — <span className="text-primary font-medium">predizem o próximo token mais provável</span> com base em tudo que foi treinado.
+          {' '}O <span className="text-accent font-medium">mecanismo de atenção</span> é o que permite relacionar "gateway" com "PIX" numa mesma frase — independente da distância entre elas.
         </p>
       </motion.div>
     </div>

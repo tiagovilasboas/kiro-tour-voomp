@@ -9,129 +9,164 @@ const fadeUp = {
   }),
 }
 
-interface WordPoint {
-  word: string
-  x: number
-  y: number
-  color: string
-  group: string
-}
+// Hub-and-spoke nos dois clusters — cada um usa seu próprio SVG com viewBox 0 0 100 100
+// Centro sempre em (50, 50) dentro do seu SVG
 
-const words: WordPoint[] = [
-  { word: 'rei', x: 18, y: 22, color: '#6366f1', group: 'realeza' },
-  { word: 'rainha', x: 26, y: 16, color: '#6366f1', group: 'realeza' },
-  { word: 'príncipe', x: 22, y: 33, color: '#818cf8', group: 'realeza' },
-  { word: 'gato', x: 68, y: 63, color: '#a78bfa', group: 'animais' },
-  { word: 'cachorro', x: 76, y: 57, color: '#a78bfa', group: 'animais' },
-  { word: 'pássaro', x: 63, y: 70, color: '#c4b5fd', group: 'animais' },
-  { word: 'carro', x: 54, y: 18, color: '#34d399', group: 'veículos' },
-  { word: 'moto', x: 61, y: 23, color: '#34d399', group: 'veículos' },
-  { word: 'feliz', x: 30, y: 68, color: '#fbbf24', group: 'emoções' },
-  { word: 'alegre', x: 37, y: 73, color: '#fbbf24', group: 'emoções' },
+const words = [
+  // Saudações — centro (50,50), pontos em arco vertical
+  { word: 'oi',        x: 50, y: 50, color: '#34d399' },
+  { word: 'bom dia',   x: 50, y: 14, color: '#6ee7b7' },
+  { word: 'olá',       x: 76, y: 30, color: '#6ee7b7' },
+  { word: 'boa tarde', x: 76, y: 68, color: '#34d399' },
+  { word: 'hey',       x: 24, y: 30, color: '#34d399' },
+  { word: 'e aí',      x: 24, y: 68, color: '#a7f3d0' },
+
+  // Pagamentos — centro (50,50), pontos em arco horizontal (levemente diferente)
+  { word: 'payment',     x: 50, y: 50, color: '#818cf8' },
+  { word: 'checkout',    x: 50, y: 14, color: '#818cf8' },
+  { word: 'gateway',     x: 80, y: 28, color: '#6366f1' },
+  { word: 'transaction', x: 80, y: 68, color: '#6366f1' },
+  { word: 'PIX',         x: 20, y: 40, color: '#a5b4fc' },
+  { word: 'cobrança',    x: 20, y: 74, color: '#818cf8' },
 ]
 
-const groups = [
-  { name: 'realeza', color: '#6366f1' },
-  { name: 'animais', color: '#a78bfa' },
-  { name: 'veículos', color: '#34d399' },
-  { name: 'emoções', color: '#fbbf24' },
+const connections = [
+  // saudações
+  { x1: 50, y1: 50, x2: 50, y2: 14, color: '#34d399' },
+  { x1: 50, y1: 50, x2: 76, y2: 30, color: '#34d399' },
+  { x1: 50, y1: 50, x2: 76, y2: 68, color: '#34d399' },
+  { x1: 50, y1: 50, x2: 24, y2: 30, color: '#34d399' },
+  { x1: 50, y1: 50, x2: 24, y2: 68, color: '#34d399' },
+  // pagamentos
+  { x1: 50, y1: 50, x2: 50, y2: 14, color: '#6366f1' },
+  { x1: 50, y1: 50, x2: 80, y2: 28, color: '#6366f1' },
+  { x1: 50, y1: 50, x2: 80, y2: 68, color: '#6366f1' },
+  { x1: 50, y1: 50, x2: 20, y2: 40, color: '#6366f1' },
+  { x1: 50, y1: 50, x2: 20, y2: 74, color: '#6366f1' },
 ]
 
 const insights = [
   {
     title: 'O que são embeddings?',
-    body: 'Cada palavra, frase ou trecho de código é convertido em um vetor — uma lista de números (ex: [0.23, -0.87, 0.41, ...]). Esse vetor captura o significado semântico, não apenas a grafia da palavra.',
+    body: 'Cada palavra vira um vetor — uma lista de números que captura seu significado. Palavras semanticamente próximas ficam próximas nesse espaço. É geometria, não gramática.',
   },
   {
-    title: 'Por que isso importa?',
-    body: 'O modelo não faz busca por palavra exata. Ele encontra conceitos próximos no espaço vetorial. Por isso um Steering sobre "pagamento" também influencia respostas sobre "checkout" e "transação" — são semanticamente próximos.',
+    title: 'Por que importa para o Kiro?',
+    body: 'Quando você escreve "payment" num Steering, o modelo também entende "checkout" e "gateway" — estão no mesmo cluster. O contexto se propaga sem você listar tudo.',
   },
   {
-    title: 'Na prática com o Kiro',
-    body: 'Quando você escreve um Steering com palavras do domínio da Voomp (sale, PIX, subscription, VSUS), o modelo entende o contexto completo — mesmo que você não mencione todos os termos numa pergunta.',
+    title: 'Na prática',
+    body: 'Use termos do domínio da Voomp nos Steerings — VSUS, PIX, sale, subscription. O modelo ancora neles mesmo que você não os mencione em cada pergunta.',
   },
 ]
 
 export function Embeddings() {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center px-8 gap-5">
+    <div className="w-full h-full flex flex-col items-center justify-center px-8 gap-4">
       <motion.h2 custom={0} variants={fadeUp} initial="hidden" animate="visible"
         className="text-3xl md:text-5xl font-bold gradient-text text-center">
         Embeddings
       </motion.h2>
 
       <motion.p custom={1} variants={fadeUp} initial="hidden" animate="visible"
-        className="text-base md:text-lg text-text-muted text-center max-w-3xl leading-relaxed">
-        Antes de processar texto, o modelo converte cada palavra em um{' '}
-        <span className="text-primary font-semibold">vetor numérico</span> que representa seu significado.
-        Palavras semanticamente próximas ficam próximas nesse espaço multidimensional.
-        É assim que o modelo <span className="text-accent font-semibold">"entende"</span> — não por regras, por geometria.
+        className="text-base md:text-lg text-text-muted text-center max-w-3xl lg:max-w-5xl leading-relaxed">
+        O modelo converte cada palavra em um{' '}
+        <span className="text-primary font-semibold">vetor numérico</span>.
+        {' '}Palavras com significado próximo ficam próximas nesse espaço —
+        {' '}<span className="text-accent font-semibold">é distância que define semântica</span>, não gramática.
       </motion.p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-6xl">
-        {/* Visualization */}
-        <motion.div custom={2} variants={fadeUp} initial="hidden" animate="visible"
-          className="glass p-4 flex flex-col gap-3">
+      <motion.div custom={2} variants={fadeUp} initial="hidden" animate="visible"
+        className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        {/* LEFT — SVG com 2 quadrantes */}
+        <div className="glass p-5 flex flex-col gap-3">
           <div className="flex items-center justify-between">
-            <p className="text-xs text-text-muted/60">Espaço vetorial 2D (simplificado)</p>
-            <div className="flex items-center gap-3">
-              {groups.map(g => (
-                <div key={g.name} className="flex items-center gap-1">
-                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: g.color }} />
-                  <span className="text-[10px] text-text-muted">{g.name}</span>
+            <p className="text-sm text-text-muted/70 font-medium">Palavras próximas = significados semelhantes</p>
+            <p className="text-xs text-text-muted/40 font-mono whitespace-nowrap">"payment" → [0.23, −0.87, ...]</p>
+          </div>
+
+          <div className="relative w-full rounded-xl bg-surface/40 border border-white/5 overflow-hidden"
+            style={{ height: '360px' }}>
+
+            {/* Dois SVGs lado a lado, cada um no seu quadrante */}
+            <div className="absolute inset-0 flex">
+
+              {/* Quadrante esquerdo — saudações */}
+              <div className="flex-1 relative flex flex-col">
+                <p className="text-center pt-3 pb-1 text-xs font-bold tracking-widest" style={{ color: '#34d399', opacity: 0.7 }}>SAUDAÇÕES</p>
+                <div className="flex-1 relative">
+                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+                  {connections.filter((_, i) => i < 5).map((c, i) => (
+                    <line key={i} x1={c.x1} y1={c.y1} x2={c.x2} y2={c.y2}
+                      stroke={c.color} strokeWidth="0.8" strokeDasharray="1.8 1.2" opacity="0.6" />
+                  ))}
+                  {words.slice(0, 6).map((p, i) => (
+                    <motion.g key={p.word}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.4 + i * 0.07, type: 'spring', stiffness: 220, damping: 18 }}>
+                      <circle cx={p.x} cy={p.y - 2.5} r="2.8" fill={p.color} opacity="0.25" />
+                      <circle cx={p.x} cy={p.y - 2.5} r="1.8" fill={p.color} />
+                      <text x={p.x} y={p.y + 2.5} textAnchor="middle" dominantBaseline="middle"
+                        fill={p.color} fontSize="5" fontWeight="700" fontFamily="sans-serif">
+                        {p.word}
+                      </text>
+                    </motion.g>
+                  ))}
+                </svg>
                 </div>
-              ))}
+              </div>
+
+              {/* Divisor */}
+              <div className="w-px bg-white/[0.08] self-stretch my-3" />
+
+              {/* Quadrante direito — pagamentos */}
+              <div className="flex-1 relative flex flex-col">
+                <p className="text-center pt-3 pb-1 text-xs font-bold tracking-widest" style={{ color: '#818cf8', opacity: 0.7 }}>PAGAMENTOS</p>
+                <div className="flex-1 relative">
+                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+                  {connections.filter((_, i) => i >= 5).map((c, i) => (
+                    <line key={i} x1={c.x1} y1={c.y1} x2={c.x2} y2={c.y2}
+                      stroke={c.color} strokeWidth="0.8" strokeDasharray="1.8 1.2" opacity="0.6" />
+                  ))}
+                  {words.slice(6).map((p, i) => (
+                    <motion.g key={p.word}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.6 + i * 0.07, type: 'spring', stiffness: 220, damping: 18 }}>
+                      <circle cx={p.x} cy={p.y - 2.5} r="2.8" fill={p.color} opacity="0.25" />
+                      <circle cx={p.x} cy={p.y - 2.5} r="1.8" fill={p.color} />
+                      <text x={p.x} y={p.y + 2.5} textAnchor="middle" dominantBaseline="middle"
+                        fill={p.color} fontSize="5" fontWeight="700" fontFamily="sans-serif">
+                        {p.word}
+                      </text>
+                    </motion.g>
+                  ))}
+                </svg>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="relative w-full h-48 rounded-xl bg-surface/50 border border-white/5 overflow-hidden">
-            {/* Grid */}
-            <div className="absolute inset-0 opacity-[0.05]">
-              {[1, 2, 3].map(n => (
-                <div key={`h${n}`} className="absolute left-0 right-0 h-px bg-white" style={{ top: `${n * 25}%` }} />
-              ))}
-              {[1, 2, 3].map(n => (
-                <div key={`v${n}`} className="absolute top-0 bottom-0 w-px bg-white" style={{ left: `${n * 25}%` }} />
-              ))}
-            </div>
+          <p className="text-xs text-text-muted/40 text-center">
+            Espaço vetorial 2D simplificado — na prática são centenas de dimensões
+          </p>
+        </div>
 
-            {/* Lines */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20">
-              <line x1="18%" y1="22%" x2="26%" y2="16%" stroke="#6366f1" strokeWidth="1" strokeDasharray="3 2" />
-              <line x1="18%" y1="22%" x2="22%" y2="33%" stroke="#6366f1" strokeWidth="1" strokeDasharray="3 2" />
-              <line x1="68%" y1="63%" x2="76%" y2="57%" stroke="#a78bfa" strokeWidth="1" strokeDasharray="3 2" />
-              <line x1="68%" y1="63%" x2="63%" y2="70%" stroke="#a78bfa" strokeWidth="1" strokeDasharray="3 2" />
-              <line x1="54%" y1="18%" x2="61%" y2="23%" stroke="#34d399" strokeWidth="1" strokeDasharray="3 2" />
-              <line x1="30%" y1="68%" x2="37%" y2="73%" stroke="#fbbf24" strokeWidth="1" strokeDasharray="3 2" />
-            </svg>
-
-            {/* Dots */}
-            {words.map((p, i) => (
-              <motion.div key={p.word}
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3 + i * 0.07, type: 'spring', stiffness: 200, damping: 15 }}
-                className="absolute flex flex-col items-center gap-0.5"
-                style={{ left: `${p.x}%`, top: `${p.y}%`, transform: 'translate(-50%, -50%)' }}
-              >
-                <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: p.color, boxShadow: `0 0 6px ${p.color}` }} />
-                <span className="text-[9px] font-medium whitespace-nowrap" style={{ color: p.color }}>{p.word}</span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Insights */}
+        {/* RIGHT — Insights */}
         <div className="flex flex-col gap-3">
           {insights.map((ins, i) => (
-            <motion.div key={ins.title} custom={i + 3} variants={fadeUp} initial="hidden" animate="visible"
-              className="glass p-4 flex flex-col gap-1.5">
-              <p className="text-sm font-semibold text-text">{ins.title}</p>
+            <motion.div key={ins.title}
+              custom={i + 3} variants={fadeUp} initial="hidden" animate="visible"
+              className="glass p-5 flex flex-col gap-2 flex-1">
+              <p className="text-base font-semibold text-text">{ins.title}</p>
               <p className="text-sm text-text-muted leading-relaxed">{ins.body}</p>
             </motion.div>
           ))}
         </div>
-      </div>
+
+      </motion.div>
     </div>
   )
 }

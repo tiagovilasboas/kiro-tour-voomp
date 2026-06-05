@@ -20,10 +20,20 @@ export function Capa() {
       <div className="relative z-10 max-w-4xl">
         {/* Logo */}
         <motion.div custom={0} variants={fadeUp} initial="hidden" animate="visible" className="mb-10 flex justify-center">
-          <img
-            src="/kiro-logo.svg"
+          <motion.img
+            src="/kiro-icon.svg"
             alt="Kiro"
-            className="h-32 md:h-48 drop-shadow-[0_0_30px_rgba(99,102,241,0.5)]"
+            className="h-36 md:h-48"
+            animate={{
+              y: [0, -14, 0],
+              rotate: [0, 3, -3, 0],
+              scale: [1, 1.06, 1],
+            }}
+            transition={{
+              duration: 3.5,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
           />
         </motion.div>
 
@@ -33,11 +43,11 @@ export function Capa() {
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6"
+          className="text-3xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6"
         >
-          <span className="text-text">Da IA aos Agentes:</span>
-          <br />
-          <span className="gradient-text">Como chegamos até aqui</span>
+          <span className="text-text">Kiro</span>
+          <span className="text-text/30"> com </span>
+          <span className="gradient-text">Intenção</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -46,10 +56,11 @@ export function Capa() {
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="text-base md:text-lg text-text-muted font-light leading-relaxed max-w-2xl mx-auto mb-10"
+          className="text-base md:text-xl text-text-muted font-light leading-relaxed max-w-2xl mx-auto mb-10"
         >
-          Do surgimento dos LLMs até as ferramentas que transformam
-          o fluxo de trabalho do time de sustentação
+          Tokens, embeddings, atenção e context window —
+          o que está por baixo dos modelos e por que isso muda
+          completamente como você usa Steerings, Skills e Hooks.
         </motion.p>
 
         {/* Brand bar */}

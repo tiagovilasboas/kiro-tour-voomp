@@ -8,32 +8,34 @@ import { Capa } from './slides/01-Capa'
 import { EvolucaoIA } from './slides/02-EvolucaoIA'
 import { Tokens } from './slides/03-Tokens'
 import { LLMs } from './slides/04-LLMs'
-import { IlusaoPensamento } from './slides/05-IlusaoPensamento'
 import { Embeddings } from './slides/05-Embeddings'
 import { ContextWindow } from './slides/06-ContextWindow'
-import { SpecDriven } from './slides/07-SpecDriven'
+import { IlusaoPensamento } from './slides/07-IlusaoPensamento'
 import { IntroKiro } from './slides/08-IntroKiro'
-import { Steerings } from './slides/08-Steerings'
-import { Skills } from './slides/09-Skills'
-import { AgentHooks } from './slides/10-AgentHooks'
-import { Encerramento } from './slides/11-Encerramento'
-import { Recursos } from './slides/12-Recursos'
+import { SpecDriven } from './slides/09-SpecDriven'
+import { Steerings } from './slides/10-Steerings'
+import { Skills } from './slides/11-Skills'
+import { AgentHooks } from './slides/12-AgentHooks'
+import { Encerramento } from './slides/13-Encerramento'
+import { HandsOn } from './slides/14-HandsOn'
+import { Recursos } from './slides/15-Recursos'
 
 const slides = [
-  Capa,            // 1. Abertura
-  EvolucaoIA,      // 2. 70 anos de IA em 3 momentos
-  Tokens,          // 3. Unidade fundamental + billing
-  LLMs,            // 4. O que são, modelos conhecidos
-  IlusaoPensamento,// 5. Desmitificar: não pensam, reconhecem padrões
-  Embeddings,      // 6. Como "entendem" significado
-  ContextWindow,   // 7. Limites e por que Steerings são eficientes
-  SpecDriven,      // 8. Requirements → Design → Tasks
-  IntroKiro,       // 9. Kiro & Seus Superpoderes
-  Steerings,       // 10. Os 8 steerings reais do N3
+  Capa,            // 1.  Abertura
+  EvolucaoIA,      // 2.  70 anos de IA em 3 momentos
+  LLMs,            // 3.  O que são, modelos conhecidos
+  Tokens,          // 4.  Unidade fundamental + billing
+  Embeddings,      // 5.  Como "entendem" significado — geometria
+  ContextWindow,   // 6.  Limites e por que Steerings são eficientes
+  IlusaoPensamento,// 7.  Desmitificar: pattern matching, não raciocínio
+  IntroKiro,       // 8.  Kiro & Seus Superpoderes — apresentação
+  SpecDriven,      // 9.  Requirements → Design → Tasks
+  Steerings,       // 10. Os steerings reais do N3
   Skills,          // 11. 4 skills vantajosas
-  AgentHooks,      // 12. 10 hooks categorizados
-  Encerramento,    // 13. CTA + prática
-  Recursos,        // 14. Links de estudo
+  AgentHooks,      // 12. Hooks categorizados
+  Encerramento,    // 13. O que vimos + CTA
+  HandsOn,         // 14. Kiro Playbook — instalar agora
+  Recursos,        // 15. Links de estudo
 ]
 
 function App() {

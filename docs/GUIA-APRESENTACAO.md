@@ -1,8 +1,8 @@
 # Guia de Apresentação — Da IA aos Agentes: Como chegamos até aqui
 
-> **Tempo total estimado:** 20–25 minutos (com perguntas) + prática ao vivo depois
+> **Tempo total estimado:** 22–27 minutos (com perguntas) + prática ao vivo depois
 > **Público:** Time de Sustentação N3
-> **Slides:** 14
+> **Slides:** 15
 > **Objetivo:** Construir entendimento sobre IA para que o time use Steerings, Skills e Agent Hooks com intenção.
 
 ---
@@ -13,11 +13,29 @@ Não é palestra técnica profunda. É uma ponte. O time já usa o Kiro — o ob
 
 ---
 
+## Arco narrativo
+
+```
+Fundação técnica                Kiro                      Prática
+────────────────────────────    ──────────────────────    ──────────────────
+1. Capa                         8.  Kiro & Superpoderes   13. Encerramento / CTA
+2. Evolução da IA               9.  Spec Driven           14. Hands-on: kiro-playbook
+3. Tokens                       10. Steerings             15. Recursos
+4. LLMs                         11. Skills
+5. Embeddings                   12. Agent Hooks
+6. Context Window
+7. Ilusão do Pensamento
+```
+
+A lógica: primeiro o time entende *como o modelo funciona* (3–6), depois *o que ele não faz* (7), então faz sentido mostrar *por que Steerings, Specs, Hooks foram desenhados assim* (8–12).
+
+---
+
 ## Slide 1 — Capa (15s)
 
 **O que dizer:**
 
-> "Vamos falar sobre IA e Kiro. Antes de mostrar a ferramenta na prática, quero passar um contexto — porque entender o que está por trás muda muito como a gente usa. Prometo que vai valer os 20 minutos."
+> "Vamos falar sobre IA e Kiro. Antes de mostrar a ferramenta na prática, quero passar um contexto rápido — porque entender o que está por trás muda muito como a gente usa. Prometo que vai valer os 20 minutos."
 
 **Transição:** "Vamos começar lá atrás."
 
@@ -37,7 +55,22 @@ Não é palestra técnica profunda. É uma ponte. O time já usa o Kiro — o ob
 
 ---
 
-## Slide 3 — O que é um Token (2min)
+## Slide 3 — Large Language Models (2min)
+
+**O que dizer:**
+
+> "Chegamos na era dos agentes. O que está por baixo desses modelos? Um LLM — Large Language Model."
+
+- Percorrer o diagrama: Texto → Tokens → Atenção + Predição → Resposta
+- Mostrar os 5 modelos: GPT-4o, Claude Sonnet (Kiro), Gemini, Llama 3, DeepSeek
+- "O Claude Sonnet 4.6 é o que responde quando vocês digitam no Kiro."
+- Terminar com: "O mecanismo de atenção é o que permite relacionar 'gateway' com 'PIX' numa mesma frase — independente da distância entre elas."
+
+**Transição:** "E como esse modelo processa o texto que você escreve? Em pedaços chamados tokens."
+
+---
+
+## Slide 4 — O que é um Token (2min)
 
 **O que dizer:**
 
@@ -45,73 +78,82 @@ Não é palestra técnica profunda. É uma ponte. O time já usa o Kiro — o ob
 
 - Mostrar o exemplo visual de tokenização
 - Explicar billing: input + output, preço por milhão de tokens
-- Conectar: "Um Steering conciso de 200 tokens substitui você repetir contexto toda vez. Menos tokens = mais rápido e mais barato."
+- "Um Steering conciso de 200 tokens substitui você repetir contexto toda vez. Menos tokens = mais rápido e mais barato."
 
-**Transição:** "Agora que sabemos o que é um token, vamos entender o LLM."
-
----
-
-## Slide 4 — Large Language Models (2min)
-
-**O que dizer:**
-
-> "LLM — grande modelo de linguagem. É o que está por baixo do Kiro, do ChatGPT, do Gemini."
-
-- Percorrer o diagrama: Texto → Tokens → Modelo → Resposta
-- Mostrar os 5 modelos: GPT-4o, Claude Sonnet (Kiro), Gemini, Llama 3, DeepSeek
-- "O Claude Sonnet 4.6 é o que responde quando vocês digitam no Kiro."
-
-**Transição:** "Mas esses modelos realmente pensam? Spoiler: não."
+**Transição:** "Mas como esse modelo 'entende' o significado das palavras?"
 
 ---
 
-## Slide 5 — A Ilusão do Pensamento (2min)
+## Slide 5 — Embeddings (1min)
 
 **O que dizer:**
 
-> "Dois estudos da Apple mostram que LLMs não raciocinam de verdade. Isso importa porque muda como a gente interage com eles."
+> "Antes de processar, o modelo converte cada palavra num vetor numérico. Palavras com significado próximo ficam próximas nesse espaço — é geometria, não gramática."
 
-- **Fragilidade:** "Mudar só os nomes num problema fez a performance cair 10%."
-- **Colapso:** "Modelos param de tentar depois de certa complexidade — mesmo com tokens sobrando."
-- **Pattern matching:** "Não encontraram evidência de raciocínio formal. É reconhecimento de padrões sofisticado."
+- Mostrar os dois clusters: saudações cotidianas e vocabulário do N3
+- "Repara que 'payment', 'checkout' e 'gateway' estão no mesmo cluster. O modelo os vê como vizinhos no espaço semântico."
+- "É por isso que quando você escreve 'payment' num Steering, o modelo já ativa 'checkout' e 'gateway' — sem você precisar listar tudo."
 
-> "O que muda pra nós? Quanto melhor o contexto que damos (Steerings), mais preciso o matching. Alucinações não são bugs — são o modelo completando com o padrão mais provável."
+> "E isso explica por que Steerings funcionam tão bem: ao injetar vocabulário do domínio — VSUS, PIX, sale, subscription — você ancora o modelo no cluster semântico certo antes de fazer qualquer pergunta. A resposta é mais precisa porque o modelo já está no espaço vetorial certo."
 
-**Transição:** "E como o modelo 'entende' significado se não pensa? Embeddings."
+**Transição:** "Mas tem um limite pra quanto contexto o modelo consegue carregar — e é aí que os Steerings se tornam ainda mais importantes."
 
 ---
 
-## Slide 6 — Embeddings (1min)
+## Slide 6 — Context Window (1-2min)
 
 **O que dizer:**
 
-> "Cada palavra vira um vetor numérico. Palavras com significado próximo ficam próximas no espaço."
-
-- Mostrar a visualização com clusters
-- "Por isso um Steering com palavras do domínio Voomp (sale, PIX, subscription) funciona — o modelo conecta por proximidade semântica, não por busca exata."
-
-**Transição:** "Mas tem um limite pra quanto contexto cabe."
-
----
-
-## Slide 7 — Context Window (1-2min)
-
-**O que dizer:**
-
-> "A janela de contexto é o limite. O que sai dela, o modelo esquece."
+> "A janela de contexto é a memória de trabalho do modelo. O que sai dela, o modelo esquece — sem aviso."
 
 - Mostrar o comparativo: Claude Sonnet = 1M tokens, GPT-4o/Llama = 128k
-- "Em vez de repetir contexto no chat toda vez, o Steering injeta uma vez de forma eficiente e permanente."
+- "Em vez de repetir contexto do projeto em cada mensagem, o Steering injeta uma vez de forma compacta e permanente."
 
-**Transição:** "Agora que entendemos a fundação, vamos pro Kiro."
+**Transição:** "Agora que entendemos como funciona — tokens, vetores, janela — uma pergunta: o modelo realmente pensa?"
 
 ---
 
-## Slide 8 — Spec Driven Development (1-2min)
+## Slide 7 — A Ilusão do Pensamento (2min)
 
 **O que dizer:**
 
-> "Antes de codar, o Kiro ajuda a pensar. Requirements → Design → Tasks."
+> "Dois estudos da Apple, 2024 e 2025, mostram que LLMs não raciocinam de verdade. Isso muda como a gente interage com eles."
+
+- **GSM-Symbolic (2024):** "Mudar só os nomes num problema matemático fez a performance cair 10%. Mesmo problema, lógica igual — só nomes diferentes."
+- **The Illusion of Thinking (2025):** "Modelos colapsam depois de certa complexidade — mesmo com tokens sobrando. Sem evidência de raciocínio formal."
+- **O que muda pra nós:** "Alucinações não são bugs — são o modelo completando com o padrão mais provável. Por isso contexto preciso (Steerings) importa mais que prompt genial."
+
+> "Não é mágica, é matemática sofisticada. E isso explica por que cada ferramenta do Kiro foi desenhada do jeito que foi."
+
+**Nota de fala — referência verbal (não precisa colocar no slide):**
+
+> "O Akita tem vários vídeos e artigos testando LLMs na prática — a conclusão dele é parecida com a dos papers da Apple: funciona, tem valor real, mas tem limites claros. Não é mágica, é ferramenta. Se alguém quiser se aprofundar, vale pesquisar no canal dele."
+
+**Transição:** "Agora faz sentido apresentar o Kiro."
+
+---
+
+## Slide 8 — Kiro & Seus Superpoderes (1-2min)
+
+**O que dizer:**
+
+> "Não é um chatbot. É um agente — edita arquivos, executa comandos, integra com o IDE."
+
+- **Steerings** — sempre ativos: "contexto persistente, o modelo sempre sabe onde está"
+- **Skills** — sob demanda: "fluxos completos que você invoca com um comando"
+- **Agent Hooks** — automáticos: "disparam por eventos, sem você pedir"
+
+> "Esses três pilares existem por causa do que acabamos de ver: o modelo tem memória limitada, não raciocina, precisa de contexto preciso. Cada peça resolve um desses problemas."
+
+**Transição:** "Antes de detalhar os três, uma ferramenta que atravessa tudo isso."
+
+---
+
+## Slide 9 — Spec Driven Development (1-2min)
+
+**O que dizer:**
+
+> "Spec é o modo estruturado do Kiro: Requirements → Design → Tasks. Você pensa com o agente antes de codar."
 
 - Percorrer as 3 fases rapidamente
 - **Quando usar no N3?**
@@ -119,23 +161,11 @@ Não é palestra técnica profunda. É uma ponte. O time já usa o Kiro — o ob
   - Melhoria que toca vários arquivos (como adicionar idempotência)
   - Fix onde QA precisa saber exatamente o que testar
 
-> "O agente já carrega os Steerings do projeto — ele sabe a stack, as tabelas, o formato de Causa Raiz. Qualquer dev do time pode continuar de onde outro parou."
+> "O agente já carrega os Steerings do projeto antes de começar a Spec. Qualquer dev do time pode continuar de onde outro parou."
 
-**Transição:** "E agora os três superpoderes do Kiro."
+> "Spec não substitui os três pilares — ela usa eles. Quando você abre uma Spec, os Steerings já estão carregados, os Hooks continuam disparando, e você pode invocar Skills no meio do fluxo."
 
----
-
-## Slide 9 — Kiro & Seus Superpoderes (1-2min)
-
-**O que dizer:**
-
-> "Não é um chatbot. Edita arquivos, executa comandos, integra com o IDE."
-
-- **Steerings** — sempre ativos (contexto persistente)
-- **Skills** — você invoca (fluxos sob demanda)
-- **Agent Hooks** — automáticos (disparam por eventos)
-
-> "Vamos ver cada um em detalhe."
+**Transição:** "Agora os três pilares em detalhe. Começando pelos Steerings."
 
 ---
 
@@ -143,13 +173,16 @@ Não é palestra técnica profunda. É uma ponte. O time já usa o Kiro — o ob
 
 **O que dizer:**
 
-> "Existem dois tipos: os que o Kiro gera automaticamente e os que nós criamos com intenção."
+> "Steerings são a memória do agente. Antes de você digitar a primeira palavra, ele já sabe onde está."
 
-- Auto-gerados: project.md, structure.md
-- Customizados do N3: listar os 8 por nome com descrição curta
-- Mostrar o preview do `jira-sustentacao.md`
+- Mostrar os dois tipos: auto-gerados (Kiro detecta a stack) e customizados (time cria com intenção)
+- Destacar **um** exemplo que ilustra o poder — o `jira-workflows`:
+  > "Esse arquivo ensina o Kiro que horas nunca vão no incidente pai — vão na subtask. Que a Causa Raiz tem um formato específico. Que o board é o 2477. Você não precisa explicar isso toda vez — ele já sabe."
+- Mostrar brevemente o preview na tela
 
-> "Tudo isso está carregado antes de você digitar a primeira palavra."
+> "O poder não é a lista de arquivos. É que o modelo recebe contexto cirúrgico no momento certo, sem você pedir."
+
+**Transição:** "Steerings são passivos — sempre ativos. Skills são ativos — você invoca."
 
 ---
 
@@ -157,12 +190,16 @@ Não é palestra técnica profunda. É uma ponte. O time já usa o Kiro — o ob
 
 **O que dizer:**
 
-> "Skills são fluxos completos que você invoca com um comando."
+> "Skills são fluxos completos que você invoca com uma frase. O agente executa cada passo — com o contexto dos Steerings já carregado."
 
-- **Entregar História:** "PR + Jira + status + horas — ~30 seg vs ~15 min manual"
-- **Grill Me:** "Questiona sua hipótese antes de commitar código de pagamento"
-- **Investigar Bug:** "Workflow estruturado do zero: Jira → Grafana → hipóteses"
-- **Post-Mortem:** "Consolida timeline e cria página no Confluence na estrutura N3"
+- Destacar **um** exemplo que ilustra o poder — o `incident-triage`:
+  > "Você cola o chamado do Freshdesk e diz 'preciso triar este incidente'. O agente classifica a severidade com os critérios reais da Voomp — P1, P2, P3, P4 — levanta hipóteses ordenadas por probabilidade e te diz o que ainda falta coletar. Tudo antes de você abrir o Grafana."
+- Mencionar o `post-mortem` como segundo exemplo:
+  > "E quando o incidente fecha, tem a skill de post-mortem — você fornece o contexto, ela estrutura o documento pronto para o Confluence."
+
+> "O poder é esse: você invoca uma vez, o agente executa o fluxo que você executaria manualmente em 20 minutos."
+
+**Transição:** "E os Hooks — o que dispara sem você pedir."
 
 ---
 
@@ -170,15 +207,14 @@ Não é palestra técnica profunda. É uma ponte. O time já usa o Kiro — o ob
 
 **O que dizer:**
 
-> "Hooks disparam sem você pedir. 15 hooks ativos globalmente."
+> "Hooks disparam sem você pedir. Baseados em eventos do IDE — salvar arquivo, criar arquivo, fechar task."
 
-Percorrer por categoria:
+- Mostrar os três grupos da tela: instalados, opcionais, prompts
+- Não precisa entrar no detalhe de cada um — o objetivo é mostrar o padrão
 
-- **Jira:** jira-task-start, jira-close-task, description-pattern, causa-raiz-pattern
-- **PHP:** lint, code-review nos gateways, scaffold
-- **War Room:** bug-investigation, health-check, war-room-status
+> "O ponto é: existe uma camada de automação que fica em segundo plano e age no momento certo. Você configura uma vez e esquece."
 
-> "O jira-close-task sozinho economiza 10-15 minutos por task."
+**Transição:** "Vamos ver o que fazer com isso essa semana."
 
 ---
 
@@ -186,39 +222,59 @@ Percorrer por categoria:
 
 **O que dizer:**
 
-> "Três coisas pra fazer essa semana:"
+> "Uma coisa pra fazer essa semana:"
 
-1. Explorar os Steerings em `.kiro/steering/`
-2. Usar o `jira-close-task` na próxima task e medir o tempo
-3. Criar um Steering próprio com algo que repete no chat
+> "Na próxima task VSUS, use o prompt `close-task` do playbook para fechar. Cole no chat, veja o que o Kiro gera — Causa Raiz, Resolução, horas — e meça quanto tempo você gastaria fazendo isso na mão."
 
-> "E agora — vamos pra prática ao vivo."
+> "Se funcionou, você já entendeu o valor. Se não funcionou, você tem um steering pra melhorar."
 
-**[Transição para demo ao vivo com Kiro aberto]**
+**Transição:** "E agora — 3 comandos e você está configurado."
 
 ---
 
-## Slide 14 — Recursos (30s)
+## Slide 14 — Hands-on: Kiro Playbook (2min)
+
+**O que dizer:**
+
+> "Tudo que vimos — os steerings, as skills, os hooks, os prompts — está nesse repositório. 3 comandos e está instalado."
+
+- Mostrar o `git clone` e o `node bin/install.mjs` na tela
+- "O script preserva o que você já tem. `--dry-run` mostra o que faria sem tocar em nada."
+- Rodar ao vivo ou mostrar já instalado — o ponto é que é simples
+
+> "A partir daqui é aprofundamento. O CONTRIBUTING.md tem o passo a passo para criar os seus próprios artefatos."
+
+**Transição:** "Recursos pra quem quiser ir mais fundo."
+
+---
+
+## Slide 15 — Recursos (30s)
 
 > "Pra quem quiser ir além dos slides — esses links estão no repo, podem acessar depois."
 
-Mencionar brevemente: Rocketseat Masterclass IA (PT-BR), Andrew Ng (Agentic AI), Kiro docs.
+Mencionar brevemente:
+- Rocketseat Masterclass IA — PT-BR, grátis, melhor ponto de entrada
+- Andrew Ng (Agentic AI) — como sistemas agentic funcionam internamente, exatamente o que o Kiro faz
+- kiro.dev/docs — referência completa de Steerings, Skills, Hooks, Specs
 
 ---
 
 ## Perguntas frequentes
 
 **"Isso substitui pensar?"**
-> "Não. O Kiro é tão bom quanto o contexto que você dá. Steerings ruins geram respostas ruins."
+> "Não. O Kiro é tão bom quanto o contexto que você dá. Steering ruim gera resposta ruim. A ferramenta amplifica o que você traz — não substitui."
 
 **"E se alucinar?"**
-> "Acontece — é pattern matching. Por isso existem hooks de review e lint. Sempre revise antes de commitar."
+> "Acontece — é pattern matching. Por isso existem o hook `php-lint-on-save` e a revisão manual antes de commitar. O modelo é ferramenta, não oráculo."
 
 **"Posso criar meus próprios Steerings e Hooks?"**
-> "Sim. Steering = arquivo Markdown. Hook = JSON com evento + ação. Qualquer um do time pode."
+> "Sim. Steering = arquivo Markdown em `.kiro/steering/`. Hook = JSON com evento + ação. O `CONTRIBUTING.md` do kiro-playbook tem exemplos reais com passo a passo para cada tipo de artefato."
 
 **"Quando usar Spec vs chat normal?"**
 > "Chat: pergunta rápida, dúvida pontual. Spec: mudança que toca múltiplos arquivos, precisa de clareza pra QA, ou tem complexidade que justifica pensar antes de codar."
+
+**"Os Steerings e Hooks do playbook são definitivos?"**
+> "Não. São o que o time validou até agora. Você vai criar os seus próprios — os mais valiosos vão ser os que só você conhece. Abre um PR quando tiver algo que faz sentido pro time."
 
 ---
 
@@ -230,3 +286,4 @@ Mencionar brevemente: Rocketseat Masterclass IA (PT-BR), Andrew Ng (Agentic AI),
 - [ ] `.kiro/steering/` aberto no Explorer para mostrar ao vivo
 - [ ] Uma task VSUS recente pronta para demo do `jira-close-task`
 - [ ] MCP Jira conectado (testar: perguntar a task mais recente no VSUS)
+- [ ] Terminal aberto na pasta do kiro-playbook (ou pronto para clonar ao vivo)
