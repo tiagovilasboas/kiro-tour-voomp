@@ -20,8 +20,8 @@ Fundação técnica                Kiro                      Prática
 ────────────────────────────    ──────────────────────    ──────────────────
 1. Capa                         8.  Kiro & Superpoderes   13. Encerramento / CTA
 2. Evolução da IA               9.  Spec Driven           14. Hands-on: kiro-playbook
-3. Tokens                       10. Steerings             15. Recursos
-4. LLMs                         11. Skills
+3. LLMs                         10. Steerings             15. Recursos
+4. Tokens                       11. Skills
 5. Embeddings                   12. Agent Hooks
 6. Context Window
 7. Ilusão do Pensamento
@@ -45,13 +45,21 @@ A lógica: primeiro o time entende *como o modelo funciona* (3–6), depois *o q
 
 **O que dizer:**
 
-> "70 anos condensados em 3 momentos. O importante não é decorar — é entender o padrão."
+> "Antes de falar do Kiro, preciso passar um contexto rápido. Não vou decorar datas — quero que vocês entendam o padrão que se repete."
 
-- **O Começo (1950–90s):** "Regras escritas à mão. Funcionou pra problemas simples, colapsou duas vezes por excesso de hype."
-- **A Virada (2000–2021):** "Dados + GPUs. O modelo aprende padrões em vez de seguir regras. Em 2017, os Transformers mudam tudo."
-- **Era dos Agentes (2022–hoje):** "É aqui que o Kiro vive. Modelos que raciocinam, usam ferramentas, editam arquivos."
+**Era 1 — O Começo (1950–1990s):**
+> "Turing faz a pergunta que funda o campo: 'pode uma máquina pensar?' E pesquisadores passam décadas tentando programar inteligência à mão. Regras para tudo. 'Se o usuário disser X, responda Y.' Funcionou para xadrez, onde o mundo é fechado e previsível. Para o mundo real — linguagem, imagem, contexto — colapsou. O financiamento foi cortado duas vezes. O campo virou piada acadêmica. Não por falta de talento — a *abordagem* estava fundamentalmente errada."
 
-**Transição:** "Mas como esse modelo processa texto? Começa com o token."
+**Era 2 — A Virada (2000–2021):**
+> "A mudança foi de filosofia. Em vez de programar o que o modelo deve saber, você expõe ele a dados e deixa aprender os padrões sozinho. GPUs de games ficaram baratas o suficiente para treinar redes profundas. A internet encheu de texto para aprender. Em 2017, um paper muda tudo: 'Attention is All You Need'. O mecanismo de atenção — que vamos ver mais tarde — é o que permite que o modelo conecte qualquer palavra com qualquer outra numa sequência, sem perder contexto. É a fundação técnica do GPT, do Claude, do Gemini."
+
+**Era 3 — Era dos Agentes (2022–hoje):**
+> "Novembro de 2022. ChatGPT. Um milhão de usuários em 5 dias. Isso nunca tinha acontecido na história da tecnologia. E o que veio depois foi mais radical ainda: modelos que não só respondem, mas *agem*. Editam arquivos. Executam comandos. Usam ferramentas. Integram com o IDE. A diferença entre chatbot e agente é exatamente essa capacidade de agir no ambiente — e é aqui que o Kiro vive."
+
+**O padrão que vale notar:**
+> "Repara no ciclo: hype excessivo, colapso, avanço real baseado em fundamento técnico sólido. Estamos vivendo o terceiro ciclo. Desta vez com fundamento — mas o hype ainda é real. Entender isso ajuda a usar a ferramenta com expectativas corretas."
+
+**Transição:** "Então o que está por baixo desses modelos? Começa com o LLM."
 
 ---
 
@@ -61,10 +69,22 @@ A lógica: primeiro o time entende *como o modelo funciona* (3–6), depois *o q
 
 > "Chegamos na era dos agentes. O que está por baixo desses modelos? Um LLM — Large Language Model."
 
-- Percorrer o diagrama: Texto → Tokens → Atenção + Predição → Resposta
-- Mostrar os 5 modelos: GPT-4o, Claude Sonnet (Kiro), Gemini, Llama 3, DeepSeek
-- "O Claude Sonnet 4.6 é o que responde quando vocês digitam no Kiro."
-- Terminar com: "O mecanismo de atenção é o que permite relacionar 'gateway' com 'PIX' numa mesma frase — independente da distância entre elas."
+Percorrer o diagrama pausadamente:
+- **Texto** → "O que você digita no chat"
+- **Tokens** → "O modelo não vê palavras, vê pedaços — já vamos falar disso"
+- **Atenção + Predição** → "Aqui acontece a mágica — e o porquê desse nome vai fazer sentido em breve"
+- **Resposta** → "Token a token, o modelo monta a resposta"
+
+Apresentar os 5 modelos:
+> "Esses são os modelos que vocês vão encontrar por aí. O Claude Sonnet 4.6 é o que responde quando vocês digitam no Kiro — é o modelo padrão da Anthropic, excelente em código e raciocínio estruturado."
+
+Fechar com o mecanismo de atenção:
+> "O mecanismo de atenção é o que torna os Transformers diferentes de tudo que veio antes. Antes dele, o modelo lia o texto como uma sequência linear — palavra por palavra. Com atenção, qualquer palavra pode 'prestar atenção' em qualquer outra da frase, independente da distância. É por isso que o modelo consegue relacionar 'gateway' com 'PIX' numa frase longa sem perder o contexto."
+
+> "Isso importa pra vocês porque explica por que um Steering com vocabulário do domínio funciona — o modelo faz conexões semânticas que um sistema mais antigo não faria."
+
+**Se alguém perguntar sobre o o3 ou modelos de reasoning:**
+> "Modelos de reasoning como o o3 adicionam uma etapa de 'pensar antes de responder' — mas como vamos ver daqui a pouco, mesmo esses modelos têm limites formais. A atenção continua sendo o núcleo."
 
 **Transição:** "E como esse modelo processa o texto que você escreve? Em pedaços chamados tokens."
 
@@ -90,11 +110,19 @@ A lógica: primeiro o time entende *como o modelo funciona* (3–6), depois *o q
 
 > "Antes de processar, o modelo converte cada palavra num vetor numérico. Palavras com significado próximo ficam próximas nesse espaço — é geometria, não gramática."
 
-- Mostrar os dois clusters: saudações cotidianas e vocabulário do N3
-- "Repara que 'payment', 'checkout' e 'gateway' estão no mesmo cluster. O modelo os vê como vizinhos no espaço semântico."
-- "É por isso que quando você escreve 'payment' num Steering, o modelo já ativa 'checkout' e 'gateway' — sem você precisar listar tudo."
+Apontar para o cluster de saudações:
+> "Olha o cluster verde — 'bom dia', 'oi', 'olá', 'hey', 'boa tarde'. O modelo não sabe gramática. Ele sabe que essas palavras aparecem nos mesmos contextos, com os mesmos vizinhos em bilhões de textos. Então elas ficam próximas no espaço vetorial."
 
-> "E isso explica por que Steerings funcionam tão bem: ao injetar vocabulário do domínio — VSUS, PIX, sale, subscription — você ancora o modelo no cluster semântico certo antes de fazer qualquer pergunta. A resposta é mais precisa porque o modelo já está no espaço vetorial certo."
+Apontar para o cluster de pagamentos:
+> "Agora olha o roxo — 'payment', 'checkout', 'gateway', 'PIX', 'transaction'. Mesmo padrão. Essas palavras gravitam juntas porque aparecem juntas."
+
+A conexão com Steerings:
+> "E isso explica por que Steerings funcionam tão bem. Quando você escreve um Steering com as palavras do domínio da Voomp — 'sale', 'PIX', 'subscription', 'VSUS' — você ancora o modelo no cluster semântico certo *antes* de fazer qualquer pergunta. Ele já está no espaço vetorial certo. A resposta vem mais precisa não por mágica, mas porque o modelo está partindo do cluster certo."
+
+> "É como dar contexto por geometria, não por instrução explícita."
+
+**Se alguém perguntar 'mas os vetores são 2D como no slide?':**
+> "Não — na prática são centenas ou milhares de dimensões. O slide é uma simplificação visual para mostrar o conceito de proximidade. A matemática é a mesma, só em muito mais dimensões."
 
 **Transição:** "Mas tem um limite pra quanto contexto o modelo consegue carregar — e é aí que os Steerings se tornam ainda mais importantes."
 
@@ -119,17 +147,24 @@ A lógica: primeiro o time entende *como o modelo funciona* (3–6), depois *o q
 
 > "Dois estudos da Apple, 2024 e 2025, mostram que LLMs não raciocinam de verdade. Isso muda como a gente interage com eles."
 
-- **GSM-Symbolic (2024):** "Mudar só os nomes num problema matemático fez a performance cair 10%. Mesmo problema, lógica igual — só nomes diferentes."
-- **The Illusion of Thinking (2025):** "Modelos colapsam depois de certa complexidade — mesmo com tokens sobrando. Sem evidência de raciocínio formal."
-- **O que muda pra nós:** "Alucinações não são bugs — são o modelo completando com o padrão mais provável. Por isso contexto preciso (Steerings) importa mais que prompt genial."
+**GSM-Symbolic (2024) — o experimento dos nomes:**
+> "Eles pegaram problemas matemáticos que os modelos resolviam bem — e mudaram só os nomes dos personagens e os números, mantendo a lógica idêntica. A performance caiu cerca de 10%. Mesmo problema, mesma lógica, só nomes diferentes. Se o modelo estivesse raciocinando, não importaria o nome. Mas importou — porque ele estava fazendo matching de padrão, não raciocínio."
 
-> "Não é mágica, é matemática sofisticada. E isso explica por que cada ferramenta do Kiro foi desenhada do jeito que foi."
+**The Illusion of Thinking (2025) — o colapso:**
+> "O segundo estudo é ainda mais revelador. Conforme aumentavam a complexidade dos problemas, os modelos aumentavam o esforço de 'pensar' — até um certo ponto. Depois disso, colapsavam. Paravam de tentar, mesmo com tokens sobrando na janela. Sem evidência de raciocínio formal em nenhum caso testado."
+
+**A implicação prática:**
+> "O que isso muda pra vocês? Alucinações não são bugs — são o modelo completando com o padrão mais provável, como um autocomplete muito sofisticado. Não é sabotagem, é a natureza do sistema."
+
+> "E a conclusão mais importante: contexto preciso vale mais que prompt genial. Um Steering bem escrito que ancora o modelo no domínio certo vai ter resultado melhor do que uma pergunta bem formulada sem contexto. É por isso que investimos tempo nos Steerings."
 
 **Nota de fala — referência verbal (não precisa colocar no slide):**
-
 > "O Akita tem vários vídeos e artigos testando LLMs na prática — a conclusão dele é parecida com a dos papers da Apple: funciona, tem valor real, mas tem limites claros. Não é mágica, é ferramenta. Se alguém quiser se aprofundar, vale pesquisar no canal dele."
 
-**Transição:** "Agora faz sentido apresentar o Kiro."
+**Se alguém questionar 'mas o o3/o4 não pensa diferente?':**
+> "Os modelos de reasoning adicionam uma etapa de chain-of-thought antes de responder — o que melhora resultados em alguns casos. Mas o Illusion of Thinking foi testado especificamente nesses modelos também, e o padrão de colapso se manteve. A diferença é de grau, não de natureza."
+
+**Transição:** "Agora que entendemos o que o modelo é — e o que ele não é — faz todo sentido apresentar o Kiro."
 
 ---
 
@@ -153,17 +188,21 @@ A lógica: primeiro o time entende *como o modelo funciona* (3–6), depois *o q
 
 **O que dizer:**
 
-> "Spec é o modo estruturado do Kiro: Requirements → Design → Tasks. Você pensa com o agente antes de codar."
+> "Antes de ver os três pilares em detalhe, tem uma ferramenta que atravessa todos eles: o modo Spec."
 
-- Percorrer as 3 fases rapidamente
-- **Quando usar no N3?**
-  - Bug complexo com múltiplos fluxos (como o VSUS-701)
-  - Melhoria que toca vários arquivos (como adicionar idempotência)
-  - Fix onde QA precisa saber exatamente o que testar
+Explicar o fluxo:
+> "Spec é o modo estruturado do Kiro. Em vez de ir direto para o chat e codar, você passa por três fases: Requirements, Design e Tasks. Você pensa com o agente antes de escrever uma linha de código."
 
-> "O agente já carrega os Steerings do projeto antes de começar a Spec. Qualquer dev do time pode continuar de onde outro parou."
+Percorrer as fases:
+- **Requirements:** "Você descreve o problema. O Kiro faz perguntas para clarificar — o que pode acontecer, o que não pode, quem é afetado. Você sai com critérios de aceite claros antes de propor solução."
+- **Design:** "Com os requisitos claros, o agente propõe a arquitetura. Decisões técnicas documentadas — arquivos a alterar, abordagem, trade-offs. Você pode mudar antes de escrever uma linha."
+- **Tasks:** "O design vira uma lista de tarefas executáveis com contexto completo. Cada task tem o suficiente para qualquer dev do time pegar e continuar — sem depender de você explicar."
 
-> "Spec não substitui os três pilares — ela usa eles. Quando você abre uma Spec, os Steerings já estão carregados, os Hooks continuam disparando, e você pode invocar Skills no meio do fluxo."
+Quando usar no N3:
+> "No dia a dia do N3, Spec faz sentido quando o problema toca múltiplos arquivos — como a idempotência do VSUS-679, que afetou middleware, controller e testes. Ou quando QA precisa de clareza exata do que foi alterado para planejar os cenários."
+
+A conexão com os pilares:
+> "Spec não substitui os três pilares — ela usa eles. Quando você abre uma Spec, os Steerings já estão carregados. Os Hooks continuam disparando. Você pode invocar uma Skill no meio do fluxo. É o modo de trabalho mais completo do Kiro."
 
 **Transição:** "Agora os três pilares em detalhe. Começando pelos Steerings."
 

@@ -20,23 +20,23 @@ Para usar Kiro bem, o time precisa entender três coisas fundamentais:
 
 ---
 
-## 📊 Os 14 Slides
+## 📊 Os 15 Slides
 
 | # | Slide | Objetivo | Tempo |
 |---|-------|----------|-------|
 | 1 | **Capa** | Abrir a jornada | 15s |
 | 2 | **Evolução da IA** | 70 anos em 3 momentos — onde estamos | 1min |
-| 3 | **O que é um Token** | A unidade fundamental + billing | 2min |
-| 4 | **Large Language Models** | Como funciona por dentro + modelos conhecidos | 2min |
+| 3 | **Large Language Models** | Como funciona por dentro + mecanismo de atenção | 2min |
+| 4 | **O que é um Token** | A unidade fundamental + billing | 2min |
 | 5 | **Embeddings** | Como o modelo "entende" significado — por geometria | 1min |
 | 6 | **Context Window** | Limites + por que Steerings são mais eficientes que chat | 1-2min |
 | 7 | **A Ilusão do Pensamento** | Desmitificar: pattern matching, não raciocínio (Apple Research) | 2min |
 | 8 | **Kiro & Seus Superpoderes** | O que é, os três pilares — por que foram desenhados assim | 1-2min |
 | 9 | **Spec Driven Development** | Requirements → Design → Tasks (quando usar no dia a dia) | 1-2min |
-| 10 | **Steerings** | Auto-gerados + os 7 steerings reais do time | 2min |
-| 11 | **Skills** | 4 skills vantajosas com fluxo detalhado | 2min |
-| 12 | **Agent Hooks** | Hooks reais categorizados (Jira/Código/War Room) | 3min |
-| 13 | **E agora?** | CTA com 3 ações concretas + "vamos pra prática" | 1min |
+| 10 | **Steerings** | Auto-gerados + exemplos reais do playbook N3 | 2min |
+| 11 | **Skills** | 2 skills reais do playbook (incident-triage e post-mortem) | 2min |
+| 12 | **Agent Hooks** | Hooks instalados + opcionais + 7 prompts equivalentes | 3min |
+| 13 | **E agora?** | CTA único: usar close-task na próxima task VSUS | 1min |
 | 14 | **Hands-on: Kiro Playbook** | 3 comandos para instalar o ponto de partida do time | 2min |
 | 15 | **Recursos** | Links de estudo curados (Rocketseat, DeepLearning.AI, Kiro docs) | 30s |
 
@@ -64,14 +64,14 @@ Navegação: `←` `→` ou `Espaço` para avançar
 
 | Doc | O que tem |
 |-----|-----------|
-| [Guia de Apresentação](docs/GUIA-APRESENTACAO.md) | Script completo dos 14 slides — o que dizer em cada um |
+| [Guia de Apresentação](docs/GUIA-APRESENTACAO.md) | Script completo dos 15 slides — o que dizer em cada um |
 | [Checklist do Dia](docs/CHECKLIST.md) | O que fazer 30 minutos antes de apresentar |
 
 ---
 
 ## Stack
 
-React 19 · TypeScript 6 · Vite 8 · Tailwind CSS v4 · Framer Motion · Lucide React
+React 19 · TypeScript 5 · Vite 6 · Tailwind CSS v4 · Framer Motion · Lucide React
 
 ---
 

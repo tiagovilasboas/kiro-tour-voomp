@@ -12,9 +12,9 @@ const fadeUp = {
 const eras = [
   {
     period: '1950–1990s',
-    title: 'O Começo (e os invernos)',
-    description: 'Turing propõe máquinas que pensam. Pesquisadores constroem regras à mão — "se X então Y". Funcionou para xadrez, não para o mundo real. Dois invernos: financiamento cortado, promessas não cumpridas. A área quase morreu duas vezes — não por falta de inteligência dos pesquisadores, mas porque a abordagem estava errada.',
-    sub: 'Regras programadas → escala impossível',
+    title: 'O Começo (e os dois colapsos)',
+    description: 'Turing pergunta: "pode uma máquina pensar?" e o campo nasce empolgado. Pesquisadores tentam programar inteligência à mão — regras para tudo, casos para tudo. Funcionou para xadrez e problemas fechados. Para o mundo real, colapsou. Duas vezes. O financiamento foi cortado, o campo virou piada acadêmica. Não por falta de talento — a abordagem estava fundamentalmente errada. Não dá para escrever regras suficientes para o caos do mundo.',
+    sub: 'Lição: regras programadas não escalam para o mundo real',
     dot: 'bg-white/30 border-white/20',
     dotSize: 'w-5 h-5',
     highlight: false,
@@ -23,9 +23,9 @@ const eras = [
   },
   {
     period: '2000–2021',
-    title: 'A Virada: dados + GPUs',
-    description: 'Em vez de programar regras, deixa o modelo aprender dos dados. GPUs baratas + internet + redes neurais profundas. Em 2017, "Attention is All You Need" inventa os Transformers — a inovação foi a atenção: relacionar qualquer palavra com qualquer outra na sequência, independente da distância. Base do GPT, Claude e Gemini.',
-    sub: 'Padrões aprendidos dos dados, não programados',
+    title: 'A Virada: deixa o modelo aprender',
+    description: 'A mudança foi de filosofia: em vez de programar o que o modelo deve saber, expõe ele a dados e deixa aprender os padrões. GPUs de games ficaram baratas, a internet encheu de texto, redes neurais profundas ressurgiram. Em 2017 veio o paper que muda tudo — "Attention is All You Need". O mecanismo de atenção permite que qualquer palavra se relacione com qualquer outra na sequência, sem perder contexto. É a fundação do GPT, do Claude, do Gemini.',
+    sub: 'Lição: padrões extraídos de dados superam regras escritas à mão',
     dot: 'bg-white/60 border-white/40',
     dotSize: 'w-5 h-5',
     highlight: false,
@@ -35,7 +35,7 @@ const eras = [
   {
     period: '2022–Hoje',
     title: 'Era dos Agentes',
-    description: 'ChatGPT — 1 milhão de usuários em 5 dias. Pela primeira vez, IA útil para qualquer pessoa. Depois: modelos que não só respondem, mas agem — editam arquivos, executam comandos, usam ferramentas, se integram ao IDE.',
+    description: 'Novembro de 2022: ChatGPT. Um milhão de usuários em 5 dias. Pela primeira vez, IA útil para qualquer pessoa, não só pesquisadores. O que veio depois foi mais radical ainda: modelos que não só respondem, mas agem. Editam arquivos. Executam comandos. Usam ferramentas. Integram com o IDE. A diferença entre "chatbot" e "agente" é exatamente essa capacidade de agir no ambiente.',
     sub: '← É aqui que o Kiro vive',
     dot: 'bg-primary border-primary/60',
     dotSize: 'w-6 h-6',

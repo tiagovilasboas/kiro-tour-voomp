@@ -12,12 +12,14 @@ const fadeUp = {
 
 const topics = [
   'Evolução da IA — 70 anos em 3 momentos',
-  'Tokens, LLMs e Context Window — como os modelos funcionam',
+  'LLMs — como funcionam por dentro (tokens, atenção, predição)',
+  'Embeddings — distância semântica e por que Steerings ancoram o modelo',
+  'Context Window — memória limitada e injeção eficiente de contexto',
   'A Ilusão do Pensamento — pattern matching, não raciocínio (Apple Research)',
   'Spec Driven Development — Requirements → Design → Tasks',
-  'Steerings — contexto persistente e as 7 instruções do time',
-  'Skills — Triagem de Incidente (P1–P4) e Post-Mortem para o Confluence',
-  'Agent Hooks — 2 instalados + 3 opcionais + 7 prompts equivalentes',
+  'Steerings — contexto persistente que âncora o modelo no seu domínio',
+  'Skills — incident-triage e post-mortem, fluxos completos num comando',
+  'Agent Hooks — automações por evento: instalados, opcionais e prompts',
 ]
 
 export function Encerramento() {
