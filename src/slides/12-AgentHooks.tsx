@@ -35,12 +35,12 @@ const hookGroups = [
         icon: FileText,
         name: 'scaffold-teste',
         trigger: 'fileCreated · *Test.php',
-        desc: 'Gera estrutura PHPUnit ao criar arquivo de teste — convenções PHP 7.4.',
+        desc: 'Gera estrutura PHPUnit ao criar arquivo de teste: convenções PHP 7.4.',
       },
     ],
   },
   {
-    category: 'Opcionais — requerem MCP',
+    category: 'Opcionais: requerem MCP',
     color: 'text-accent',
     bg: 'bg-accent/10',
     border: 'border-accent/20',
@@ -60,7 +60,7 @@ const hookGroups = [
     ],
   },
   {
-    category: '7 prompts — sem MCP',
+    category: '7 prompts: sem MCP',
     color: 'text-primary',
     bg: 'bg-primary/10',
     border: 'border-primary/20',
@@ -98,7 +98,7 @@ export function AgentHooks() {
 
       <motion.p custom={1} variants={fadeUp} initial="hidden" animate="visible"
         className="text-base md:text-lg text-text-muted text-center max-w-3xl">
-        Automações que disparam <span className="text-primary font-semibold">sem você pedir</span> — baseadas em eventos do IDE.
+        Automações que disparam <span className="text-primary font-semibold">sem você pedir</span>, baseadas em eventos do IDE.
         O agente age no momento certo, com o contexto certo.
       </motion.p>
 

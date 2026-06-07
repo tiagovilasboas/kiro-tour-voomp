@@ -13,7 +13,7 @@ const eras = [
   {
     period: '1950–1990s',
     title: 'O Começo (e os dois colapsos)',
-    description: 'Turing pergunta: "pode uma máquina pensar?" e o campo nasce empolgado. Pesquisadores tentam programar inteligência à mão — regras para tudo, casos para tudo. Funcionou para xadrez e problemas fechados. Para o mundo real, colapsou. Duas vezes. O financiamento foi cortado, o campo virou piada acadêmica. Não por falta de talento — a abordagem estava fundamentalmente errada. Não dá para escrever regras suficientes para o caos do mundo.',
+    description: 'Turing pergunta: "pode uma máquina pensar?" e o campo nasce empolgado. Pesquisadores tentam programar inteligência à mão: regras para tudo, casos para tudo. Funcionou para xadrez e problemas fechados. Para o mundo real, colapsou. Duas vezes. O financiamento foi cortado, o campo virou piada acadêmica. Não por falta de talento: a abordagem estava fundamentalmente errada. Não dá para escrever regras suficientes para o caos do mundo.',
     sub: 'Lição: regras programadas não escalam para o mundo real',
     dot: 'bg-white/30 border-white/20',
     dotSize: 'w-5 h-5',
@@ -24,7 +24,7 @@ const eras = [
   {
     period: '2000–2021',
     title: 'A Virada: deixa o modelo aprender',
-    description: 'A mudança foi de filosofia: em vez de programar o que o modelo deve saber, expõe ele a dados e deixa aprender os padrões. GPUs de games ficaram baratas, a internet encheu de texto, redes neurais profundas ressurgiram. Em 2017 veio o paper que muda tudo — "Attention is All You Need". O mecanismo de atenção permite que qualquer palavra se relacione com qualquer outra na sequência, sem perder contexto. É a fundação do GPT, do Claude, do Gemini.',
+    description: 'A mudança foi de filosofia: em vez de programar o que o modelo deve saber, expõe ele a dados e deixa aprender os padrões. GPUs de games ficaram baratas, a internet encheu de texto, redes neurais profundas ressurgiram. Em 2017 veio o paper que muda tudo: "Attention is All You Need". O mecanismo de atenção permite que qualquer palavra se relacione com qualquer outra na sequência, sem perder contexto. É a fundação do GPT, do Claude, do Gemini.',
     sub: 'Lição: padrões extraídos de dados superam regras escritas à mão',
     dot: 'bg-white/60 border-white/40',
     dotSize: 'w-5 h-5',
@@ -55,7 +55,7 @@ export function EvolucaoIA() {
 
       <motion.p custom={1} variants={fadeUp} initial="hidden" animate="visible"
         className="text-base md:text-lg text-text-muted text-center max-w-3xl">
-        70 anos condensados em 3 momentos — o padrão se repete: hype, inverno, avanço real.
+        70 anos condensados em 3 momentos: o padrão se repete: hype, inverno, avanço real.
       </motion.p>
 
       {/* Timeline */}
@@ -99,7 +99,7 @@ export function EvolucaoIA() {
 
       <motion.p custom={6} variants={fadeUp} initial="hidden" animate="visible"
         className="text-xs text-text-muted/40 text-center">
-        Cada inverno foi seguido por um avanço maior — o ciclo de hype é real, mas o progresso também é
+        Cada inverno foi seguido por um avanço maior. O ciclo de hype é real, mas o progresso também é
       </motion.p>
     </div>
   )

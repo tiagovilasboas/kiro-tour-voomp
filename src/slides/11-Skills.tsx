@@ -23,7 +23,7 @@ const skills = [
     steps: [
       'Classifica severidade P1–P4 com critérios reais da Voomp',
       'Identifica componentes afetados (PaymentController, webhooks, contratos...)',
-      'Verifica Grafana voomp-sustentacao-l3 primeiro — antes de qualquer outra fonte',
+      'Verifica Grafana voomp-sustentacao-l3 primeiro: antes de qualquer outra fonte',
       'Levanta 2–3 hipóteses de causa raiz ordenadas por probabilidade',
       'Lista o que ainda falta coletar para confirmar a hipótese',
     ],
@@ -42,7 +42,7 @@ const skills = [
       'Gera linha do tempo completa a partir dos dados fornecidos',
       'Documenta causa raiz real (não o sintoma) e por que não detectamos antes',
       'Lista ações corretivas e preventivas com responsável e prazo',
-      'Gera markdown pronto para o Confluence — página Post-Mortem N3',
+      'Gera markdown pronto para o Confluence: página Post-Mortem N3',
     ],
   },
 ]
@@ -58,7 +58,7 @@ export function Skills() {
       <motion.p custom={1} variants={fadeUp} initial="hidden" animate="visible"
         className="text-base md:text-lg text-text-muted text-center max-w-3xl">
         <span className="text-text font-medium">Steerings sabem. Skills fazem.</span>
-        {' '}Uma Skill é um fluxo de trabalho completo que você invoca com uma frase — o agente executa cada passo usando o contexto que os Steerings já carregaram.
+        {' '}Uma Skill é um fluxo de trabalho completo que você invoca com uma frase: o agente executa cada passo usando o contexto que os Steerings já carregaram.
       </motion.p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-6xl">
@@ -106,17 +106,17 @@ export function Skills() {
         className="flex items-center gap-6 text-sm text-text-muted">
         <div className="flex items-center gap-2">
           <Zap size={13} className="text-primary" />
-          <span><span className="text-primary font-semibold">Skills</span> — você invoca</span>
+          <span><span className="text-primary font-semibold">Skills</span>: você invoca</span>
         </div>
         <span className="text-text-muted/30">·</span>
         <div className="flex items-center gap-2">
           <Compass size={13} className="text-accent" />
-          <span><span className="text-accent font-semibold">Steerings</span> — sempre ativos</span>
+          <span><span className="text-accent font-semibold">Steerings</span>: sempre ativos</span>
         </div>
         <span className="text-text-muted/30">·</span>
         <div className="flex items-center gap-2">
           <GitPullRequest size={13} className="text-success" />
-          <span><span className="text-success font-semibold">Hooks</span> — disparam sozinhos</span>
+          <span><span className="text-success font-semibold">Hooks</span>: disparam sozinhos</span>
         </div>
       </motion.div>
     </div>

@@ -11,7 +11,9 @@ import { LLMs } from './slides/04-LLMs'
 import { Embeddings } from './slides/05-Embeddings'
 import { ContextWindow } from './slides/06-ContextWindow'
 import { IlusaoPensamento } from './slides/07-IlusaoPensamento'
+import { IDEsIA } from './slides/07b-IDEsIA'
 import { IntroKiro } from './slides/08-IntroKiro'
+import { KiroAvancado } from './slides/08b-KiroAvancado'
 import { SpecDriven } from './slides/09-SpecDriven'
 import { Steerings } from './slides/10-Steerings'
 import { Skills } from './slides/11-Skills'
@@ -23,19 +25,21 @@ import { Recursos } from './slides/15-Recursos'
 const slides = [
   Capa,            // 1.  Abertura
   EvolucaoIA,      // 2.  70 anos de IA em 3 momentos
-  LLMs,            // 3.  O que são, modelos conhecidos
+  LLMs,            // 3.  O que são, modelos disponíveis no Kiro
   Tokens,          // 4.  Unidade fundamental + billing
-  Embeddings,      // 5.  Como "entendem" significado — geometria
-  ContextWindow,   // 6.  Limites e por que Steerings são eficientes
-  IlusaoPensamento,// 7.  Desmitificar: pattern matching, não raciocínio
-  IntroKiro,       // 8.  Kiro & Seus Superpoderes — apresentação
-  SpecDriven,      // 9.  Requirements → Design → Tasks
-  Steerings,       // 10. Os steerings reais do N3
-  Skills,          // 11. 4 skills vantajosas
-  AgentHooks,      // 12. Hooks categorizados
-  Encerramento,    // 13. O que vimos + CTA
-  HandsOn,         // 14. Kiro Playbook — instalar agora
-  Recursos,        // 15. Links de estudo
+  Embeddings,      // 5.  Como "entendem" significado
+  ContextWindow,   // 6.  Limites e como o Kiro monta a janela
+  IlusaoPensamento,// 7.  Pattern matching, não raciocínio
+  IDEsIA,          // 8.  IDEs com IA: cada uma com um propósito
+  IntroKiro,       // 9.  Kiro como Sistema: 4 pilares + 3 futuros
+  KiroAvancado,    // 10. Kiro Avançado: mapeamento futuro
+  SpecDriven,      // 11. Spec Driven: Requirements → Design → Tasks
+  Steerings,       // 12. Steerings: contexto persistente
+  Skills,          // 13. Skills: fluxos completos invocáveis
+  AgentHooks,      // 14. Hooks: automação por eventos
+  Encerramento,    // 15. CTA: use close-task essa semana
+  HandsOn,         // 16. Hands-on: prompt interativo
+  Recursos,        // 17. Recursos de estudo
 ]
 
 function App() {

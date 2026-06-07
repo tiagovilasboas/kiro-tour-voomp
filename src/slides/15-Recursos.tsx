@@ -19,49 +19,49 @@ const resources = [
     items: [
       {
         name: 'Masterclass IA — Rocketseat',
-        desc: 'Trilha em português focada em aplicar IA no dia a dia de dev. Começo ideal.',
+        desc: 'Trilha em português: aplicar IA no dia a dia de dev. Melhor ponto de entrada em PT-BR.',
         url: 'https://app.rocketseat.com.br/jornada/masterclass-ia',
       },
       {
-        name: 'ChatGPT Prompt Engineering for Developers',
-        desc: 'Andrew Ng (DeepLearning.AI) + OpenAI. Direto ao ponto — como escrever prompts que funcionam.',
-        url: 'https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/',
+        name: 'Prompt Engineering Guide',
+        desc: 'Guia técnico completo sobre prompting, RAG, agentes e fine-tuning. Referência da comunidade, sempre atualizado.',
+        url: 'https://www.promptingguide.ai/pt',
       },
     ],
   },
   {
-    category: 'Aprofundar em LLMs e Agentes',
+    category: 'LLMs, Agentes e Kiro',
     color: 'text-accent',
     bg: 'bg-accent/10',
     border: 'border-accent/25',
     items: [
       {
-        name: 'Agentic AI with Andrew Ng',
-        desc: 'Como construir sistemas agentic: planeamento multi-step, tool use, reflexão. Exatamente o que o Kiro faz internamente.',
-        url: 'https://www.deeplearning.ai/alpha/courses/agentic-ai/',
+        name: 'Anthropic Engineering Blog',
+        desc: 'Como a Anthropic constrói agentes, multi-agent systems e o Claude Code. Fonte primária de como o Kiro funciona internamente.',
+        url: 'https://www.anthropic.com/engineering',
       },
       {
-        name: 'Generative AI with LLMs — Coursera/AWS',
-        desc: 'Curso técnico mais completo sobre LLMs: fine-tuning, RLHF, deployment. Para quem quer entender de verdade.',
-        url: 'https://www.deeplearning.ai/courses/generative-ai-with-llms/',
+        name: 'Simon Willison\'s Weblog',
+        desc: 'Análises técnicas profundas sobre LLMs, ferramentas e casos reais. Um dos melhores pensadores independentes da área.',
+        url: 'https://simonwillison.net',
       },
     ],
   },
   {
-    category: 'Kiro & documentação',
+    category: 'Documentação e Papers',
     color: 'text-success',
     bg: 'bg-success/10',
     border: 'border-success/25',
     items: [
       {
         name: 'Documentação oficial do Kiro',
-        desc: 'Steerings, Skills, Hooks, Specs — referência completa de tudo que vimos hoje.',
+        desc: 'Steerings, Skills, Hooks, Specs: referência completa de tudo que vimos hoje.',
         url: 'https://kiro.dev/docs',
       },
       {
-        name: 'Agent Skills with Anthropic',
-        desc: 'Como empacotar fluxos de trabalho como Skills reutilizáveis. Relevante para criar novas Skills do time.',
-        url: 'https://learn.deeplearning.ai/courses/agent-skills-with-anthropic/information',
+        name: 'Apple Research — Illusion of Thinking',
+        desc: 'Paper original citado na apresentação. Leitura obrigatória para entender os limites reais dos LLMs.',
+        url: 'https://machinelearning.apple.com/research/illusion-of-thinking',
       },
     ],
   },
@@ -83,7 +83,7 @@ export function Recursos() {
 
         <motion.p custom={1} variants={fadeUp} initial="hidden" animate="visible"
           className="text-base text-text-muted text-center max-w-2xl mx-auto">
-          Para ir além dos slides — recursos curados para quem quer entender IA de verdade e usar melhor as ferramentas.
+          Para ir além dos slides: recursos curados para quem quer entender IA de verdade e usar melhor as ferramentas.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

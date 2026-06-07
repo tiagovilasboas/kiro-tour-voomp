@@ -11,15 +11,15 @@ const fadeUp = {
 }
 
 const topics = [
-  'Evolução da IA — 70 anos em 3 momentos',
-  'LLMs — como funcionam por dentro (tokens, atenção, predição)',
-  'Embeddings — distância semântica e por que Steerings ancoram o modelo',
-  'Context Window — memória limitada e injeção eficiente de contexto',
-  'A Ilusão do Pensamento — pattern matching, não raciocínio (Apple Research)',
-  'Spec Driven Development — Requirements → Design → Tasks',
-  'Steerings — contexto persistente que âncora o modelo no seu domínio',
-  'Skills — incident-triage e post-mortem, fluxos completos num comando',
-  'Agent Hooks — automações por evento: instalados, opcionais e prompts',
+  'Evolução da IA: 70 anos em 3 momentos',
+  'LLMs: como funcionam por dentro (tokens, atenção, predição)',
+  'Embeddings: distância semântica e por que Steerings ancoram o modelo',
+  'Context Window: memória limitada e injeção eficiente de contexto',
+  'A Ilusão do Pensamento: pattern matching, não raciocínio (Apple Research)',
+  'Spec Driven Development: Requirements → Design → Tasks',
+  'Steerings: contexto persistente que âncora o modelo no seu domínio',
+  'Skills: incident-triage e post-mortem, fluxos completos num comando',
+  'Agent Hooks: automações por evento: instalados, opcionais e prompts',
 ]
 
 export function Encerramento() {
@@ -71,20 +71,20 @@ export function Encerramento() {
             <p className="font-semibold text-text text-sm">Uma coisa pra fazer essa semana</p>
           </div>
           <p className="text-sm text-text-muted leading-relaxed">
-            Na próxima task VSUS, use o prompt{' '}
-            <code className="text-primary font-mono text-xs">close-task</code>{' '}
-            do playbook para fechar. Cole no chat, veja o que o Kiro gera —
-            Causa Raiz, Resolução, horas — e meça quanto tempo você gastaria fazendo isso na mão.
+            Cole o prompt do próximo slide no Kiro com{' '}
+            <code className="text-primary font-mono text-xs">Claude Sonnet 4.6</code>.
+            Responda as 3 perguntas. Deixe ele consultar o Jira e Confluence.
+            Revise o plano. Implemente <span className="text-text font-medium">uma</span> automação.
           </p>
           <p className="text-xs text-text-muted/50 mt-3 italic">
-            Se funcionou, você entendeu o valor. Se não funcionou, você tem um steering pra melhorar.
+            Não é um repo pra instalar. São automações que emergem do seu contexto. Ownership imediata.
           </p>
         </motion.div>
 
         {/* Docs link */}
         <motion.div custom={3} variants={fadeUp} initial="hidden" animate="visible" className="flex justify-center">
           <p className="text-sm text-text-muted/60 text-center">
-            A seguir: instale o kiro-playbook e coloque em prática agora →
+            A seguir: copie o prompt e descubra seus próprios superpoderes →
           </p>
         </motion.div>
       </div>

@@ -48,38 +48,39 @@ const connections = [
 const insights = [
   {
     title: 'O que são embeddings?',
-    body: 'Cada palavra vira um vetor — uma lista de números que captura seu significado. Palavras semanticamente próximas ficam próximas nesse espaço. É geometria, não gramática.',
+    body: 'Cada palavra vira um vetor: uma lista de números que captura seu significado. Palavras semanticamente próximas ficam próximas nesse espaço. É geometria, não gramática.',
   },
   {
     title: 'Por que importa para o Kiro?',
-    body: 'Quando você escreve "payment" num Steering, o modelo também entende "checkout" e "gateway" — estão no mesmo cluster. O contexto se propaga sem você listar tudo.',
+    body: 'Quando você escreve "payment" num Steering, o modelo também entende "checkout" e "gateway": estão no mesmo cluster. O contexto se propaga sem você listar tudo.',
   },
   {
     title: 'Na prática',
-    body: 'Use termos do domínio da Voomp nos Steerings — VSUS, PIX, sale, subscription. O modelo ancora neles mesmo que você não os mencione em cada pergunta.',
+    body: 'Use termos do domínio da Voomp nos Steerings: VSUS, PIX, sale, subscription. O modelo ancora neles mesmo que você não os mencione em cada pergunta.',
   },
 ]
 
 export function Embeddings() {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center px-8 gap-4">
+    <div className="w-full h-full flex flex-col items-center justify-center px-8 gap-2">
       <motion.h2 custom={0} variants={fadeUp} initial="hidden" animate="visible"
-        className="text-3xl md:text-5xl font-bold gradient-text text-center">
+        className="text-2xl md:text-4xl font-bold gradient-text text-center">
         Embeddings
       </motion.h2>
 
       <motion.p custom={1} variants={fadeUp} initial="hidden" animate="visible"
-        className="text-base md:text-lg text-text-muted text-center max-w-3xl lg:max-w-5xl leading-relaxed">
+        className="text-sm md:text-base text-text-muted text-center max-w-3xl lg:max-w-5xl leading-relaxed">
         O modelo converte cada palavra em um{' '}
         <span className="text-primary font-semibold">vetor numérico</span>.
-        {' '}Palavras com significado próximo ficam próximas nesse espaço —
+        <br />
+        {' '}Palavras com significado próximo ficam próximas nesse espaço,
         {' '}<span className="text-accent font-semibold">é distância que define semântica</span>, não gramática.
       </motion.p>
 
       <motion.div custom={2} variants={fadeUp} initial="hidden" animate="visible"
         className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-4">
 
-        {/* LEFT — SVG com 2 quadrantes */}
+        {/* LEFT: SVG com 2 quadrantes */}
         <div className="glass p-5 flex flex-col gap-3">
           <div className="flex items-center justify-between">
             <p className="text-sm text-text-muted/70 font-medium">Palavras próximas = significados semelhantes</p>
@@ -92,7 +93,7 @@ export function Embeddings() {
             {/* Dois SVGs lado a lado, cada um no seu quadrante */}
             <div className="absolute inset-0 flex">
 
-              {/* Quadrante esquerdo — saudações */}
+              {/* Quadrante esquerdo: saudações */}
               <div className="flex-1 relative flex flex-col">
                 <p className="text-center pt-3 pb-1 text-xs font-bold tracking-widest" style={{ color: '#34d399', opacity: 0.7 }}>SAUDAÇÕES</p>
                 <div className="flex-1 relative">
@@ -121,7 +122,7 @@ export function Embeddings() {
               {/* Divisor */}
               <div className="w-px bg-white/[0.08] self-stretch my-3" />
 
-              {/* Quadrante direito — pagamentos */}
+              {/* Quadrante direito: pagamentos */}
               <div className="flex-1 relative flex flex-col">
                 <p className="text-center pt-3 pb-1 text-xs font-bold tracking-widest" style={{ color: '#818cf8', opacity: 0.7 }}>PAGAMENTOS</p>
                 <div className="flex-1 relative">
@@ -150,22 +151,40 @@ export function Embeddings() {
           </div>
 
           <p className="text-xs text-text-muted/40 text-center">
-            Espaço vetorial 2D simplificado — na prática são centenas de dimensões
+            Espaço vetorial 2D simplificado. Na prática são centenas de dimensões
           </p>
         </div>
 
-        {/* RIGHT — Insights */}
+        {/* RIGHT: Insights */}
         <div className="flex flex-col gap-3">
           {insights.map((ins, i) => (
             <motion.div key={ins.title}
               custom={i + 3} variants={fadeUp} initial="hidden" animate="visible"
-              className="glass p-5 flex flex-col gap-2 flex-1">
-              <p className="text-base font-semibold text-text">{ins.title}</p>
-              <p className="text-sm text-text-muted leading-relaxed">{ins.body}</p>
+              className="glass p-4 flex flex-col gap-1.5 flex-1">
+              <p className="text-sm font-semibold text-text">{ins.title}</p>
+              <p className="text-xs text-text-muted leading-relaxed">{ins.body}</p>
             </motion.div>
           ))}
         </div>
 
+      </motion.div>
+
+      {/* Disclaimer: embeddings no modelo vs no Kiro */}
+      <motion.div custom={6} variants={fadeUp} initial="hidden" animate="visible"
+        className="w-full max-w-6xl flex items-start gap-4 px-1">
+        <div className="flex-1 text-center">
+          <p className="text-xs text-text-muted/50 font-mono leading-relaxed">
+            <span className="text-accent/60 font-semibold">No modelo (treinamento):</span>
+            {' '}embeddings são a representação interna aprendida em bilhões de textos. Fixos. Você não os muda.
+          </p>
+        </div>
+        <div className="w-px bg-white/5 self-stretch" />
+        <div className="flex-1 text-center">
+          <p className="text-xs text-text-muted/50 font-mono leading-relaxed">
+            <span className="text-primary/60 font-semibold">No Kiro (indexação local):</span>
+            {' '}modelo de embedding separado indexa o codebase para encontrar arquivos relevantes antes de chamar o LLM.
+          </p>
+        </div>
       </motion.div>
     </div>
   )

@@ -45,9 +45,10 @@ export function Capa() {
           animate="visible"
           className="text-3xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6"
         >
-          <span className="text-text">Kiro</span>
-          <span className="text-text/30"> com </span>
-          <span className="gradient-text">Intenção</span>
+          <span className="text-text">Kiro: </span>
+          <span className="text-text/50">a maioria usa.</span>
+          <br />
+          <span className="gradient-text">Poucos entendem.</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -58,9 +59,8 @@ export function Capa() {
           animate="visible"
           className="text-base md:text-xl text-text-muted font-light leading-relaxed max-w-2xl mx-auto mb-10"
         >
-          Tokens, embeddings, atenção e context window —
-          o que está por baixo dos modelos e por que isso muda
-          completamente como você usa Steerings, Skills e Hooks.
+          Do fundamento dos LLMs ao sistema completo,
+          Specs, Steerings, Skills e Hooks com intenção, não por instinto.
         </motion.p>
 
         {/* Brand bar */}

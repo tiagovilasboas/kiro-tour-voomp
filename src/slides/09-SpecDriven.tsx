@@ -24,7 +24,7 @@ const steps = [
     icon: Paintbrush,
     step: '02',
     title: 'Design',
-    description: 'Arquitetura e fluxo de dados — decisões técnicas antes de codar.',
+    description: 'Arquitetura e fluxo de dados: decisões técnicas antes de codar.',
     color: 'text-accent',
     bg: 'bg-accent/15',
     border: 'border-accent/30',
@@ -33,7 +33,7 @@ const steps = [
     icon: ListChecks,
     step: '03',
     title: 'Tasks',
-    description: 'Tarefas executáveis com dependências — cada uma com contexto completo.',
+    description: 'Tarefas executáveis com dependências: cada uma com contexto completo.',
     color: 'text-success',
     bg: 'bg-success/15',
     border: 'border-success/30',
@@ -50,7 +50,7 @@ const whenToUse = [
   {
     icon: Wrench,
     scenario: 'Melhoria que toca vários arquivos/tabelas',
-    example: 'Adicionar idempotência no upsell — afeta middleware, controller, testes',
+    example: 'Adicionar idempotência no upsell: afeta middleware, controller, testes',
     color: 'text-warning',
   },
   {
@@ -75,7 +75,7 @@ export function SpecDriven() {
       <motion.p custom={1} variants={fadeUp} initial="hidden" animate="visible"
         className="text-base md:text-lg text-text-muted text-center max-w-3xl">
         Antes de codar, o Kiro ajuda a pensar. O fluxo transforma uma task vaga
-        em um plano executável — com contexto dos Steerings já carregado.
+        em um plano executável, com contexto dos Steerings já carregado.
       </motion.p>
 
       {/* Steps */}

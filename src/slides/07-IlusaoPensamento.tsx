@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { AlertTriangle, Shuffle, TrendingDown, Brain, ExternalLink, Quote } from 'lucide-react'
+import { AlertTriangle, Shuffle, TrendingDown, Brain, ExternalLink, Quote, DollarSign } from 'lucide-react'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -25,7 +25,7 @@ const papers = [
     title: 'The Illusion of Thinking',
     year: '2025',
     url: 'https://machinelearning.apple.com/research/illusion-of-thinking',
-    finding: 'Modelos de raciocínio aumentam o esforço conforme a dificuldade — até um ponto. Depois colapsam, mesmo com tokens sobrando. Sem evidência de raciocínio formal.',
+    finding: 'Modelos de raciocínio aumentam o esforço conforme a dificuldade, até um ponto. Depois colapsam, mesmo com tokens sobrando. Sem evidência de raciocínio formal.',
     icon: TrendingDown,
     color: 'text-danger',
     bg: 'bg-danger/10',
@@ -34,9 +34,9 @@ const papers = [
 ]
 
 const implications = [
-  { icon: Brain, text: 'LLMs não "pensam" — reconhecem padrões estatísticos em escala massiva' },
+  { icon: Brain, text: 'LLMs não "pensam": reconhecem padrões estatísticos em escala massiva' },
   { icon: Shuffle, text: 'Quanto melhor o contexto (Steerings), mais preciso o matching de padrões' },
-  { icon: AlertTriangle, text: 'Alucinações não são bugs — são o modelo completando com o padrão mais provável' },
+  { icon: AlertTriangle, text: 'Alucinações não são bugs: são o modelo completando com o padrão mais provável' },
   { icon: TrendingDown, text: 'Por isso hooks de review e lint existem: o modelo é ferramenta, não oráculo' },
 ]
 
@@ -52,19 +52,26 @@ export function IlusaoPensamento() {
         {/* Header */}
         <motion.div custom={0} variants={fadeUp} initial="hidden" animate="visible"
           className="flex items-center gap-3 justify-center">
-          <AlertTriangle size={26} className="text-warning" />
-          <h2 className="text-3xl md:text-5xl font-bold gradient-text">A Ilusão do Pensamento</h2>
+          <AlertTriangle size={22} className="text-warning" />
+          <h2 className="text-2xl md:text-4xl font-bold gradient-text">A Ilusão do Pensamento</h2>
         </motion.div>
 
         {/* Quote */}
         <motion.div custom={1} variants={fadeUp} initial="hidden" animate="visible"
           className="glass border-warning/20 p-4 flex items-start gap-3">
-          <Quote size={16} className="text-warning/60 flex-shrink-0 mt-0.5" />
-          <p className="text-sm text-text-muted italic leading-relaxed">
-            "We found no evidence of formal reasoning in language models. Their behaviour is better explained by{' '}
-            <span className="text-warning font-semibold not-italic">sophisticated pattern matching</span>"
+          <Quote size={14} className="text-warning/60 flex-shrink-0 mt-0.5" />
+          <p className="text-xs text-text-muted italic leading-relaxed">
+            "Não encontramos evidências de raciocínio formal em modelos de linguagem. O comportamento deles é melhor explicado por{' '}
+            <span className="text-warning font-semibold not-italic">correspondência sofisticada de padrões</span>"
           </p>
-          <span className="text-xs text-text-muted/40 flex-shrink-0 self-end font-mono">Apple Research, 2024</span>
+          <a
+            href="https://machinelearning.apple.com/research/gsm-symbolic"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[10px] text-text-muted/40 flex-shrink-0 self-end font-mono hover:text-text-muted/70 transition-colors underline"
+          >
+            Apple Research, 2024
+          </a>
         </motion.div>
 
         {/* Papers */}
@@ -80,8 +87,8 @@ export function IlusaoPensamento() {
                       <Icon size={16} />
                     </div>
                     <div>
-                      <span className={`text-xs font-mono uppercase tracking-wider ${p.color}`}>Apple Research · {p.year}</span>
-                      <h3 className={`font-bold text-base ${p.color}`}>{p.title}</h3>
+                      <span className={`text-[10px] font-mono uppercase tracking-wider ${p.color}`}>Apple Research · {p.year}</span>
+                      <h3 className={`font-bold text-sm ${p.color}`}>{p.title}</h3>
                     </div>
                   </div>
                   <a href={p.url} target="_blank" rel="noopener noreferrer"
@@ -89,7 +96,7 @@ export function IlusaoPensamento() {
                     Paper <ExternalLink size={10} />
                   </a>
                 </div>
-                <p className="text-sm text-text-muted leading-relaxed">{p.finding}</p>
+                <p className="text-xs text-text-muted leading-relaxed">{p.finding}</p>
               </motion.div>
             )
           })}
@@ -105,7 +112,7 @@ export function IlusaoPensamento() {
               return (
                 <div key={i} className="flex items-start gap-2">
                   <Icon size={13} className="text-warning/60 flex-shrink-0 mt-0.5" />
-                  <p className="text-sm text-text-muted leading-relaxed">{imp.text}</p>
+                  <p className="text-xs text-text-muted leading-relaxed">{imp.text}</p>
                 </div>
               )
             })}
@@ -122,6 +129,21 @@ export function IlusaoPensamento() {
               machinelearning.apple.com · {p.title} ({p.year})
             </a>
           ))}
+        </motion.div>
+
+        {/* Pricing warning */}
+        <motion.div custom={6} variants={fadeUp} initial="hidden" animate="visible"
+          className="glass border-warning/20 p-4 flex items-start gap-3">
+          <DollarSign size={16} className="text-warning flex-shrink-0 mt-0.5" />
+          <div className="flex flex-col gap-1">
+            <p className="text-xs font-semibold text-warning">Aviso: o preço atual é subsidiado</p>
+            <p className="text-xs text-text-muted leading-relaxed">
+              OpenAI projeta queimar <span className="text-warning font-medium">$14 bilhões em 2026</span>. Anthropic teve margem de <span className="text-warning font-medium">-94%</span> em 2024. Usuários pagando $20/mês consomem até <span className="text-warning font-medium">$10.000-20.000</span> de inference real. Bilhões em capital de risco estão subsidiando seu acesso hoje.{' '}
+              <span className="text-text font-medium">Quando o subsídio acabar, o custo vai aparecer na fatura.</span>{' '}
+              <a href="https://www.axios.com/2026/03/12/ai-models-costs-ipo-pricing" target="_blank" rel="noopener noreferrer"
+                className="text-warning/70 hover:text-warning underline font-mono text-xs">Axios, 2026</a>
+            </p>
+          </div>
         </motion.div>
       </div>
     </div>

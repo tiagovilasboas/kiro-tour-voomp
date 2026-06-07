@@ -136,6 +136,17 @@ export function Tokens() {
           })}
         </div>
       </motion.div>
+
+      {/* Protocol disclaimer */}
+      <motion.p
+        custom={4}
+        variants={fadeUp}
+        initial="hidden"
+        animate="visible"
+        className="text-xs text-text-muted/40 text-center max-w-3xl font-mono"
+      >
+        Protocolo: texto → tokens → JSON via HTTPS para a API · resposta chega como stream (Server-Sent Events) · é por isso que a resposta aparece palavra a palavra
+      </motion.p>
     </div>
   )
 }

@@ -11,20 +11,20 @@ const fadeUp = {
 }
 
 const autoFiles = [
-  { file: 'project.md',   desc: 'Stack, estrutura de pastas, dependências — detectado ao abrir.' },
+  { file: 'project.md',   desc: 'Stack, estrutura de pastas, dependências: detectado ao abrir.' },
   { file: 'structure.md', desc: 'Padrões de arquitetura identificados ao navegar no código.' },
 ]
 
 const customFiles = [
-  { file: 'project-context',    trigger: 'auto',          desc: 'Stack, repos, frentes de atuação, fluxo operacional — sempre carregado.' },
-  { file: 'jira-workflows',     trigger: 'auto',          desc: 'Board VSUS, campos obrigatórios, formato de Causa Raiz — sempre carregado.' },
-  { file: 'payment-resilience', trigger: '*Payment*.php', desc: '6 regras para código financeiro — carrega só ao abrir arquivo de pagamento.' },
+  { file: 'project-context',    trigger: 'auto',          desc: 'Stack, repos, frentes de atuação, fluxo operacional: sempre carregado.' },
+  { file: 'jira-workflows',     trigger: 'auto',          desc: 'Board VSUS, campos obrigatórios, formato de Causa Raiz: sempre carregado.' },
+  { file: 'payment-resilience', trigger: '*Payment*.php', desc: '6 regras para código financeiro: carrega só ao abrir arquivo de pagamento.' },
 ]
 
 const previewLines = [
   { type: 'meta',    content: 'inclusion: auto' },
   { type: 'blank',   content: '' },
-  { type: 'heading', content: '# Jira — Sustentação N3' },
+  { type: 'heading', content: '# Jira: Sustentação N3' },
   { type: 'section', content: '## Contexto' },
   { type: 'item',    content: '- Projeto: VSUS | Board: 2477' },
   { type: 'item',    content: '- Fix Version: [VSUS] PI 2/26' },
@@ -48,7 +48,7 @@ export function Steerings() {
         className="text-base md:text-lg text-text-muted text-center max-w-3xl">
         Arquivos Markdown em{' '}
         <code className="px-1.5 py-0.5 rounded bg-white/10 text-primary font-mono text-sm">.kiro/steering/</code>
-        {' '}— <span className="text-text font-semibold">contexto que o agente carrega antes de você digitar a primeira palavra.</span>
+        {' '}: <span className="text-text font-semibold">contexto que o agente carrega antes de você digitar a primeira palavra.</span>
         {' '}Steering não executa nada. Ele só sabe. É a memória do agente sobre o seu projeto.
       </motion.p>
 
@@ -65,7 +65,7 @@ export function Steerings() {
             </div>
           </div>
           <p className="text-sm text-text-muted leading-relaxed">
-            O Kiro observa o projeto ao abrir e cria automaticamente — stack, pastas, padrões detectados no código.
+            O Kiro observa o projeto ao abrir e cria automaticamente: stack, pastas, padrões detectados no código.
           </p>
           <div className="space-y-3 mt-1">
             {autoFiles.map(f => (
@@ -88,7 +88,7 @@ export function Steerings() {
             </div>
           </div>
           <p className="text-sm text-text-muted leading-relaxed">
-            Você cria com intenção. Cada arquivo ensina o agente algo sobre o contexto — sem repetir no chat toda vez.
+            Você cria com intenção. Cada arquivo ensina o agente algo sobre o contexto, sem repetir no chat toda vez.
           </p>
           <div className="space-y-3 mt-auto">
             {customFiles.map(f => (
@@ -140,7 +140,7 @@ export function Steerings() {
 
       <motion.p custom={5} variants={fadeUp} initial="hidden" animate="visible"
         className="text-sm text-text-muted/60 text-center">
-        Steering <span className="text-text-muted font-medium">não executa nada</span> — só contextualiza.
+        Steering <span className="text-text-muted font-medium">não executa nada</span>: só contextualiza.
         {' '}Ao injetar vocabulário do domínio, ancora o modelo no cluster semântico certo <span className="text-primary/70">antes</span> de você perguntar.
         {' '}Quer executar um fluxo? Isso é uma <span className="text-primary font-semibold">Skill</span>.
       </motion.p>
