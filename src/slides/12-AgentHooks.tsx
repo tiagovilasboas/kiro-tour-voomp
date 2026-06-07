@@ -20,7 +20,7 @@ const eventTypes = [
 
 const hookGroups = [
   {
-    category: 'Instalados pelo playbook',
+    category: 'Disparam ao salvar arquivo',
     color: 'text-success',
     bg: 'bg-success/10',
     border: 'border-success/20',
@@ -29,59 +29,53 @@ const hookGroups = [
         icon: Terminal,
         name: 'php-lint-on-save',
         trigger: 'fileEdited · *.php',
-        desc: 'Roda php -l ao salvar. Erro de sintaxe aparece antes do commit.',
+        desc: 'Roda php -l ao salvar. Erro de sintaxe antes do commit, não depois do push.',
       },
       {
-        icon: FileText,
-        name: 'scaffold-teste',
-        trigger: 'fileCreated · *Test.php',
-        desc: 'Gera estrutura PHPUnit ao criar arquivo de teste: convenções PHP 7.4.',
+        icon: Shield,
+        name: 'payment-code-review',
+        trigger: 'fileEdited · *Payment*.php',
+        desc: 'Detecta exception engolida, Http::post sem timeout, Sale::create sem DB::transaction.',
       },
     ],
   },
   {
-    category: 'Opcionais: requerem MCP',
+    category: 'Disparam por evento de task',
     color: 'text-accent',
     bg: 'bg-accent/10',
     border: 'border-accent/20',
     hooks: [
       {
-        icon: Shield,
-        name: 'jira-close-task',
-        trigger: 'userTriggered',
-        desc: 'Causa Raiz + Resolução + horas na subtask + move para Pendente de Produção. MCP Jira.',
+        icon: FileText,
+        name: 'jira-task-start',
+        trigger: 'preTaskExecution',
+        desc: 'Ao iniciar uma task: checa se tem subtask de análise, valida descrição, cria subtask de horas.',
       },
       {
         icon: Search,
-        name: 'incident-investigation',
-        trigger: 'userTriggered',
-        desc: 'Jira → Grafana → Logs → Código → Hipóteses. MCP Jira + Grafana.',
+        name: 'post-execution-review',
+        trigger: 'postTaskExecution',
+        desc: 'Ao finalizar: revisa o código gerado contra as boas práticas do time antes de commitar.',
       },
     ],
   },
   {
-    category: '7 prompts: sem MCP',
+    category: 'Invocados manualmente',
     color: 'text-primary',
     bg: 'bg-primary/10',
     border: 'border-primary/20',
     hooks: [
       {
-        icon: FileText,
-        name: 'close-task',
-        trigger: 'cole no chat',
-        desc: 'Causa Raiz + Resolução + horas + status. Com MCP executa; sem MCP gera textos prontos.',
+        icon: Shield,
+        name: 'jira-close-task',
+        trigger: 'userTriggered',
+        desc: 'Causa Raiz + Resolução no formato N3, horas na subtask certa, move status.',
       },
       {
         icon: GitPullRequest,
-        name: 'deliver-story · generate-pr',
-        trigger: 'cole no chat',
-        desc: 'PR no padrão N3 + Jira atualizado + sub-testes QA criados.',
-      },
-      {
-        icon: BookOpen,
-        name: 'war-room-status · health-check · +3',
-        trigger: 'cole no chat',
-        desc: 'triage-incident, investigate-incident, war-room-status, health-check.',
+        name: 'generate-pr-description',
+        trigger: 'userTriggered',
+        desc: 'Gera descrição de PR no padrão do time: resumo, arquivos, link VSUS, testes.',
       },
     ],
   },
@@ -147,9 +141,8 @@ export function AgentHooks() {
       <motion.p custom={7} variants={fadeUp} initial="hidden" animate="visible"
         className="text-sm text-text-muted/50 text-center flex items-center gap-1.5">
         <Zap size={13} className="text-primary/40" />
-        2 hooks instalados por padrão · 3 opcionais em{' '}
-        <code className="font-mono text-primary/60 text-xs">hooks/dev/</code>
-        {' '}· 7 prompts equivalentes sem MCP
+        Hooks são JSON em <code className="font-mono text-primary/60 text-xs">~/.kiro/hooks/</code>
+        {' '}· globais em todos os projetos · o prompt do hands-on pode criar os seus
       </motion.p>
     </div>
   )
