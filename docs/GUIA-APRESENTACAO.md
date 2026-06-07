@@ -1,33 +1,33 @@
-# Guia de Apresentação — Da IA aos Agentes: Como chegamos até aqui
+# Guia de Apresentação: Kiro, a maioria usa. Poucos entendem.
 
-> **Tempo total estimado:** 22–27 minutos (com perguntas) + prática ao vivo depois
+> **Tempo total estimado:** 24-30 minutos (com perguntas) + prática ao vivo depois
 > **Público:** Time de Sustentação N3
-> **Slides:** 15
+> **Slides:** 17
 > **Objetivo:** Construir entendimento sobre IA para que o time use Steerings, Skills e Agent Hooks com intenção.
 
 ---
 
 ## Tom geral
 
-Não é palestra técnica profunda. É uma ponte. O time já usa o Kiro — o objetivo é que entendam *por que* funciona do jeito que funciona. Fale como quem explica pra um colega, não como quem defende uma tese.
+Não é palestra técnica profunda. É uma ponte. O time já usa o Kiro. O objetivo é que entendam *por que* funciona do jeito que funciona. Fale como quem explica pra um colega, não como quem defende uma tese.
 
 ---
 
 ## Arco narrativo
 
 ```
-Fundação técnica                Kiro                      Prática
-────────────────────────────    ──────────────────────    ──────────────────
-1. Capa                         8.  Kiro & Superpoderes   13. Encerramento / CTA
-2. Evolução da IA               9.  Spec Driven           14. Hands-on: kiro-playbook
-3. LLMs                         10. Steerings             15. Recursos
-4. Tokens                       11. Skills
-5. Embeddings                   12. Agent Hooks
+Fundação técnica            Posicionamento         Kiro                    Prática
+────────────────────────    ───────────────────    ─────────────────────   ─────────────────
+1. Capa                     8.  IDEs com IA        11. Spec Driven         15. Encerramento
+2. Evolução da IA           9.  Kiro como Sistema  12. Steerings           16. Hands-on
+3. LLMs                     10. Kiro Avançado      13. Skills              17. Recursos
+4. Tokens                                          14. Agent Hooks
+5. Embeddings
 6. Context Window
 7. Ilusão do Pensamento
 ```
 
-A lógica: primeiro o time entende *como o modelo funciona* (3–6), depois *o que ele não faz* (7), então faz sentido mostrar *por que Steerings, Specs, Hooks foram desenhados assim* (8–12).
+A lógica: fundação (3-6) → desmitificar (7) → posicionar no mercado (8) → Kiro como sistema (9-10) → pilares em detalhe (11-14) → prática (15-17).
 
 ---
 
@@ -132,12 +132,20 @@ A conexão com Steerings:
 
 **O que dizer:**
 
-> "A janela de contexto é a memória de trabalho do modelo. O que sai dela, o modelo esquece — sem aviso."
+> "A janela de contexto é a memória de trabalho do modelo. O que sai dela, o modelo esquece sem aviso."
 
-- Mostrar o comparativo: Claude Sonnet = 1M tokens, GPT-4o/Llama = 128k
-- "Em vez de repetir contexto do projeto em cada mensagem, o Steering injeta uma vez de forma compacta e permanente."
+Mostrar o comparativo de janelas:
+> "Claude Sonnet 4.6 tem 1M tokens. Isso equivale a 2.500 páginas de texto. GPT-4o tem 128k — muito menos espaço para trabalhar."
 
-**Transição:** "Agora que entendemos como funciona — tokens, vetores, janela — uma pergunta: o modelo realmente pensa?"
+Mostrar a pilha do Kiro:
+> "Mas o que preenche essa janela no Kiro? Toda vez que você abre uma conversa, o Kiro monta uma pilha: primeiro os Steerings — automaticamente, antes de tudo. Depois os arquivos abertos do projeto. Depois o histórico da conversa. E por último a sua mensagem."
+
+> "Tudo isso soma. Steerings bem escritos consomem poucos tokens — 2 a 5 mil. Deixam espaço para o que importa: código e contexto real do problema. Repetir contexto no chat toda vez é desperdiçar janela."
+
+A conexão com Spec Driven:
+> "É por isso que o Claude Sonnet 4.6 funciona melhor para Specs: o modelo precisa carregar requirements, design e código ao mesmo tempo. Com 128k você escolhe o que cabe. Com 1M, tudo cabe."
+
+**Transição:** "Agora que entendemos como funciona: tokens, vetores, janela. Uma pergunta: o modelo realmente pensa?"
 
 ---
 
@@ -168,23 +176,70 @@ A conexão com Steerings:
 
 ---
 
-## Slide 8 — Kiro & Seus Superpoderes (1-2min)
+## Slide 8 — IDEs com IA (1min)
 
 **O que dizer:**
 
-> "Não é um chatbot. É um agente — edita arquivos, executa comandos, integra com o IDE."
+> "Antes de entrar no Kiro, é importante entender o mercado. Existem várias IDEs com IA e nenhuma é bala de prata. Cada uma tem um propósito."
 
-- **Steerings** — sempre ativos: "contexto persistente, o modelo sempre sabe onde está"
-- **Skills** — sob demanda: "fluxos completos que você invoca com um comando"
-- **Agent Hooks** — automáticos: "disparam por eventos, sem você pedir"
+Percorrer brevemente os 5 cards:
+- **Cursor:** "The best coding agent. Velocidade pura, autocomplete, multi-file editing. Referência de mercado, $29B de valuation."
+- **Windsurf:** "The first agentic IDE. Engine Cascade para tarefas multi-step. Foco em times enterprise com governança."
+- **Claude Code:** "Agentic coding tool da Anthropic. Terminal-native com subagents: multi-agent de verdade. Para quem vive no CLI."
+- **GitHub Copilot:** "Your AI pair programmer. Extensão, não fork. Domina enterprise pela integração nativa com GitHub. 20M+ usuários."
+- **Kiro:** "Engineering rigor for agentic dev. Spec Driven Development. Da vibe coding ao código mantível em produção."
 
-> "Esses três pilares existem por causa do que acabamos de ver: o modelo tem memória limitada, não raciocina, precisa de contexto preciso. Cada peça resolve um desses problemas."
+> "O Kiro não compete em velocidade de autocomplete. Compete em rigor de engenharia. É por isso que estamos aqui: usar com intenção, não por instinto."
 
-**Transição:** "Antes de detalhar os três, uma ferramenta que atravessa tudo isso."
+**Transição:** "Agora vamos ver o Kiro como sistema."
 
 ---
 
-## Slide 9 — Spec Driven Development (1-2min)
+## Slide 9 — Kiro como Sistema (1-2min)
+
+**O que dizer:**
+
+> "Agora que entendemos a fundação técnica e o posicionamento no mercado, vamos ver o Kiro como um sistema."
+
+Primeiro, os diferenciais:
+> "Diferente do ChatGPT, o Kiro não é um chat isolado. Ele edita arquivos diretamente no projeto, executa comandos no terminal, e integra com o VS Code. É um agente que age no ambiente."
+
+Depois, os 4 pilares:
+> "O Kiro se organiza em 7 capacidades, mas 4 delas resolvem 90% do dia a dia."
+
+Apresentar cada card ativo:
+- **Specs** — "O que fazer: planejar antes de codar"
+- **Steerings** — "Como contextualizar: contexto persistente, o modelo já sabe onde está"
+- **Skills** — "Como executar: fluxos completos invocados com uma frase"
+- **Hooks** — "Como automatizar: disparam por evento, sem pedir"
+
+Mostrar o fluxo:
+> "Repara que eles trabalham juntos: Spec → Steering → Skill → Hook → Resultado. Não são features isoladas."
+
+> "O básico bem feito é o que diferencia quem usa de quem depende."
+
+**Transição:** "Mas existem mais 3 camadas no sistema. Vou mostrar o mapa, mas não vamos entrar nelas hoje."
+
+---
+
+## Slide 10 — Kiro Avançado (1min)
+
+**O que dizer:**
+
+> "Essas são as 3 capacidades avançadas. Não vamos cobrir hoje, mas mostro para vocês saberem que existem e o que esperar."
+
+Percorrer brevemente cada card:
+- **Integrações** — "MCP para Jira, Grafana, Azure DevOps. Powers para fluxos especializados. O agente agindo fora da IDE."
+- **Context Engineering** — "RAG, memória entre sessões, domínio da empresa. O combustível do agente."
+- **Governança** — "Evals, guardrails e auditoria. Escalar sem perder o controle."
+
+> "Primeiro o básico bem feito. Quando o time dominar Specs, Steerings, Skills e Hooks, as camadas avançadas se encaixam naturalmente. Cada sessão futura é independente e prática."
+
+**Transição:** "Voltando pro básico. Começando pelo Spec Driven."
+
+---
+
+## Slide 11 — Spec Driven Development (1-2min)
 
 **O que dizer:**
 
@@ -208,7 +263,7 @@ A conexão com os pilares:
 
 ---
 
-## Slide 10 — Steerings (2min)
+## Slide 12 — Steerings (2min)
 
 **O que dizer:**
 
@@ -225,7 +280,7 @@ A conexão com os pilares:
 
 ---
 
-## Slide 11 — Skills (2min)
+## Slide 13 — Skills (2min)
 
 **O que dizer:**
 
@@ -242,7 +297,7 @@ A conexão com os pilares:
 
 ---
 
-## Slide 12 — Agent Hooks (3min)
+## Slide 14 — Agent Hooks (3min)
 
 **O que dizer:**
 
@@ -257,21 +312,23 @@ A conexão com os pilares:
 
 ---
 
-## Slide 13 — E agora? (1min)
+## Slide 15 — E agora? (1min)
 
 **O que dizer:**
 
 > "Uma coisa pra fazer essa semana:"
 
-> "Na próxima task VSUS, use o prompt `close-task` do playbook para fechar. Cole no chat, veja o que o Kiro gera — Causa Raiz, Resolução, horas — e meça quanto tempo você gastaria fazendo isso na mão."
+> "Cole o prompt do hands-on no Kiro com Claude Sonnet 4.6. Responda as 3 perguntas. Deixe ele consultar o Jira e Confluence. Revise o plano. Implemente uma automação."
 
-> "Se funcionou, você já entendeu o valor. Se não funcionou, você tem um steering pra melhorar."
+> "Não é um repo pra instalar. São automações que emergem do SEU contexto. É ownership imediata. O que o Kiro propor vai ser diferente pra cada um de vocês, porque o papel e os fluxos são diferentes."
 
-**Transição:** "E agora — 3 comandos e você está configurado."
+> "Se quiserem referência de implementação, o kiro-playbook está público no GitHub. Mas a prática real é o prompt."
+
+**Transição:** "Vamos copiar o prompt agora."
 
 ---
 
-## Slide 14 — Hands-on: Kiro Playbook (2min)
+## Slide 16 — Hands-on (2min): Kiro Playbook (2min)
 
 **O que dizer:**
 
@@ -287,7 +344,7 @@ A conexão com os pilares:
 
 ---
 
-## Slide 15 — Recursos (30s)
+## Slide 17 — Recursos (30s)
 
 > "Pra quem quiser ir além dos slides — esses links estão no repo, podem acessar depois."
 

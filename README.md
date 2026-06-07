@@ -1,10 +1,8 @@
-# Kiro com Intenção
+# Kiro: a maioria usa. Poucos entendem.
 
-O que está por baixo dos modelos — e por que isso muda tudo na hora de usar o Kiro.
+🔗 **Live:** [kiro-tour-voomp.vercel.app](https://kiro-tour-voomp.vercel.app/)
 
 Apresentação para o time de Sustentação N3 da Cogna/Voomp.
-
-> "Quem entende o que está por trás usa melhor a ferramenta."
 
 ---
 
@@ -20,27 +18,29 @@ Para usar Kiro bem, o time precisa entender três coisas fundamentais:
 
 ---
 
-## 📊 Os 15 Slides
+## 📊 Os 17 Slides
 
 | # | Slide | Objetivo | Tempo |
 |---|-------|----------|-------|
 | 1 | **Capa** | Abrir a jornada | 15s |
-| 2 | **Evolução da IA** | 70 anos em 3 momentos — onde estamos | 1min |
-| 3 | **Large Language Models** | Como funciona por dentro + mecanismo de atenção | 2min |
-| 4 | **O que é um Token** | A unidade fundamental + billing | 2min |
-| 5 | **Embeddings** | Como o modelo "entende" significado — por geometria | 1min |
-| 6 | **Context Window** | Limites + por que Steerings são mais eficientes que chat | 1-2min |
-| 7 | **A Ilusão do Pensamento** | Desmitificar: pattern matching, não raciocínio (Apple Research) | 2min |
-| 8 | **Kiro & Seus Superpoderes** | O que é, os três pilares — por que foram desenhados assim | 1-2min |
-| 9 | **Spec Driven Development** | Requirements → Design → Tasks (quando usar no dia a dia) | 1-2min |
-| 10 | **Steerings** | Auto-gerados + exemplos reais do playbook N3 | 2min |
-| 11 | **Skills** | 2 skills reais do playbook (incident-triage e post-mortem) | 2min |
-| 12 | **Agent Hooks** | Hooks instalados + opcionais + 7 prompts equivalentes | 3min |
-| 13 | **E agora?** | CTA único: usar close-task na próxima task VSUS | 1min |
-| 14 | **Hands-on: Kiro Playbook** | 3 comandos para instalar o ponto de partida do time | 2min |
-| 15 | **Recursos** | Links de estudo curados (Rocketseat, DeepLearning.AI, Kiro docs) | 30s |
+| 2 | **Evolução da IA** | 70 anos em 3 momentos | 1min |
+| 3 | **Large Language Models** | Como funciona + modelos do Kiro | 2min |
+| 4 | **O que é um Token** | Unidade fundamental + billing | 2min |
+| 5 | **Embeddings** | Vetores numéricos + clusters semânticos | 1min |
+| 6 | **Context Window** | Limites + como o Kiro monta a janela | 1-2min |
+| 7 | **A Ilusão do Pensamento** | Pattern matching, não raciocínio (Apple Research) | 2min |
+| 8 | **IDEs com IA** | Cursor, Windsurf, Claude Code, Copilot, Kiro: cada uma com um propósito | 1min |
+| 9 | **Kiro como Sistema** | 4 pilares básicos + fluxo Spec → Steering → Skill → Hook → Resultado | 1-2min |
+| 10 | **Kiro Avançado** | 3 pilares futuros mapeados (Integrações, Context Engineering, Governança) | 1min |
+| 11 | **Spec Driven** | Requirements → Design → Tasks | 1-2min |
+| 12 | **Steerings** | Contexto persistente + exemplos reais do playbook N3 | 2min |
+| 13 | **Skills** | 2 skills reais (incident-triage e post-mortem) | 2min |
+| 14 | **Agent Hooks** | Hooks instalados + opcionais + 7 prompts equivalentes | 2min |
+| 15 | **E agora?** | CTA único: usar close-task na próxima task VSUS | 1min |
+| 16 | **Hands-on** | Prompt interativo com botão de copiar + Spec Driven em ação | 2min |
+| 17 | **Recursos** | Links diversificados (Anthropic, Simon Willison, Kiro docs, Apple Research) | 30s |
 
-**Tempo total estimado:** 22–27 minutos (com perguntas) + prática ao vivo depois
+**Tempo total estimado:** 24-30 minutos (com perguntas) + prática ao vivo depois
 
 ---
 
