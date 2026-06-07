@@ -64,7 +64,9 @@ Navegação: `←` `→` ou `Espaço` para avançar
 
 | Doc | O que tem |
 |-----|-----------|
-| [Guia de Apresentação](docs/GUIA-APRESENTACAO.md) | Script completo dos 15 slides — o que dizer em cada um |
+| [Guia de Apresentação](docs/GUIA-APRESENTACAO.md) | Script completo dos 17 slides |
+| [Prompt Hands-on](docs/PROMPT-HANDS-ON.md) | Prompt em inglês com guardrails para criar automações |
+| [MCP Setup](docs/MCP-SETUP.md) | Configuração Jira + Confluence + Azure DevOps para o hands-on |
 | [Checklist do Dia](docs/CHECKLIST.md) | O que fazer 30 minutos antes de apresentar |
 
 ---

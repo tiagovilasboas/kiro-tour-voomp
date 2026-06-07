@@ -328,7 +328,7 @@ A conexão com os pilares:
 
 ---
 
-## Slide 16 — Hands-on (2min): Kiro Playbook (2min)
+## Slide 16 — Hands-on (2min)
 
 **O que dizer:**
 
