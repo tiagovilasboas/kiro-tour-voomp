@@ -32,9 +32,9 @@ const advanced = [
     bg: 'bg-warning/10',
     border: 'border-warning/25',
     items: [
-      'RAG: buscar conhecimento em tempo real',
-      'Memória: agente que lembra entre sessões',
-      'Domínio da empresa: modelar o conhecimento do negócio',
+      'RAG: antes de responder, o agente busca documentos relevantes em tempo real. Perguntou sobre um incidente? Ele já leu os logs.',
+      'Memória entre sessões: lembra do que você fez ontem. Não precisa repetir o contexto.',
+      'Domínio da empresa: o modelo passa a falar Voomp por padrão, com vocabulário e regras de negócio do time.',
     ],
   },
   {
@@ -88,8 +88,8 @@ export function KiroAvancado() {
               </div>
               <ul className="space-y-2">
                 {a.items.map(item => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-text-muted">
-                    <span className={`text-xs mt-1 ${a.color}`}>•</span>
+                  <li key={item} className="flex items-start gap-2 text-sm text-text-muted leading-relaxed">
+                    <span className={`text-xs mt-0.5 flex-shrink-0 ${a.color}`}>•</span>
                     {item}
                   </li>
                 ))}

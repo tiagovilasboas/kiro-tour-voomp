@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { AlertTriangle, Shuffle, TrendingDown, Brain, ExternalLink, Quote, DollarSign } from 'lucide-react'
+import { AlertTriangle, Shuffle, TrendingDown, Brain, ExternalLink, Quote } from 'lucide-react'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -96,7 +96,7 @@ export function IlusaoPensamento() {
                     Paper <ExternalLink size={10} />
                   </a>
                 </div>
-                <p className="text-xs text-text-muted leading-relaxed">{p.finding}</p>
+                <p className="text-sm text-text-muted leading-relaxed">{p.finding}</p>
               </motion.div>
             )
           })}
@@ -112,7 +112,7 @@ export function IlusaoPensamento() {
               return (
                 <div key={i} className="flex items-start gap-2">
                   <Icon size={13} className="text-warning/60 flex-shrink-0 mt-0.5" />
-                  <p className="text-xs text-text-muted leading-relaxed">{imp.text}</p>
+                  <p className="text-sm text-text-muted leading-relaxed">{imp.text}</p>
                 </div>
               )
             })}
@@ -131,20 +131,6 @@ export function IlusaoPensamento() {
           ))}
         </motion.div>
 
-        {/* Pricing warning */}
-        <motion.div custom={6} variants={fadeUp} initial="hidden" animate="visible"
-          className="glass border-warning/20 p-4 flex items-start gap-3">
-          <DollarSign size={16} className="text-warning flex-shrink-0 mt-0.5" />
-          <div className="flex flex-col gap-1">
-            <p className="text-xs font-semibold text-warning">Aviso: o preço atual é subsidiado</p>
-            <p className="text-xs text-text-muted leading-relaxed">
-              OpenAI projeta queimar <span className="text-warning font-medium">$14 bilhões em 2026</span>. Anthropic teve margem de <span className="text-warning font-medium">-94%</span> em 2024. Usuários pagando $20/mês consomem até <span className="text-warning font-medium">$10.000-20.000</span> de inference real. Bilhões em capital de risco estão subsidiando seu acesso hoje.{' '}
-              <span className="text-text font-medium">Quando o subsídio acabar, o custo vai aparecer na fatura.</span>{' '}
-              <a href="https://www.axios.com/2026/03/12/ai-models-costs-ipo-pricing" target="_blank" rel="noopener noreferrer"
-                className="text-warning/70 hover:text-warning underline font-mono text-xs">Axios, 2026</a>
-            </p>
-          </div>
-        </motion.div>
       </div>
     </div>
   )

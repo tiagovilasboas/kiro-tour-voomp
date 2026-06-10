@@ -95,7 +95,7 @@ export function SpecDriven() {
                     <h3 className={`font-bold text-base ${s.color}`}>{s.title}</h3>
                   </div>
                 </div>
-                <p className="text-xs text-text-muted leading-relaxed">{s.description}</p>
+                <p className="text-sm text-text-muted leading-relaxed">{s.description}</p>
               </div>
               {i < steps.length - 1 && (
                 <ArrowRight size={18} className="text-text-muted/30 flex-shrink-0 hidden md:block" />
@@ -117,7 +117,7 @@ export function SpecDriven() {
                 <Icon size={14} className={`${w.color} flex-shrink-0 mt-0.5`} />
                 <div>
                   <p className="text-sm font-semibold text-text">{w.scenario}</p>
-                  <p className="text-xs text-text-muted mt-0.5 leading-relaxed italic">{w.example}</p>
+                  <p className="text-sm text-text-muted mt-0.5 leading-relaxed italic">{w.example}</p>
                 </div>
               </div>
             )

@@ -92,7 +92,7 @@ export function Rollback() {
                   </div>
                   <span className={`text-sm font-bold ${e.color}`}>{e.company}</span>
                 </div>
-                <p className="text-xs text-text-muted leading-relaxed flex-1">{e.what}</p>
+                <p className="text-sm text-text-muted leading-relaxed flex-1">{e.what}</p>
                 <div className="flex items-center gap-1 mt-auto">
                   <ExternalLink size={10} className="text-text-muted/30" />
                   <span className="text-[10px] text-text-muted/30 font-mono">fonte</span>

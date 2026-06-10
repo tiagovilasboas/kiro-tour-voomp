@@ -126,7 +126,7 @@ export function AgentHooks() {
                       <Icon size={14} />
                     </div>
                     <div className="flex flex-col gap-0.5">
-                      <code className={`text-xs font-mono font-bold ${group.color}`}>{h.name}</code>
+                      <code className={`text-sm font-mono font-bold ${group.color}`}>{h.name}</code>
                       <span className="text-xs text-text-muted/50 font-mono">{h.trigger}</span>
                       <p className="text-sm text-text-muted leading-snug mt-0.5">{h.desc}</p>
                     </div>

@@ -108,17 +108,17 @@ export function IDEsIA() {
               <span className="text-xs text-text-muted/50">{ide.maker}</span>
             </div>
             <div className="flex flex-col gap-1.5 flex-1">
-              <span className={`text-xs font-bold ${ide.color}`}>
+              <span className={`text-sm font-bold ${ide.color}`}>
                 Propósito: {ide.label}
               </span>
-              <p className="text-xs text-text-muted leading-relaxed">{ide.purpose}</p>
+              <p className="text-sm text-text-muted leading-relaxed">{ide.purpose}</p>
             </div>
             <div className="flex flex-col gap-1.5 mt-auto">
               <span className={`text-xs font-mono font-semibold ${ide.color} ${ide.bg} px-2 py-0.5 rounded w-fit`}>
                 {ide.focus}
               </span>
-              <p className={`text-xs ${ide.color} opacity-70 leading-tight`}>{ide.bestFor}</p>
-              <p className="text-[10px] text-text-muted/40 leading-tight border-t border-white/5 pt-1.5">
+              <p className={`text-sm ${ide.color} opacity-70 leading-tight`}>{ide.bestFor}</p>
+              <p className="text-xs text-text-muted/40 leading-tight border-t border-white/5 pt-1.5">
                 🏢 {ide.segment}
               </p>
             </div>
