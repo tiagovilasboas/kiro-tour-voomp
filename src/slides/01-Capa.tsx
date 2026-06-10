@@ -46,9 +46,9 @@ export function Capa() {
           className="text-3xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6"
         >
           <span className="text-text">Kiro: </span>
-          <span className="text-text/50">a maioria usa.</span>
+          <span className="text-text/50">do hype</span>
           <br />
-          <span className="gradient-text">Poucos entendem.</span>
+          <span className="gradient-text">ao controle.</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -59,7 +59,7 @@ export function Capa() {
           animate="visible"
           className="text-base md:text-xl text-text-muted font-light leading-relaxed max-w-2xl mx-auto mb-10"
         >
-          Do fundamento dos LLMs ao sistema completo,
+          Do fundamento dos LLMs ao sistema completo.
           Specs, Steerings, Skills e Hooks com intenção, não por instinto.
         </motion.p>
 
