@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { AlertTriangle } from 'lucide-react'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -126,17 +125,6 @@ export function IDEsIA() {
         ))}
       </div>
 
-      {/* Key insight */}
-      <motion.div custom={8} variants={fadeUp} initial="hidden" animate="visible"
-        className="glass-accent p-4 w-full max-w-4xl flex items-start gap-3">
-        <AlertTriangle size={16} className="text-warning flex-shrink-0 mt-0.5" />
-        <p className="text-sm text-text-muted leading-relaxed">
-          <span className="text-text font-medium">O Kiro não compete em velocidade de autocomplete</span>: compete em{' '}
-          <span className="text-primary font-medium">rigor de engenharia</span>.
-          Specs, contexto persistente e automação por eventos são o diferencial.
-          É por isso que estamos aqui: usar com intenção, não por instinto.
-        </p>
-      </motion.div>
     </div>
   )
 }

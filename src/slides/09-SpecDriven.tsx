@@ -129,11 +129,11 @@ export function SpecDriven() {
       <motion.div custom={6} variants={fadeUp} initial="hidden" animate="visible"
         className="glass-accent p-3 w-full max-w-6xl flex items-start gap-2">
         <Sparkles size={14} className="text-primary flex-shrink-0 mt-0.5" />
-        <p className="text-xs text-text-muted leading-relaxed">
-          O agente já carrega <code className="text-primary font-mono">contexto-projeto.md</code>,{' '}
-          <code className="text-primary font-mono">jira-sustentacao.md</code> e{' '}
-          <code className="text-primary font-mono">boas-praticas-codigo.md</code> automaticamente.
-          Qualquer dev do time pode continuar uma spec de onde outro parou.
+        <p className="text-sm text-text-muted leading-relaxed">
+          Durante uma Spec, tudo trabalha junto:{' '}
+          <span className="text-text font-medium">Steerings</span> carregados automaticamente (vocabulário do domínio),{' '}
+          <span className="text-text font-medium">Skills</span> invocáveis sob demanda no meio do fluxo,{' '}
+          <span className="text-text font-medium">Hooks</span> disparando por evento (lint, tests) a cada arquivo gerado.
         </p>
       </motion.div>
     </div>
