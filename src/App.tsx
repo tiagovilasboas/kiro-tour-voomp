@@ -11,6 +11,7 @@ import { LLMs } from './slides/04-LLMs'
 import { Embeddings } from './slides/05-Embeddings'
 import { ContextWindow } from './slides/06-ContextWindow'
 import { IlusaoPensamento } from './slides/07-IlusaoPensamento'
+import { Rollback } from './slides/07c-Rollback'
 import { IDEsIA } from './slides/07b-IDEsIA'
 import { IntroKiro } from './slides/08-IntroKiro'
 import { KiroAvancado } from './slides/08b-KiroAvancado'
@@ -30,16 +31,17 @@ const slides = [
   Embeddings,      // 5.  Como "entendem" significado
   ContextWindow,   // 6.  Limites e como o Kiro monta a janela
   IlusaoPensamento,// 7.  Pattern matching, não raciocínio
-  IDEsIA,          // 8.  IDEs com IA: cada uma com um propósito
-  IntroKiro,       // 9.  Kiro como Sistema: 4 pilares + 3 futuros
-  KiroAvancado,    // 10. Kiro Avançado: mapeamento futuro
-  SpecDriven,      // 11. Spec Driven: Requirements → Design → Tasks
-  Steerings,       // 12. Steerings: contexto persistente
-  Skills,          // 13. Skills: fluxos completos invocáveis
-  AgentHooks,      // 14. Hooks: automação por eventos
-  Encerramento,    // 15. CTA: use close-task essa semana
-  HandsOn,         // 16. Hands-on: prompt interativo
-  Recursos,        // 17. Recursos de estudo
+  Rollback,        // 8.  O Rollback da IA: a fatura do hype chegou
+  IDEsIA,          // 9.  IDEs com IA: cada uma com um propósito
+  IntroKiro,       // 10. Kiro como Sistema: 4 pilares + 3 futuros
+  KiroAvancado,    // 11. Kiro Avançado: mapeamento futuro
+  SpecDriven,      // 12. Spec Driven: Requirements → Design → Tasks
+  Steerings,       // 13. Steerings: contexto persistente
+  Skills,          // 14. Skills: fluxos completos invocáveis
+  AgentHooks,      // 15. Hooks: automação por eventos
+  Encerramento,    // 16. CTA: use close-task essa semana
+  HandsOn,         // 17. Hands-on: prompt interativo
+  Recursos,        // 18. Recursos de estudo
 ]
 
 function App() {
