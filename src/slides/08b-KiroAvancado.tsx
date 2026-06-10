@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Globe, Brain, Shield, Lock } from 'lucide-react'
+import { Globe, Brain, Shield, Lock, Zap } from 'lucide-react'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -20,8 +20,19 @@ const advanced = [
     border: 'border-success/25',
     items: [
       'MCP: Jira, Azure DevOps, Grafana, MySQL',
-      'Powers: fluxos especializados com contexto externo',
       'APIs: o agente operando fora do código, no ecossistema',
+    ],
+  },
+  {
+    question: 'Com que plugins?',
+    answer: 'Powers',
+    icon: Zap,
+    color: 'text-accent',
+    bg: 'bg-accent/10',
+    border: 'border-accent/25',
+    items: [
+      'Plugins especializados: Context7, Datadog, docs',
+      'Fluxos completos ativados sob demanda',
     ],
   },
   {
@@ -71,7 +82,7 @@ export function KiroAvancado() {
       </motion.p>
 
       {/* 3 advanced pillars */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-6xl">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-3 w-full max-w-6xl">
         {advanced.map((a, i) => {
           const Icon = a.icon
           return (

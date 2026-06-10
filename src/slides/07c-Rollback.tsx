@@ -104,13 +104,16 @@ export function Rollback() {
 
         {/* Takeaway */}
         <motion.div custom={6} variants={fadeUp} initial="hidden" animate="visible"
-          className="glass-accent p-5 text-center">
-          <p className="text-sm text-text-muted leading-relaxed max-w-3xl mx-auto">
-            <span className="text-text font-semibold">Cada token desperdiçado é dinheiro perdido.</span>{' '}
-            Steerings e automações não são luxo: são{' '}
-            <span className="text-primary font-medium">eficiência obrigatória</span>.
-            Quem usa sem intenção gasta tokens em loop. Quem usa com intenção, gasta menos e tem resultado melhor.
+          className="glass-accent p-5">
+          <p className="text-base font-bold text-warning text-center mb-3">Por que isso importa pra nós?</p>
+          <p className="text-sm text-text-muted leading-relaxed text-center mb-3">
+            Se Big Techs com orçamento ilimitado estão cortando por custo, times menores precisam ser ainda mais intencionais.
           </p>
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <span className="text-xs font-mono px-2.5 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary">Steerings concisos</span>
+            <span className="text-xs font-mono px-2.5 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary">Hooks para automatizar repetição</span>
+            <span className="text-xs font-mono px-2.5 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary">Escolher o modelo certo por task</span>
+          </div>
         </motion.div>
       </div>
     </div>

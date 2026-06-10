@@ -18,12 +18,12 @@ Para usar Kiro bem, o time precisa entender três coisas fundamentais:
 
 ---
 
-## 📊 Os 18 Slides
+## 📊 Os 17 Slides
 
 | # | Slide | Objetivo | Tempo |
 |---|-------|----------|-------|
 | 1 | **Capa** | Abrir a jornada | 15s |
-| 2 | **Evolução da IA** | 70 anos em 3 momentos | 1min |
+| 2 | **Evolução da IA** | 70 anos em 4 momentos | 1min |
 | 3 | **Large Language Models** | Como funciona + modelos do Kiro | 2min |
 | 4 | **O que é um Token** | Unidade fundamental + billing | 2min |
 | 5 | **Embeddings** | Vetores numéricos + clusters semânticos | 1min |
@@ -32,16 +32,15 @@ Para usar Kiro bem, o time precisa entender três coisas fundamentais:
 | 8 | **O Rollback da IA** | Fatura do hype: Microsoft, Uber, Cloudflare, Tokenmaxxing | 2min |
 | 9 | **IDEs com IA** | Cursor, Windsurf, Claude Code, Copilot, Kiro: cada uma com um propósito | 1min |
 | 10 | **Kiro como Sistema** | 4 pilares básicos + fluxo Spec → Steering → Skill → Hook → Resultado | 1-2min |
-| 11 | **Kiro Avançado** | 3 pilares futuros mapeados (Integrações, Context Engineering, Governança) | 1min |
+| 11 | **Kiro Avançado** | 4 pilares futuros (Integrações, Powers, Context Engineering, Governança) | 1min |
 | 12 | **Spec Driven** | Requirements → Design → Tasks | 1-2min |
 | 13 | **Steerings** | Contexto persistente + exemplos reais do time N3 | 2min |
 | 14 | **Skills** | 2 skills reais (incident-triage e post-mortem) | 2min |
 | 15 | **Agent Hooks** | Hooks contextuais: save, task, manual triggers | 2min |
-| 16 | **E agora?** | CTA: cole o prompt com Claude Sonnet 4.6 | 1min |
-| 17 | **Hands-on** | Prompt interativo com botão de copiar + Spec Driven em ação | 2min |
-| 18 | **Recursos** | Links diversificados (Rocketseat, Anthropic, Simon Willison, Kiro docs) | 30s |
+| 16 | **Hands-on** | CTA + Prompt interativo com botão de copiar | 2min |
+| 17 | **Recursos** | Links diversificados (Rocketseat, Anthropic, Simon Willison, Kiro docs) | 30s |
 
-**Tempo total estimado:** 25-32 minutos (com perguntas) + prática ao vivo depois
+**Tempo total estimado:** 24-30 minutos (com perguntas) + prática ao vivo depois
 
 ---
 
@@ -65,7 +64,7 @@ Navegação: `←` `→` ou `Espaço` para avançar
 
 | Doc | O que tem |
 |-----|-----------|
-| [Guia de Apresentação](docs/GUIA-APRESENTACAO.md) | Script completo dos 18 slides |
+| [Guia de Apresentação](docs/GUIA-APRESENTACAO.md) | Script completo dos 17 slides |
 | [Prompt Hands-on](docs/PROMPT-HANDS-ON.md) | Prompt em inglês com guardrails para criar automações |
 | [MCP Setup](docs/MCP-SETUP.md) | Configuração Jira + Confluence + Azure DevOps para o hands-on |
 | [Checklist do Dia](docs/CHECKLIST.md) | O que fazer 30 minutos antes de apresentar |

@@ -28,19 +28,20 @@ const models = [
   },
   {
     name: 'Claude Opus 4.6',
-    note: 'O mais capaz. Raciocínio profundo, debugging complexo, decisões de arquitetura.',
+    note: 'O mais capaz. Decisões de arquitetura, debugging cross-layer, post-mortem técnico.',
     color: 'border-primary/30 bg-primary/5',
     dot: 'bg-primary',
     credits: '2.2x',
-    frank: 'Máximo poder, máximo custo',
+    frank: 'Use quando o problema exige raciocinar entre múltiplas camadas',
   },
   {
     name: 'Claude Sonnet 4.6',
-    note: '1M context window. Sessões longas, war room, múltiplos arquivos simultâneos.',
-    color: 'border-violet-500/30 bg-violet-500/5',
+    note: '1M context window. Sessões longas, war room, múltiplos arquivos simultâneos. Ideal para análise de incidentes.',
+    color: 'border-violet-400/50 bg-violet-500/10',
     dot: 'bg-violet-400',
     credits: '1.3x',
-    frank: 'Melhor custo-benefício para sessões complexas',
+    frank: 'Melhor custo-benefício. Recomendado para incidentes N3.',
+    recommended: true,
   },
   {
     name: 'Claude Opus 4.5',
@@ -94,7 +95,7 @@ export function LLMs() {
                   className="flex items-center justify-center"
                   style={{ gridRow: 1, gridColumn: i * 2 + 2 }}
                 >
-                  <ArrowRight size={14} className="text-text-muted/30" />
+                  <ArrowRight size={28} className="text-text-muted/40" />
                 </div>
               )}
               {/* Label cell — same column as icon, row 2 */}
@@ -119,16 +120,21 @@ export function LLMs() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
           {models.map((m) => (
             <div key={m.name}
-              className={`glass border p-3 flex flex-col gap-1.5 relative ${m.color}`}>
-              <span className="absolute -top-2 right-3 text-[10px] font-bold bg-primary text-white px-2 py-0.5 rounded-full">
+              className={`glass border p-3 flex flex-col gap-1.5 relative ${m.color} ${'recommended' in m && m.recommended ? 'ring-2 ring-violet-400/50 shadow-[0_0_20px_rgba(139,92,246,0.15)]' : ''}`}>
+              <span className={`absolute -top-2 right-3 text-[10px] font-bold text-white px-2 py-0.5 rounded-full ${'recommended' in m && m.recommended ? 'bg-violet-500' : 'bg-primary'}`}>
                 {m.credits}
               </span>
+              {'recommended' in m && m.recommended && (
+                <span className="absolute -top-2 left-3 text-[9px] font-bold text-violet-300 bg-violet-500/20 border border-violet-500/30 px-1.5 py-0.5 rounded-full uppercase tracking-wider">
+                  N3
+                </span>
+              )}
               <div className="flex items-center gap-2">
                 <div className={`w-2 h-2 rounded-full flex-shrink-0 ${m.dot}`} />
                 <span className="font-bold text-sm text-text">{m.name}</span>
               </div>
-              <p className="text-xs text-text-muted leading-relaxed flex-1">{m.note}</p>
-              <p className="text-[11px] text-text-muted/40 italic border-t border-white/5 pt-1">{m.frank}</p>
+              <p className="text-sm text-text-muted leading-relaxed flex-1">{m.note}</p>
+              <p className="text-xs text-text-muted/70 italic border-t border-white/5 pt-1">{m.frank}</p>
             </div>
           ))}
         </div>

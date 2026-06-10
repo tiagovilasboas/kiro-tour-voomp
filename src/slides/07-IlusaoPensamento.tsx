@@ -60,7 +60,7 @@ export function IlusaoPensamento() {
         <motion.div custom={1} variants={fadeUp} initial="hidden" animate="visible"
           className="glass border-warning/20 p-4 flex items-start gap-3">
           <Quote size={14} className="text-warning/60 flex-shrink-0 mt-0.5" />
-          <p className="text-xs text-text-muted italic leading-relaxed">
+          <p className="text-sm text-text-muted italic leading-relaxed">
             "Não encontramos evidências de raciocínio formal em modelos de linguagem. O comportamento deles é melhor explicado por{' '}
             <span className="text-warning font-semibold not-italic">correspondência sofisticada de padrões</span>"
           </p>
@@ -68,7 +68,7 @@ export function IlusaoPensamento() {
             href="https://machinelearning.apple.com/research/gsm-symbolic"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[10px] text-text-muted/40 flex-shrink-0 self-end font-mono hover:text-text-muted/70 transition-colors underline"
+            className="text-xs text-text-muted/60 flex-shrink-0 self-end font-mono hover:text-text-muted/80 transition-colors underline"
           >
             Apple Research, 2024
           </a>

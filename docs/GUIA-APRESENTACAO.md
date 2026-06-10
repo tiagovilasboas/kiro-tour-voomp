@@ -1,9 +1,19 @@
 # Guia de Apresentação: Kiro, do hype ao controle.
 
-> **Tempo total estimado:** 25-32 minutos (com perguntas) + prática ao vivo depois
+> **Tempo total estimado:** 24-30 minutos (com perguntas) + prática ao vivo depois
 > **Público:** Time de Sustentação N3 (6 mentorados)
-> **Slides:** 18
+> **Slides:** 17
 > **Objetivo:** Construir entendimento sobre IA para que o time use Steerings, Skills e Agent Hooks com intenção.
+
+---
+
+## Nota pessoal
+
+Este material foi feito com carinho. Antes de confeccionar, me fiz uma pergunta:
+
+> *"O que eu queria ter aprendido antes de começar a trabalhar com IDEs de IA?"*
+
+A resposta virou esta apresentação. Cada slide é algo que eu gostaria que alguém tivesse me explicado antes de eu perder tempo usando a ferramenta sem entender o que está por trás.
 
 ---
 
@@ -18,16 +28,16 @@ Não é palestra técnica profunda. É uma ponte. O time já usa o Kiro. O objet
 ```
 Fundação técnica            Realidade do mercado   Posicionamento         Kiro                    Prática
 ────────────────────────    ────────────────────   ───────────────────    ─────────────────────   ─────────────────
-1. Capa                     8. O Rollback da IA    9.  IDEs com IA        12. Spec Driven         16. Encerramento
-2. Evolução da IA                                  10. Kiro como Sistema  13. Steerings           17. Hands-on
-3. LLMs                                            11. Kiro Avançado      14. Skills              18. Recursos
+1. Capa                     8. O Rollback da IA    9.  IDEs com IA        12. Spec Driven         16. Hands-on
+2. Evolução da IA                                  10. Kiro como Sistema  13. Steerings           17. Recursos
+3. LLMs                                            11. Kiro Avançado      14. Skills
 4. Tokens                                                                 15. Agent Hooks
 5. Embeddings
 6. Context Window
 7. Ilusão do Pensamento
 ```
 
-A lógica: fundação (3-6) → desmitificar (7) → realidade financeira (8) → posicionar no mercado (9) → Kiro como sistema (10-11) → pilares em detalhe (12-15) → prática (16-18).
+A lógica: fundação (3-6) → desmitificar (7) → realidade financeira (8) → posicionar no mercado (9) → Kiro como sistema (10-11) → pilares em detalhe (12-15) → prática (16-17).
 
 ---
 
@@ -335,31 +345,15 @@ A conexão com os pilares:
 
 > "O ponto é: existe uma camada de automação que fica em segundo plano e age no momento certo. Você configura uma vez e esquece."
 
-**Transição:** "Vamos ver o que fazer com isso essa semana."
-
----
-
-## Slide 16 — E agora? (1min)
-
-**O que dizer:**
-
-> "Uma coisa pra fazer essa semana:"
-
-> "Cole o prompt do hands-on no Kiro com Claude Sonnet 4.6. Responda as 3 perguntas. Deixe ele consultar o Jira e Confluence. Revise o plano. Implemente uma automação."
-
-> "Não é um repo pra instalar. São automações que emergem do SEU contexto. É ownership imediata. O que o Kiro propor vai ser diferente pra cada um de vocês, porque o papel e os fluxos são diferentes."
-
-> "Se quiserem referência de implementação, o kiro-playbook está público no GitHub. Mas a prática real é o prompt."
-
 **Transição:** "Vamos copiar o prompt agora."
 
 ---
 
-## Slide 17 — Hands-on (2min)
+## Slide 16 — Hands-on (2min)
 
 **O que dizer:**
 
-> "Aqui está o prompt. Copia, cola no Kiro com Claude Sonnet 4.6, responde as 3 perguntas, e deixa o modelo consultar Jira e Confluence."
+> "Uma coisa pra fazer essa semana: copie esse prompt, cole no Kiro com Claude Sonnet 4.6. Responda as 3 perguntas. Deixe ele consultar o Jira e Confluence. Revise o plano. Implemente uma automação."
 
 - Mostrar o bloco de código com o prompt na tela
 - Destacar o botão de copiar
@@ -374,7 +368,7 @@ A conexão com os pilares:
 
 ---
 
-## Slide 18 — Recursos (30s)
+## Slide 17 — Recursos (30s)
 
 > "Pra quem quiser ir além dos slides — esses links estão no repo, podem acessar depois."
 

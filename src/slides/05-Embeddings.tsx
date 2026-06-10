@@ -70,7 +70,7 @@ export function Embeddings() {
 
       <motion.p custom={1} variants={fadeUp} initial="hidden" animate="visible"
         className="text-sm md:text-base text-text-muted text-center max-w-3xl lg:max-w-5xl leading-relaxed">
-        O modelo converte cada palavra em um{' '}
+        O modelo converte cada palavra (token) em um{' '}
         <span className="text-primary font-semibold">vetor numérico</span>.
         <br />
         {' '}Palavras com significado próximo ficam próximas nesse espaço,

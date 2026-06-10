@@ -108,7 +108,7 @@ export function IntroKiro() {
 
       <motion.p custom={1} variants={fadeUp} initial="hidden" animate="visible"
         className="text-base md:text-lg text-text-muted text-center max-w-4xl leading-relaxed">
-        Não é um chatbot: é um <span className="text-text font-semibold">agente que age no seu ambiente</span>.
+        Vocês já usam. Agora vamos entender <span className="text-text font-semibold">o sistema por trás</span>.
         {' '}O Kiro se organiza em <span className="text-text font-medium">7 capacidades</span>, mas
         {' '}<span className="text-primary font-semibold">4 delas resolvem 90% do dia a dia</span>.
         {' '}O básico bem feito é o que diferencia quem usa de quem depende.

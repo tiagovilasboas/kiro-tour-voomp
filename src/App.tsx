@@ -19,13 +19,12 @@ import { SpecDriven } from './slides/09-SpecDriven'
 import { Steerings } from './slides/10-Steerings'
 import { Skills } from './slides/11-Skills'
 import { AgentHooks } from './slides/12-AgentHooks'
-import { Encerramento } from './slides/13-Encerramento'
 import { HandsOn } from './slides/14-HandsOn'
 import { Recursos } from './slides/15-Recursos'
 
 const slides = [
   Capa,            // 1.  Abertura
-  EvolucaoIA,      // 2.  70 anos de IA em 3 momentos
+  EvolucaoIA,      // 2.  70 anos de IA em 4 momentos
   LLMs,            // 3.  O que são, modelos disponíveis no Kiro
   Tokens,          // 4.  Unidade fundamental + billing
   Embeddings,      // 5.  Como "entendem" significado
@@ -33,15 +32,14 @@ const slides = [
   IlusaoPensamento,// 7.  Pattern matching, não raciocínio
   Rollback,        // 8.  O Rollback da IA: a fatura do hype chegou
   IDEsIA,          // 9.  IDEs com IA: cada uma com um propósito
-  IntroKiro,       // 10. Kiro como Sistema: 4 pilares + 3 futuros
+  IntroKiro,       // 10. Kiro como Sistema: 4 pilares + 4 avançados
   KiroAvancado,    // 11. Kiro Avançado: mapeamento futuro
   SpecDriven,      // 12. Spec Driven: Requirements → Design → Tasks
   Steerings,       // 13. Steerings: contexto persistente
   Skills,          // 14. Skills: fluxos completos invocáveis
   AgentHooks,      // 15. Hooks: automação por eventos
-  Encerramento,    // 16. CTA: use close-task essa semana
-  HandsOn,         // 17. Hands-on: prompt interativo
-  Recursos,        // 18. Recursos de estudo
+  HandsOn,         // 16. Hands-on: prompt interativo + CTA
+  Recursos,        // 17. Recursos de estudo
 ]
 
 function App() {

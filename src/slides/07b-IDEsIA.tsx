@@ -111,7 +111,7 @@ export function IDEsIA() {
               <span className={`text-sm font-bold ${ide.color}`}>
                 Propósito: {ide.label}
               </span>
-              <p className="text-sm text-text-muted leading-relaxed">{ide.purpose}</p>
+              <p className="text-xs text-text-muted leading-relaxed">{ide.purpose}</p>
             </div>
             <div className="flex flex-col gap-1.5 mt-auto">
               <span className={`text-xs font-mono font-semibold ${ide.color} ${ide.bg} px-2 py-0.5 rounded w-fit`}>
