@@ -1,4 +1,4 @@
-# Kiro: a maioria usa. Poucos entendem.
+# Kiro: do hype ao controle.
 
 🔗 **Live:** [kiro-tour-voomp.vercel.app](https://kiro-tour-voomp.vercel.app/)
 
@@ -18,7 +18,7 @@ Para usar Kiro bem, o time precisa entender três coisas fundamentais:
 
 ---
 
-## 📊 Os 17 Slides
+## 📊 Os 18 Slides
 
 | # | Slide | Objetivo | Tempo |
 |---|-------|----------|-------|
@@ -29,18 +29,19 @@ Para usar Kiro bem, o time precisa entender três coisas fundamentais:
 | 5 | **Embeddings** | Vetores numéricos + clusters semânticos | 1min |
 | 6 | **Context Window** | Limites + como o Kiro monta a janela | 1-2min |
 | 7 | **A Ilusão do Pensamento** | Pattern matching, não raciocínio (Apple Research) | 2min |
-| 8 | **IDEs com IA** | Cursor, Windsurf, Claude Code, Copilot, Kiro: cada uma com um propósito | 1min |
-| 9 | **Kiro como Sistema** | 4 pilares básicos + fluxo Spec → Steering → Skill → Hook → Resultado | 1-2min |
-| 10 | **Kiro Avançado** | 3 pilares futuros mapeados (Integrações, Context Engineering, Governança) | 1min |
-| 11 | **Spec Driven** | Requirements → Design → Tasks | 1-2min |
-| 12 | **Steerings** | Contexto persistente + exemplos reais do playbook N3 | 2min |
-| 13 | **Skills** | 2 skills reais (incident-triage e post-mortem) | 2min |
-| 14 | **Agent Hooks** | Hooks instalados + opcionais + 7 prompts equivalentes | 2min |
-| 15 | **E agora?** | CTA único: usar close-task na próxima task VSUS | 1min |
-| 16 | **Hands-on** | Prompt interativo com botão de copiar + Spec Driven em ação | 2min |
-| 17 | **Recursos** | Links diversificados (Anthropic, Simon Willison, Kiro docs, Apple Research) | 30s |
+| 8 | **O Rollback da IA** | Fatura do hype: Microsoft, Uber, Cloudflare, Tokenmaxxing | 2min |
+| 9 | **IDEs com IA** | Cursor, Windsurf, Claude Code, Copilot, Kiro: cada uma com um propósito | 1min |
+| 10 | **Kiro como Sistema** | 4 pilares básicos + fluxo Spec → Steering → Skill → Hook → Resultado | 1-2min |
+| 11 | **Kiro Avançado** | 3 pilares futuros mapeados (Integrações, Context Engineering, Governança) | 1min |
+| 12 | **Spec Driven** | Requirements → Design → Tasks | 1-2min |
+| 13 | **Steerings** | Contexto persistente + exemplos reais do time N3 | 2min |
+| 14 | **Skills** | 2 skills reais (incident-triage e post-mortem) | 2min |
+| 15 | **Agent Hooks** | Hooks contextuais: save, task, manual triggers | 2min |
+| 16 | **E agora?** | CTA: cole o prompt com Claude Sonnet 4.6 | 1min |
+| 17 | **Hands-on** | Prompt interativo com botão de copiar + Spec Driven em ação | 2min |
+| 18 | **Recursos** | Links diversificados (Rocketseat, Anthropic, Simon Willison, Kiro docs) | 30s |
 
-**Tempo total estimado:** 24-30 minutos (com perguntas) + prática ao vivo depois
+**Tempo total estimado:** 25-32 minutos (com perguntas) + prática ao vivo depois
 
 ---
 
@@ -64,7 +65,7 @@ Navegação: `←` `→` ou `Espaço` para avançar
 
 | Doc | O que tem |
 |-----|-----------|
-| [Guia de Apresentação](docs/GUIA-APRESENTACAO.md) | Script completo dos 17 slides |
+| [Guia de Apresentação](docs/GUIA-APRESENTACAO.md) | Script completo dos 18 slides |
 | [Prompt Hands-on](docs/PROMPT-HANDS-ON.md) | Prompt em inglês com guardrails para criar automações |
 | [MCP Setup](docs/MCP-SETUP.md) | Configuração Jira + Confluence + Azure DevOps para o hands-on |
 | [Checklist do Dia](docs/CHECKLIST.md) | O que fazer 30 minutos antes de apresentar |

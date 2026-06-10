@@ -1,8 +1,8 @@
-# Guia de Apresentação: Kiro, a maioria usa. Poucos entendem.
+# Guia de Apresentação: Kiro, do hype ao controle.
 
-> **Tempo total estimado:** 24-30 minutos (com perguntas) + prática ao vivo depois
-> **Público:** Time de Sustentação N3
-> **Slides:** 17
+> **Tempo total estimado:** 25-32 minutos (com perguntas) + prática ao vivo depois
+> **Público:** Time de Sustentação N3 (6 mentorados)
+> **Slides:** 18
 > **Objetivo:** Construir entendimento sobre IA para que o time use Steerings, Skills e Agent Hooks com intenção.
 
 ---
@@ -16,18 +16,18 @@ Não é palestra técnica profunda. É uma ponte. O time já usa o Kiro. O objet
 ## Arco narrativo
 
 ```
-Fundação técnica            Posicionamento         Kiro                    Prática
-────────────────────────    ───────────────────    ─────────────────────   ─────────────────
-1. Capa                     8.  IDEs com IA        11. Spec Driven         15. Encerramento
-2. Evolução da IA           9.  Kiro como Sistema  12. Steerings           16. Hands-on
-3. LLMs                     10. Kiro Avançado      13. Skills              17. Recursos
-4. Tokens                                          14. Agent Hooks
+Fundação técnica            Realidade do mercado   Posicionamento         Kiro                    Prática
+────────────────────────    ────────────────────   ───────────────────    ─────────────────────   ─────────────────
+1. Capa                     8. O Rollback da IA    9.  IDEs com IA        12. Spec Driven         16. Encerramento
+2. Evolução da IA                                  10. Kiro como Sistema  13. Steerings           17. Hands-on
+3. LLMs                                            11. Kiro Avançado      14. Skills              18. Recursos
+4. Tokens                                                                 15. Agent Hooks
 5. Embeddings
 6. Context Window
 7. Ilusão do Pensamento
 ```
 
-A lógica: fundação (3-6) → desmitificar (7) → posicionar no mercado (8) → Kiro como sistema (9-10) → pilares em detalhe (11-14) → prática (15-17).
+A lógica: fundação (3-6) → desmitificar (7) → realidade financeira (8) → posicionar no mercado (9) → Kiro como sistema (10-11) → pilares em detalhe (12-15) → prática (16-18).
 
 ---
 
@@ -35,7 +35,7 @@ A lógica: fundação (3-6) → desmitificar (7) → posicionar no mercado (8) �
 
 **O que dizer:**
 
-> "Vamos falar sobre IA e Kiro. Antes de mostrar a ferramenta na prática, quero passar um contexto rápido — porque entender o que está por trás muda muito como a gente usa. Prometo que vai valer os 20 minutos."
+> "Vamos falar sobre IA e Kiro. Do hype que todos conhecem ao controle que poucos têm. Antes de mostrar a ferramenta na prática, quero passar um contexto rápido: entender o que está por trás muda muito como a gente usa. Prometo que vai valer os 30 minutos."
 
 **Transição:** "Vamos começar lá atrás."
 
@@ -176,7 +176,34 @@ A conexão com Spec Driven:
 
 ---
 
-## Slide 8 — IDEs com IA (1min)
+## Slide 8 — O Rollback da IA (2min)
+
+**O que dizer:**
+
+> "Antes de falar das IDEs, preciso mostrar o que está acontecendo agora. Junho de 2026. A fatura do hype chegou."
+
+**Contexto:**
+> "Quem tem uns bons anos de trincheira conhece o ciclo: passa a empolgação da 'ferramenta mágica', entra a realidade dos boletos. O subsídio bilionário que maquiava o custo das APIs secou. Deixar um agente autônomo varrendo a codebase em loop assustou até as Big Techs."
+
+Percorrer os 4 cards rapidamente:
+- **Microsoft:** "Cancelou licenças do Claude Code internamente. Moveu todos os devs pro Copilot CLI. Motivo? Custo."
+- **Uber:** "Cap de $1.500 por dev por mês. Proibiram ferramentas como Claude. 'Too expensive.'"
+- **Cloudflare:** "Lançou limites obrigatórios de gasto para qualquer API de IA em produção."
+- **Tokenmaxxing:** "O fenômeno dos agentes em loop. O agente tenta, falha, tenta de novo com variação mínima, falha de novo. Milhares de dólares gastos por task sem resultado útil."
+
+**A conexão com IDEs (ponto-chave):**
+> "Isso não é problema de um modelo específico. É um fenômeno de todas as IDEs agentic: Cursor, Claude Code, Windsurf, Kiro. Quando o agente não tem contexto preciso, ele entra em loop de tentativa-e-erro, consumindo tokens sem convergir. É pattern matching em círculos."
+
+**O takeaway:**
+> "Cada token desperdiçado é dinheiro perdido. Steerings e automações não são luxo: são eficiência obrigatória. Quem usa sem intenção gasta tokens em loop. Quem usa com intenção, gasta menos e tem resultado melhor."
+
+> "É por isso que vamos aprender a usar os Steerings com rigor. Não é perfumaria. É economia real."
+
+**Transição:** "Com isso em mente, vamos ver quais IDEs existem e por que escolhemos o Kiro."
+
+---
+
+## Slide 9 — IDEs com IA (1min)
 
 **O que dizer:**
 
@@ -195,7 +222,7 @@ Percorrer brevemente os 5 cards:
 
 ---
 
-## Slide 9 — Kiro como Sistema (1-2min)
+## Slide 10 — Kiro como Sistema (1-2min)
 
 **O que dizer:**
 
@@ -222,7 +249,7 @@ Mostrar o fluxo:
 
 ---
 
-## Slide 10 — Kiro Avançado (1min)
+## Slide 11 — Kiro Avançado (1min)
 
 **O que dizer:**
 
@@ -239,7 +266,7 @@ Percorrer brevemente cada card:
 
 ---
 
-## Slide 11 — Spec Driven Development (1-2min)
+## Slide 12 — Spec Driven Development (1-2min)
 
 **O que dizer:**
 
@@ -263,7 +290,7 @@ A conexão com os pilares:
 
 ---
 
-## Slide 12 — Steerings (2min)
+## Slide 13 — Steerings (2min)
 
 **O que dizer:**
 
@@ -280,7 +307,7 @@ A conexão com os pilares:
 
 ---
 
-## Slide 13 — Skills (2min)
+## Slide 14 — Skills (2min)
 
 **O que dizer:**
 
@@ -297,7 +324,7 @@ A conexão com os pilares:
 
 ---
 
-## Slide 14 — Agent Hooks (3min)
+## Slide 15 — Agent Hooks (3min)
 
 **O que dizer:**
 
@@ -312,7 +339,7 @@ A conexão com os pilares:
 
 ---
 
-## Slide 15 — E agora? (1min)
+## Slide 16 — E agora? (1min)
 
 **O que dizer:**
 
@@ -328,23 +355,26 @@ A conexão com os pilares:
 
 ---
 
-## Slide 16 — Hands-on (2min)
+## Slide 17 — Hands-on (2min)
 
 **O que dizer:**
 
-> "Tudo que vimos — os steerings, as skills, os hooks, os prompts — está nesse repositório. 3 comandos e está instalado."
+> "Aqui está o prompt. Copia, cola no Kiro com Claude Sonnet 4.6, responde as 3 perguntas, e deixa o modelo consultar Jira e Confluence."
 
-- Mostrar o `git clone` e o `node bin/install.mjs` na tela
-- "O script preserva o que você já tem. `--dry-run` mostra o que faria sem tocar em nada."
-- Rodar ao vivo ou mostrar já instalado — o ponto é que é simples
+- Mostrar o bloco de código com o prompt na tela
+- Destacar o botão de copiar
+- "O prompt vai perguntar seu nome, papel e fluxos. Depois vai consultar o Jira VSUS e o Confluence. E vai propor automações que fazem sentido pro SEU contexto."
 
-> "A partir daqui é aprofundamento. O CONTRIBUTING.md tem o passo a passo para criar os seus próprios artefatos."
+> "O resultado vai ser diferente para cada um. É ownership imediata: as automações emergem do seu contexto, não de um template genérico."
+
+**Se alguém perguntar sobre o kiro-playbook:**
+> "Está público no GitHub como referência. Mas o hands-on real é esse prompt. O playbook é opcional se quiser ver exemplos prontos."
 
 **Transição:** "Recursos pra quem quiser ir mais fundo."
 
 ---
 
-## Slide 17 — Recursos (30s)
+## Slide 18 — Recursos (30s)
 
 > "Pra quem quiser ir além dos slides — esses links estão no repo, podem acessar depois."
 

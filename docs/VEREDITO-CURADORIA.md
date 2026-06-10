@@ -3,8 +3,8 @@
 > **Avaliador:** Claude Opus 4.6 (Anthropic)
 > **Data:** 7 de junho de 2026
 > **Projeto:** kiro-tour-voomp
-> **Título:** "Kiro: a maioria usa. Poucos entendem."
-> **Total de slides:** 17
+> **Título:** "Kiro: do hype ao controle."
+> **Total de slides:** 18
 
 ---
 
@@ -22,12 +22,12 @@
 ## O que foi corrigido nesta passagem
 
 1. ✅ **Arquivo morto removido** (12b-Roadmap.tsx)
-2. ✅ **README**: 15 → 17 slides, tabela reflete ordem real, link Vercel deduplicado, título atualizado
-3. ✅ **App.tsx**: numeração sequencial 1-17 sem saltos
-4. ✅ **Guia**: scripts adicionados para slides 8 (IDEsIA) e 10 (KiroAvancado)
-5. ✅ **Guia**: cabeçalho corrigido (17 slides, 24-30min)
+2. ✅ **README**: 15 → 18 slides, tabela reflete ordem real, link Vercel deduplicado, título atualizado
+3. ✅ **App.tsx**: numeração sequencial 1-18 sem saltos
+4. ✅ **Guia**: scripts adicionados para slides 8 (Rollback), 9 (IDEsIA) e 11 (KiroAvancado)
+5. ✅ **Guia**: cabeçalho corrigido (18 slides, 25-32min)
 6. ✅ **Guia**: arco narrativo inclui os 4 blocos reais
-7. ✅ **Guia**: numeração dos slides corrigida de 1 a 17
+7. ✅ **Guia**: numeração dos slides corrigida de 1 a 18
 8. ✅ **Guia**: framework alinhado com o slide real (4 pilares + 3 futuros)
 9. ✅ **Guia**: erro gramatical "preenchê" → "preenche"
 10. ✅ **Slide LLMs**: travessão no Auto removido
