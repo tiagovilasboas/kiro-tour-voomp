@@ -19,10 +19,10 @@ const contextStack = [
 ]
 
 const models = [
-  { name: 'Claude Sonnet 4.6', tokens: '200k', bar: 100, kiro: true },
-  { name: 'Claude Opus 4.6', tokens: '200k', bar: 100, kiro: true },
-  { name: 'GPT-4o', tokens: '128k', bar: 64, kiro: false },
-  { name: 'Gemini 2.0 Flash', tokens: '1M', bar: 500, kiro: false },
+  { name: 'Claude Sonnet 4.6', tokens: '1M', bar: 100, kiro: true },
+  { name: 'Claude Opus 4.6', tokens: '1M', bar: 100, kiro: true },
+  { name: 'GPT-4o', tokens: '128k', bar: 13, kiro: false },
+  { name: 'Gemini 2.0 Flash', tokens: '1M', bar: 100, kiro: false },
 ]
 
 export function ContextWindow() {
@@ -47,7 +47,7 @@ export function ContextWindow() {
         <p className="text-sm text-text-muted leading-relaxed">
           <span className="text-text font-semibold">Ex:</span>{' '}
           Jira (evidência) + código (análise) + Confluence (post-mortems anteriores) + Steerings + causa raiz + resolução.
-          {' '}Tudo na mesma sessão. Com 128k (Auto), na 8a mensagem o modelo esquece o início. Com Claude Sonnet 4.6 (200k), cabe muito mais contexto simultâneo.
+          {' '}Tudo na mesma sessão. Com 128k (Auto), na 8a mensagem o modelo esquece o início. Com Claude Sonnet 4.6 (1M), tudo cabe.
         </p>
       </motion.div>
 

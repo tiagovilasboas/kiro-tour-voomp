@@ -36,7 +36,7 @@ const models = [
   },
   {
     name: 'Claude Sonnet 4.6',
-    note: '200k context window. Sessões longas, war room, múltiplos arquivos simultâneos. Ideal para análise de incidentes.',
+    note: '1M context window. Sessões longas, war room, múltiplos arquivos simultâneos. Ideal para análise de incidentes.',
     color: 'border-violet-400/50 bg-violet-500/10',
     dot: 'bg-violet-400',
     credits: '1.3x',
