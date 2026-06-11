@@ -1,6 +1,6 @@
 # Hands-on Prompt: Kiro with Intention
 
-> **Recommended model:** Claude Sonnet 4.6 (1M context window, required to load Jira and Confluence context)
+> **Recommended model:** Claude Sonnet 4.6 (200k context window, best cost-benefit for sessions with heavy context)
 >
 > Before pasting, select **Claude Sonnet 4.6** in the Kiro model selector.
 
@@ -126,7 +126,7 @@ Never batch-create all files at once.
 
 ## Why Claude Sonnet 4.6
 
-- **1M context window**: loads Jira history, Confluence pages and still maintains conversation context
+- **200k context window**: loads Jira history, Confluence pages and still maintains conversation context
 - **Long sessions**: this prompt involves multiple rounds of collection and analysis
 - **Best cost-benefit** for tasks with heavy context
 

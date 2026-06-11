@@ -19,10 +19,10 @@ const contextStack = [
 ]
 
 const models = [
-  { name: 'Claude Sonnet 4.6', tokens: '1M', bar: 100, kiro: true },
-  { name: 'Claude Opus 4.6', tokens: '200k', bar: 20, kiro: true },
-  { name: 'GPT-4o', tokens: '128k', bar: 13, kiro: false },
-  { name: 'Gemini 2.0 Flash', tokens: '1M', bar: 100, kiro: false },
+  { name: 'Claude Sonnet 4.6', tokens: '200k', bar: 100, kiro: true },
+  { name: 'Claude Opus 4.6', tokens: '200k', bar: 100, kiro: true },
+  { name: 'GPT-4o', tokens: '128k', bar: 64, kiro: false },
+  { name: 'Gemini 2.0 Flash', tokens: '1M', bar: 500, kiro: false },
 ]
 
 export function ContextWindow() {
@@ -37,7 +37,8 @@ export function ContextWindow() {
         className="text-sm md:text-base text-text-muted text-center max-w-3xl leading-relaxed">
         Pense numa <span className="text-primary font-semibold">mesa de trabalho</span>: o modelo só "vê" o que está na mesa.
         {' '}Quando a mesa enche, o que estava na borda cai no chão.{' '}
-        <span className="text-warning font-medium">O modelo não avisa quando esquece.</span>
+        O tamanho da mesa é definido pelo <span className="text-text font-medium">modelo</span>.
+        {' '}O que você coloca nela primeiro é definido pelo <span className="text-primary font-medium">Kiro</span>.
       </motion.p>
 
       {/* N3 context */}
@@ -46,7 +47,7 @@ export function ContextWindow() {
         <p className="text-sm text-text-muted leading-relaxed">
           <span className="text-text font-semibold">Ex:</span>{' '}
           Jira (evidência) + código (análise) + Confluence (post-mortems anteriores) + Steerings + causa raiz + resolução.
-          {' '}Tudo na mesma sessão. Com 128k, na 8a mensagem o modelo (no Auto) esquece o início. Com Claude Sonnet 4.6 (1M), tudo cabe.
+          {' '}Tudo na mesma sessão. Com 128k (Auto), na 8a mensagem o modelo esquece o início. Com Claude Sonnet 4.6 (200k), cabe muito mais contexto simultâneo.
         </p>
       </motion.div>
 

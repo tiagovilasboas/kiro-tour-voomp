@@ -36,7 +36,7 @@ const models = [
   },
   {
     name: 'Claude Sonnet 4.6',
-    note: '1M context window. Sessões longas, war room, múltiplos arquivos simultâneos. Ideal para análise de incidentes.',
+    note: '200k context window. Sessões longas, war room, múltiplos arquivos simultâneos. Ideal para análise de incidentes.',
     color: 'border-violet-400/50 bg-violet-500/10',
     dot: 'bg-violet-400',
     credits: '1.3x',
@@ -45,11 +45,11 @@ const models = [
   },
   {
     name: 'Claude Opus 4.5',
-    note: 'Opus anterior. Bom para raciocínio, mas prefira o 4.6 quando possível.',
+    note: 'Opus anterior. Perfil diferente: mais criativo em tarefas ambíguas. Mesmo custo do 4.6.',
     color: 'border-sky-500/30 bg-sky-500/5',
     dot: 'bg-sky-400',
     credits: '2.2x',
-    frank: 'Mesmo custo do 4.6, capacidade menor',
+    frank: 'Mesmo custo do 4.6. Considere o 4.6 como padrão.',
   },
 ]
 

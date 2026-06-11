@@ -26,7 +26,7 @@ const ides = [
   {
     name: 'Windsurf',
     url: 'https://windsurf.com',
-    maker: 'OpenAI (ex-Codeium) · VS Code fork',
+    maker: 'Codeium · VS Code fork',
     label: 'The first agentic IDE',
     purpose: 'Nasceu para times enterprise que precisam de Cursor-like com governança. Engine Cascade executa tarefas multi-step em sequência. Propósito: agente com rastreabilidade corporativa.',
     focus: 'Agente multi-step + enterprise',
@@ -54,7 +54,7 @@ const ides = [
     url: 'https://github.com/features/copilot',
     maker: 'GitHub / Microsoft · extensão VS Code',
     label: 'Your AI pair programmer',
-    purpose: 'Nasceu dentro do ecossistema GitHub. Não é um fork: é uma extensão. Propósito: trazer IA para quem não quer trocar de editor nem de workflow. 20M+ usuários, $2B ARR.',
+    purpose: 'Nasceu dentro do ecossistema GitHub. Não é um fork: é uma extensão. Propósito: trazer IA para quem não quer trocar de editor nem de workflow. 20M+ usuários.',
     focus: 'Integração GitHub + enterprise',
     bestFor: 'Times no ecossistema Microsoft sem trocar de editor',
     segment: 'Bancos · Governo · Enterprise regulated',
