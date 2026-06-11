@@ -15,10 +15,10 @@ const ides = [
     url: 'https://cursor.com',
     maker: 'Anysphere · VS Code fork',
     label: 'The best coding agent',
-    purpose: 'Multi-file editing com Composer Mode, autocomplete preditivo e subagents. 200k context window, model routing flexível. $29B valuation, referência de adoção em times de alta performance.',
+    purpose: 'Nasceu para ser o editor mais rápido com IA no centro. Multi-file editing, autocomplete preditivo e Composer Mode. Propósito: eliminar o atrito entre ideia e código.',
     focus: 'Velocidade e edição inline',
-    bestFor: 'Dev que quer o editor mais rápido com IA no centro',
-    segment: 'Startups · Scale-ups · Fintechs · Dev individual',
+    bestFor: 'Dev que quer o editor mais rápido com IA nativa',
+    segment: 'Startups · Scale-ups · Dev individual',
     color: 'text-sky-400',
     border: 'border-sky-400/25',
     bg: 'bg-sky-400/5',
@@ -28,9 +28,9 @@ const ides = [
     url: 'https://windsurf.com',
     maker: 'OpenAI (ex-Codeium) · VS Code fork',
     label: 'The first agentic IDE',
-    purpose: 'Engine Cascade executa tarefas multi-step em sequência: criar, refatorar, rodar terminal. Governança enterprise, model routing entre Claude, GPT e Gemini.',
+    purpose: 'Nasceu para times enterprise que precisam de Cursor-like com governança. Engine Cascade executa tarefas multi-step em sequência. Propósito: agente com rastreabilidade corporativa.',
     focus: 'Agente multi-step + enterprise',
-    bestFor: 'Times que precisam de Cursor-like com governança e custo menor',
+    bestFor: 'Times com necessidade de controle e governança',
     segment: 'Enterprise · Consultoras · Squads grandes',
     color: 'text-emerald-400',
     border: 'border-emerald-400/25',
@@ -41,10 +41,10 @@ const ides = [
     url: 'https://claude.ai/code',
     maker: 'Anthropic · CLI + IDE integration',
     label: 'Agentic coding tool',
-    purpose: 'Agente terminal-native com suporte a subagents (multi-agent). Executa ciclos completos via CLI, integra VS Code e JetBrains, GitHub Actions para tarefas em background.',
+    purpose: 'Nasceu para devs que vivem no terminal. Agente CLI com subagents nativos. Propósito: orquestrar ciclos completos de código via linha de comando, sem precisar de IDE.',
     focus: 'Autonomia total + multi-agent',
-    bestFor: 'Dev que quer ciclos completos e orquestração de agentes',
-    segment: 'DevOps · SRE · Arquitetura · Refactors legados',
+    bestFor: 'Dev que prefere CLI e quer orquestrar agentes',
+    segment: 'DevOps · SRE · Arquitetura · Refactors',
     color: 'text-amber-400',
     border: 'border-amber-400/25',
     bg: 'bg-amber-400/5',
@@ -54,10 +54,10 @@ const ides = [
     url: 'https://github.com/features/copilot',
     maker: 'GitHub / Microsoft · extensão VS Code',
     label: 'Your AI pair programmer',
-    purpose: 'Extensão integrada ao ecossistema GitHub. Autocomplete, chat, Agent Mode e code review no PR. 20M+ usuários, $2B ARR. Domina enterprise por integração nativa com Actions, Issues e repos.',
+    purpose: 'Nasceu dentro do ecossistema GitHub. Não é um fork: é uma extensão. Propósito: trazer IA para quem não quer trocar de editor nem de workflow. 20M+ usuários, $2B ARR.',
     focus: 'Integração GitHub + enterprise',
-    bestFor: 'Times no ecossistema Microsoft que não querem trocar de editor',
-    segment: 'Bancos · Seguradoras · Governo · Enterprise regulated',
+    bestFor: 'Times no ecossistema Microsoft sem trocar de editor',
+    segment: 'Bancos · Governo · Enterprise regulated',
     color: 'text-white/70',
     border: 'border-white/15',
     bg: 'bg-white/5',
@@ -67,9 +67,9 @@ const ides = [
     url: 'https://kiro.dev',
     maker: 'Amazon / AWS · VS Code fork',
     label: 'Engineering rigor for agentic dev',
-    purpose: 'Spec Driven Development: Requirements → Design → Tasks antes de escrever código. Steerings, Skills e Hooks formam um sistema. Da "vibe coding" ao código que pode ser mantido em produção.',
+    purpose: 'Nasceu para resolver o problema que vimos: loops, falta de contexto, código que não escala. Spec Driven + Steerings + Skills + Hooks. Propósito: da vibe coding ao código mantível em produção.',
     focus: 'Rigor de engenharia',
-    bestFor: 'Dev que quer planejar antes de codar e automatizar fluxos',
+    bestFor: 'Dev que quer planejar, contextualizar e automatizar',
     segment: 'Squads de produto · Sustentação · Times com rastreabilidade',
     color: 'text-primary',
     border: 'border-primary/30',
@@ -102,23 +102,29 @@ export function IDEsIA() {
             rel="noopener noreferrer"
             custom={i + 2} variants={fadeUp} initial="hidden" animate="visible"
             className={`glass border p-4 flex flex-col gap-3 ${ide.border} ${ide.highlight ? 'ring-1 ring-primary/30' : ''} hover:opacity-90 transition-opacity cursor-pointer`}>
-            <div className="flex flex-col gap-1">
+
+            {/* Header: nome + maker */}
+            <div className="flex flex-col gap-0.5">
               <span className={`text-base font-bold ${ide.color}`}>{ide.name}</span>
-              <span className="text-xs text-text-muted/50">{ide.maker}</span>
+              <span className="text-[10px] text-text-muted/40 leading-tight">{ide.maker}</span>
             </div>
-            <div className="flex flex-col gap-1.5 flex-1">
-              <span className={`text-sm font-bold ${ide.color}`}>
-                Propósito: {ide.label}
-              </span>
+
+            {/* Tagline oficial */}
+            <span className={`text-xs font-mono italic ${ide.color} opacity-70`}>"{ide.label}"</span>
+
+            {/* Propósito: o que essa IDE foi desenhada pra resolver */}
+            <div className={`rounded-lg px-2.5 py-2 ${ide.bg} border ${ide.border} flex-1`}>
               <p className="text-xs text-text-muted leading-relaxed">{ide.purpose}</p>
             </div>
-            <div className="flex flex-col gap-1.5 mt-auto">
-              <span className={`text-xs font-mono font-semibold ${ide.color} ${ide.bg} px-2 py-0.5 rounded w-fit`}>
+
+            {/* Para quem é: a frase mais prática */}
+            <div className="flex flex-col gap-1 mt-auto">
+              <span className={`text-xs font-mono font-semibold ${ide.color} bg-white/5 px-2 py-0.5 rounded w-fit`}>
                 {ide.focus}
               </span>
-              <p className={`text-sm ${ide.color} opacity-70 leading-tight`}>{ide.bestFor}</p>
-              <p className="text-xs text-text-muted/40 leading-tight border-t border-white/5 pt-1.5">
-                🏢 {ide.segment}
+              <p className={`text-xs font-medium ${ide.color} leading-tight`}>{ide.bestFor}</p>
+              <p className="text-[10px] text-text-muted/35 leading-tight pt-1 border-t border-white/5">
+                {ide.segment}
               </p>
             </div>
           </motion.a>

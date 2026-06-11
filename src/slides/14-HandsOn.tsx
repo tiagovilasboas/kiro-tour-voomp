@@ -142,6 +142,7 @@ export function HandsOn() {
             <Zap size={22} className="text-accent" />
             <h2 className="text-3xl md:text-4xl font-bold gradient-text">Hands-on</h2>
           </div>
+          <p className="text-base text-text-muted/60 font-medium italic">Do hype ao controle. Agora é sua vez.</p>
           <p className="text-sm text-text-muted max-w-2xl">
             Cole esse prompt no Kiro usando <span className="text-primary font-medium">Claude Sonnet 4.6</span>.
             Todos nós estamos no mesmo time, mas cada um vai sair com automações diferentes:

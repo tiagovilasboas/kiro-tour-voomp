@@ -131,6 +131,10 @@ export function IlusaoPensamento() {
           ))}
         </motion.div>
 
+        {/* Thread anchor */}
+        <p className="text-xs text-text-muted/25 text-center italic mt-2">
+          Contexto preciso vale mais que prompt genial. Entender o limite muda como você usa.
+        </p>
       </div>
     </div>
   )

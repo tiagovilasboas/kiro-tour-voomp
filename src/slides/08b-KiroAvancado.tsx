@@ -115,7 +115,7 @@ export function KiroAvancado() {
         className="glass-accent p-4 w-full max-w-4xl text-center">
         <p className="text-sm text-text-muted leading-relaxed">
           <span className="text-primary font-semibold">Primeiro o básico bem feito</span>: Specs, Steerings, Skills e Hooks.
-          {' '}Quando o time dominar isso, as camadas avançadas se encaixam naturalmente.
+          {' '}Essas camadas entram naturalmente quando o básico estiver rodando.
           {' '}Cada sessão futura é independente e prática.
         </p>
       </motion.div>

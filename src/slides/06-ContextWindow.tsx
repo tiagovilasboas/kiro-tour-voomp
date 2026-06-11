@@ -125,6 +125,11 @@ export function ContextWindow() {
         </div>
 
       </div>
+
+      {/* Thread anchor */}
+      <p className="text-xs text-text-muted/25 text-center italic">
+        Quem entende os limites controla o resultado.
+      </p>
     </div>
   )
 }

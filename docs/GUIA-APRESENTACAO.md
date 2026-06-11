@@ -76,7 +76,7 @@ Fundação técnica → Problema financeiro real → Causa técnica do problema 
 > "Novembro de 2022. ChatGPT. Um milhão de usuários em 5 dias. Isso nunca tinha acontecido na história da tecnologia. E o que veio depois foi mais radical ainda: modelos que não só respondem, mas *agem*. Editam arquivos. Executam comandos. Usam ferramentas. Integram com o IDE. A diferença entre chatbot e agente é exatamente essa capacidade de agir no ambiente — e é aqui que o Kiro vive."
 
 **O padrão que vale notar:**
-> "Repara no ciclo: hype excessivo, colapso, avanço real baseado em fundamento técnico sólido. Estamos vivendo o terceiro ciclo. Desta vez com fundamento — mas o hype ainda é real. Entender isso ajuda a usar a ferramenta com expectativas corretas."
+> "Repara no ciclo: hype excessivo, colapso, avanço real baseado em fundamento técnico sólido. Estamos vivendo o terceiro ciclo. Desta vez com fundamento, mas o hype ainda é real. Daqui a pouco vamos ver esse ciclo acontecendo ao vivo, em junho de 2026."
 
 **Transição:** "Então o que está por baixo desses modelos? Começando pelo LLM."
 
@@ -333,12 +333,15 @@ A conexão com os pilares:
 
 **O que dizer:**
 
-> "Skills são fluxos completos que você invoca com uma frase. O agente executa cada passo — com o contexto dos Steerings já carregado."
+> "Skills são fluxos completos que você invoca com uma frase. O agente executa cada passo, com o contexto dos Steerings já carregado."
+
+**Criar contraste (antes de mostrar a Skill):**
+> "Quanto tempo vocês levam pra triar um incidente hoje? Abrir o chamado, abrir Grafana, ler logs, classificar severidade, levantar hipóteses, decidir o que coletar a mais. 15, 20 minutos num P3?"
 
 - Destacar **um** exemplo que ilustra o poder — o `incident-triage`:
-  > "Você cola o chamado do Freshdesk e diz 'preciso triar este incidente'. O agente classifica a severidade com os critérios reais da Voomp — P1, P2, P3, P4 — levanta hipóteses ordenadas por probabilidade e te diz o que ainda falta coletar. Tudo antes de você abrir o Grafana."
+  > "Com a Skill, você cola o chamado e diz 'preciso triar este incidente'. O agente classifica severidade com os critérios reais da Voomp — P1 a P4 — levanta hipóteses ordenadas e te diz o que falta coletar. 2 minutos. Os mesmos 20 minutos manuais, mas executados pelo agente com o contexto dos Steerings já carregado."
 - Mencionar o `post-mortem` como segundo exemplo:
-  > "E quando o incidente fecha, tem a skill de post-mortem — você fornece o contexto, ela estrutura o documento pronto para o Confluence."
+  > "E quando o incidente fecha: a skill de post-mortem estrutura o documento pronto para o Confluence. Você fornece o contexto, ela formata."
 
 > "O poder é esse: você invoca uma vez, o agente executa o fluxo que você executaria manualmente em 20 minutos."
 
@@ -350,12 +353,15 @@ A conexão com os pilares:
 
 **O que dizer:**
 
-> "Hooks disparam sem você pedir. Baseados em eventos do IDE — salvar arquivo, criar arquivo, fechar task."
+**Criar identificação (antes de mostrar os Hooks):**
+> "Quem aqui já commitou sem rodar o lint? Ou esqueceu de atualizar a descrição da task no Jira depois de fechar? Ou abriu um PR sem preencher a descrição?"
 
-- Mostrar os três grupos da tela: instalados, opcionais, prompts
-- Não precisa entrar no detalhe de cada um — o objetivo é mostrar o padrão
+> "Hooks resolvem isso. Disparam por evento do IDE: salvar arquivo, criar arquivo, fechar task. Não dependem de disciplina humana."
 
-> "O ponto é: existe uma camada de automação que fica em segundo plano e age no momento certo. Você configura uma vez e esquece."
+- Mostrar os três grupos da tela: save events, task events, manual triggers
+- Não precisa entrar no detalhe de cada um, o objetivo é mostrar o padrão
+
+> "Você configura uma vez e esquece. A automação cuida do resto. Disciplina virou código."
 
 **Transição:** "Temos os 4 pilares. Agora a pergunta: como isso se aplica ao SEU contexto, na Voomp, no VSUS? Aqui está o prompt."
 
