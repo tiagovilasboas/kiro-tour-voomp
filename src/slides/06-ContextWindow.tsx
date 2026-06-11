@@ -35,9 +35,9 @@ export function ContextWindow() {
 
       <motion.p custom={1} variants={fadeUp} initial="hidden" animate="visible"
         className="text-sm md:text-base text-text-muted text-center max-w-3xl leading-relaxed">
-        A <span className="text-primary font-semibold">janela de contexto</span> é a memória de trabalho do modelo.
-        {' '}O que sai dela, o modelo esquece sem aviso.
-        {' '}<span className="text-warning font-medium">Um agente sem contexto é apenas autocomplete caro.</span>
+        Pense numa <span className="text-primary font-semibold">mesa de trabalho</span>: o modelo só "vê" o que está na mesa.
+        {' '}Quando a mesa enche, o que estava na borda cai no chão.{' '}
+        <span className="text-warning font-medium">O modelo não avisa quando esquece.</span>
       </motion.p>
 
       {/* N3 context */}
@@ -112,13 +112,13 @@ export function ContextWindow() {
             <div className="flex items-start gap-2.5">
               <AlertTriangle size={14} className="text-warning mt-0.5 flex-shrink-0" />
               <p className="text-sm text-text-muted leading-relaxed">
-                <span className="text-text font-semibold">Quando a janela enche:</span> o conteúdo mais antigo é descartado silenciosamente. O modelo esquece decisões como se nunca tivessem existido.
+                <span className="text-text font-semibold">Quando a janela enche:</span> o conteúdo mais antigo cai fora silenciosamente. O modelo continua respondendo normalmente, sem avisar que esqueceu. Você só percebe quando ele contradiz algo que disse lá atrás.
               </p>
             </div>
             <div className="flex items-start gap-2.5">
               <Lightbulb size={14} className="text-success mt-0.5 flex-shrink-0" />
               <p className="text-sm text-text-muted leading-relaxed">
-                <span className="text-text font-semibold">Por que Steerings importam:</span> poucos tokens, injetados sempre. Em vez de repetir contexto em cada mensagem, o Steering faz isso uma vez.
+                <span className="text-text font-semibold">Steerings são contexto permanente barato:</span> 2-5k tokens injetados sempre, antes de tudo. Evitam que você repita "estou no projeto seller-greenn-back, usamos PHP, board VSUS..." em toda sessão.
               </p>
             </div>
           </motion.div>

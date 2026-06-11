@@ -47,16 +47,16 @@ const connections = [
 
 const insights = [
   {
-    title: 'O que são embeddings?',
-    body: 'Cada palavra vira um vetor: uma lista de números que captura seu significado. Palavras semanticamente próximas ficam próximas nesse espaço. É geometria, não gramática.',
+    title: 'O que é um vetor?',
+    body: 'Pense num GPS: cada lugar tem coordenadas (lat, lon). Embeddings fazem o mesmo com palavras: cada uma ganha coordenadas no "espaço do significado". Palavras próximas semanticamente ficam com coordenadas próximas.',
   },
   {
     title: 'Por que importa para o Kiro?',
-    body: 'Quando você escreve "payment" num Steering, o modelo também entende "checkout" e "gateway": estão no mesmo cluster. O contexto se propaga sem você listar tudo.',
+    body: 'Quando você escreve "payment" num Steering, o modelo também "entende" checkout, gateway e PIX: estão no mesmo cluster. O contexto se propaga sem você listar tudo explicitamente.',
   },
   {
-    title: 'Na prática',
-    body: 'Use termos do domínio da Voomp nos Steerings: VSUS, PIX, sale, subscription. O modelo ancora neles mesmo que você não os mencione em cada pergunta.',
+    title: 'Na prática para o N3',
+    body: 'Use termos do domínio nos Steerings: VSUS, PIX, sale, subscription, incident. O modelo parte do cluster certo antes da primeira pergunta. Menos contexto repetido, respostas mais precisas.',
   },
 ]
 
@@ -70,11 +70,9 @@ export function Embeddings() {
 
       <motion.p custom={1} variants={fadeUp} initial="hidden" animate="visible"
         className="text-sm md:text-base text-text-muted text-center max-w-3xl lg:max-w-5xl leading-relaxed">
-        O modelo converte cada palavra (token) em um{' '}
-        <span className="text-primary font-semibold">vetor numérico</span>.
-        <br />
-        {' '}Palavras com significado próximo ficam próximas nesse espaço,
-        {' '}<span className="text-accent font-semibold">é distância que define semântica</span>, não gramática.
+        Antes de processar, o modelo converte cada palavra (token) em coordenadas num espaço matemático.{' '}
+        <span className="text-primary font-semibold">Palavras com significado próximo ficam próximas nesse espaço.</span>
+        {' '}É como um GPS do significado: proximidade geográfica = proximidade semântica.
       </motion.p>
 
       <motion.div custom={2} variants={fadeUp} initial="hidden" animate="visible"

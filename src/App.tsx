@@ -29,8 +29,8 @@ const slides = [
   Tokens,          // 4.  Unidade fundamental + billing
   Embeddings,      // 5.  Como "entendem" significado
   ContextWindow,   // 6.  Limites e como o Kiro monta a janela
-  IlusaoPensamento,// 7.  Pattern matching, não raciocínio
-  Rollback,        // 8.  O Rollback da IA: a fatura do hype chegou
+  Rollback,        // 7.  O Rollback da IA: problema (custo real)
+  IlusaoPensamento,// 8.  Pattern matching, não raciocínio (causa técnica)
   IDEsIA,          // 9.  IDEs com IA: cada uma com um propósito
   IntroKiro,       // 10. Kiro como Sistema: 4 pilares + 4 avançados
   KiroAvancado,    // 11. Kiro Avançado: mapeamento futuro

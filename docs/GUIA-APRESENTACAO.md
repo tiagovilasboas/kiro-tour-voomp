@@ -26,18 +26,27 @@ Não é palestra técnica profunda. É uma ponte. O time já usa o Kiro. O objet
 ## Arco narrativo
 
 ```
-Fundação técnica            Realidade do mercado   Posicionamento         Kiro                    Prática
-────────────────────────    ────────────────────   ───────────────────    ─────────────────────   ─────────────────
-1. Capa                     8. O Rollback da IA    9.  IDEs com IA        12. Spec Driven         16. Hands-on
-2. Evolução da IA                                  10. Kiro como Sistema  13. Steerings           17. Recursos
-3. LLMs                                            11. Kiro Avançado      14. Skills
-4. Tokens                                                                 15. Agent Hooks
-5. Embeddings
-6. Context Window
-7. Ilusão do Pensamento
+FASE 1: FUNDAÇÃO (1-6)          FASE 2: REALIDADE (7-8)    FASE 3: POSICIONAMENTO (9-11)
+────────────────────────────    ──────────────────────     ───────────────────────────────
+1. Capa                         7. O Rollback da IA        9.  IDEs com IA
+2. Evolução da IA               8. Ilusão do Pensamento    10. Kiro como Sistema
+3. LLMs                                                    11. Kiro Avançado
+4. Tokens
+5. Embeddings                   FASE 4: PILARES (12-15)    FASE 5: PRÁTICA (16-17)
+6. Context Window               ─────────────────────      ─────────────────────
+                                12. Spec Driven            16. Hands-on
+                                13. Steerings              17. Recursos
+                                14. Skills
+                                15. Agent Hooks
 ```
 
-A lógica: fundação (3-6) → desmitificar (7) → realidade financeira (8) → posicionar no mercado (9) → Kiro como sistema (10-11) → pilares em detalhe (12-15) → prática (16-17).
+**Fio vermelho (repete em 4 momentos-chave):**
+> "O modelo é poderoso mas limitado. Quem entende os limites controla o resultado. Quem não entende, paga caro por loops."
+
+Momentos: Capa (prometido) → Context Window (reforçado) → Ilusão (aprofundado) → Hands-on (resolvido)
+
+**Arco de causalidade:**
+Fundação técnica → Problema financeiro real → Causa técnica do problema → Mercado → Kiro como solução → Pilares práticos → Sua vez
 
 ---
 
@@ -47,7 +56,7 @@ A lógica: fundação (3-6) → desmitificar (7) → realidade financeira (8) �
 
 > "Vamos falar sobre IA e Kiro. Do hype que todos conhecem ao controle que poucos têm. Antes de mostrar a ferramenta na prática, quero passar um contexto rápido: entender o que está por trás muda muito como a gente usa. Prometo que vai valer os 30 minutos."
 
-**Transição:** "Vamos começar lá atrás."
+**Transição:** "Vamos começar de onde tudo começou."
 
 ---
 
@@ -69,7 +78,7 @@ A lógica: fundação (3-6) → desmitificar (7) → realidade financeira (8) �
 **O padrão que vale notar:**
 > "Repara no ciclo: hype excessivo, colapso, avanço real baseado em fundamento técnico sólido. Estamos vivendo o terceiro ciclo. Desta vez com fundamento — mas o hype ainda é real. Entender isso ajuda a usar a ferramenta com expectativas corretas."
 
-**Transição:** "Então o que está por baixo desses modelos? Começa com o LLM."
+**Transição:** "Então o que está por baixo desses modelos? Começando pelo LLM."
 
 ---
 
@@ -96,7 +105,7 @@ Fechar com o mecanismo de atenção:
 **Se alguém perguntar sobre o o3 ou modelos de reasoning:**
 > "Modelos de reasoning como o o3 adicionam uma etapa de 'pensar antes de responder' — mas como vamos ver daqui a pouco, mesmo esses modelos têm limites formais. A atenção continua sendo o núcleo."
 
-**Transição:** "E como esse modelo processa o texto que você escreve? Em pedaços chamados tokens."
+**Transição:** "E como esse modelo processa o que você digita? Em pedaços chamados tokens."
 
 ---
 
@@ -110,7 +119,7 @@ Fechar com o mecanismo de atenção:
 - Explicar billing: input + output, preço por milhão de tokens
 - "Um Steering conciso de 200 tokens substitui você repetir contexto toda vez. Menos tokens = mais rápido e mais barato."
 
-**Transição:** "Mas como esse modelo 'entende' o significado das palavras?"
+**Transição:** "Tokens explicam o custo. Mas como o modelo entende o significado das palavras?"
 
 ---
 
@@ -134,7 +143,7 @@ A conexão com Steerings:
 **Se alguém perguntar 'mas os vetores são 2D como no slide?':**
 > "Não — na prática são centenas ou milhares de dimensões. O slide é uma simplificação visual para mostrar o conceito de proximidade. A matemática é a mesma, só em muito mais dimensões."
 
-**Transição:** "Mas tem um limite pra quanto contexto o modelo consegue carregar — e é aí que os Steerings se tornam ainda mais importantes."
+**Transição:** "Ótimo: sabemos que o modelo entende por proximidade semântica. Mas tem um limite nessa memória."
 
 ---
 
@@ -155,15 +164,15 @@ Mostrar a pilha do Kiro:
 A conexão com Spec Driven:
 > "É por isso que o Claude Sonnet 4.6 funciona melhor para Specs: o modelo precisa carregar requirements, design e código ao mesmo tempo. Com 128k você escolhe o que cabe. Com 1M, tudo cabe."
 
-**Transição:** "Agora que entendemos como funciona: tokens, vetores, janela. Uma pergunta: o modelo realmente pensa?"
+**Transição:** "Entendemos os limites técnicos: tokens, vetores, janela. Agora veja o que acontece quando empresas ignoram esses limites em escala."
 
 ---
 
-## Slide 7 — A Ilusão do Pensamento (2min)
+## Slide 8 — A Ilusão do Pensamento (2min)
 
 **O que dizer:**
 
-> "Dois estudos da Apple, 2024 e 2025, mostram que LLMs não raciocinam de verdade. Isso muda como a gente interage com eles."
+> "Vimos a fatura. Agora a causa técnica. Dois estudos da Apple, 2024 e 2025, explicam por que isso acontece."
 
 **GSM-Symbolic (2024) — o experimento dos nomes:**
 > "Eles pegaram problemas matemáticos que os modelos resolviam bem — e mudaram só os nomes dos personagens e os números, mantendo a lógica idêntica. A performance caiu cerca de 10%. Mesmo problema, mesma lógica, só nomes diferentes. Se o modelo estivesse raciocinando, não importaria o nome. Mas importou — porque ele estava fazendo matching de padrão, não raciocínio."
@@ -172,25 +181,28 @@ A conexão com Spec Driven:
 > "O segundo estudo é ainda mais revelador. Conforme aumentavam a complexidade dos problemas, os modelos aumentavam o esforço de 'pensar' — até um certo ponto. Depois disso, colapsavam. Paravam de tentar, mesmo com tokens sobrando na janela. Sem evidência de raciocínio formal em nenhum caso testado."
 
 **A implicação prática:**
-> "O que isso muda pra vocês? Alucinações não são bugs — são o modelo completando com o padrão mais provável, como um autocomplete muito sofisticado. Não é sabotagem, é a natureza do sistema."
+> "Agora o loop do Rollback faz sentido. O agente não está sendo burro — ele está fazendo o que sabe fazer: matching de padrão. Sem contexto preciso, os padrões que encontra são genéricos. Ele tenta, gera algo, tenta de novo, gera parecido. Loop infinito, tokens infinitos, conta infinita."
 
-> "E a conclusão mais importante: contexto preciso vale mais que prompt genial. Um Steering bem escrito que ancora o modelo no domínio certo vai ter resultado melhor do que uma pergunta bem formulada sem contexto. É por isso que investimos tempo nos Steerings."
+> "Alucinações não são bugs — são o modelo completando com o padrão mais provável. Não é sabotagem, é a natureza do sistema."
 
-**Nota de fala — referência verbal (não precisa colocar no slide):**
-> "O Akita tem vários vídeos e artigos testando LLMs na prática — a conclusão dele é parecida com a dos papers da Apple: funciona, tem valor real, mas tem limites claros. Não é mágica, é ferramenta. Se alguém quiser se aprofundar, vale pesquisar no canal dele."
+> "Contexto preciso vale mais que prompt genial. Um Steering bem escrito que ancora o modelo no domínio certo vai ter resultado melhor do que uma pergunta bem formulada sem contexto."
 
 **Se alguém questionar 'mas o o3/o4 não pensa diferente?':**
 > "Os modelos de reasoning adicionam uma etapa de chain-of-thought antes de responder — o que melhora resultados em alguns casos. Mas o Illusion of Thinking foi testado especificamente nesses modelos também, e o padrão de colapso se manteve. A diferença é de grau, não de natureza."
 
-**Transição:** "Agora que entendemos o que o modelo é — e o que ele não é — faz todo sentido apresentar o Kiro."
+**Transição:** "Agora temos o quadro completo: modelo com limites, custo real, empresas pagando a conta. Qual IDE foi desenhada pra lidar com isso de verdade?"
 
 ---
 
-## Slide 8 — O Rollback da IA (2min)
+## Slide 9 — IDEs com IA (1min)
+
+---
+
+## Slide 7 — O Rollback da IA (2min)
 
 **O que dizer:**
 
-> "Antes de falar das IDEs, preciso mostrar o que está acontecendo agora. Junho de 2026. A fatura do hype chegou."
+> "Antes de explicar por que isso acontece, deixa eu mostrar o que está acontecendo agora. Junho de 2026. A fatura do hype chegou."
 
 **Contexto:**
 > "Quem tem uns bons anos de trincheira conhece o ciclo: passa a empolgação da 'ferramenta mágica', entra a realidade dos boletos. O subsídio bilionário que maquiava o custo das APIs secou. Deixar um agente autônomo varrendo a codebase em loop assustou até as Big Techs."
@@ -201,19 +213,17 @@ Percorrer os 4 cards rapidamente:
 - **Cloudflare:** "Lançou limites obrigatórios de gasto para qualquer API de IA em produção."
 - **Tokenmaxxing:** "O fenômeno dos agentes em loop. O agente tenta, falha, tenta de novo com variação mínima, falha de novo. Milhares de dólares gastos por task sem resultado útil."
 
-**A conexão com IDEs (ponto-chave):**
-> "Isso não é problema de um modelo específico. É um fenômeno de todas as IDEs agentic: Cursor, Claude Code, Windsurf, Kiro. Quando o agente não tem contexto preciso, ele entra em loop de tentativa-e-erro, consumindo tokens sem convergir. É pattern matching em círculos."
+**A pergunta que fica no ar:**
+> "Mas por que isso acontece com tanta frequência? Por que empresas com engenheiros brilhantes, com os melhores modelos do mundo, ainda assim entram em loop?"
 
 **O takeaway:**
-> "Cada token desperdiçado é dinheiro perdido. Steerings e automações não são luxo: são eficiência obrigatória. Quem usa sem intenção gasta tokens em loop. Quem usa com intenção, gasta menos e tem resultado melhor."
+> "Cada token desperdiçado é dinheiro perdido. Steerings e automações não são luxo: são eficiência obrigatória. A resposta técnica pra esse problema vem no próximo slide."
 
-> "É por isso que vamos aprender a usar os Steerings com rigor. Não é perfumaria. É economia real."
-
-**Transição:** "Com isso em mente, vamos ver quais IDEs existem e por que escolhemos o Kiro."
+**Transição:** "Vimos a fatura. Por que isso acontece com tanta frequência? Porque o modelo não funciona como intuitivamente imaginamos."
 
 ---
 
-## Slide 9 — IDEs com IA (1min)
+## Slide 8 — A Ilusão do Pensamento (2min)
 
 **O que dizer:**
 
@@ -228,7 +238,7 @@ Percorrer brevemente os 5 cards:
 
 > "O Kiro não compete em velocidade de autocomplete. Compete em rigor de engenharia. É por isso que estamos aqui: usar com intenção, não por instinto."
 
-**Transição:** "Agora vamos ver o Kiro como sistema."
+**Transição:** "O Kiro não competiu em velocidade. Foi projetado pra resolver exatamente o que acabamos de ver: contexto, loops, custo. Vamos ver como."
 
 ---
 
@@ -272,7 +282,7 @@ Percorrer brevemente cada card:
 
 > "Primeiro o básico bem feito. Quando o time dominar Specs, Steerings, Skills e Hooks, as camadas avançadas se encaixam naturalmente. Cada sessão futura é independente e prática."
 
-**Transição:** "Voltando pro básico. Começando pelo Spec Driven."
+**Transição:** "O mapa está na mesa. Agora vamos dominar o que você usa amanhã. Começando pelo Spec."
 
 ---
 
@@ -296,7 +306,7 @@ Quando usar no N3:
 A conexão com os pilares:
 > "Spec não substitui os três pilares — ela usa eles. Quando você abre uma Spec, os Steerings já estão carregados. Os Hooks continuam disparando. Você pode invocar uma Skill no meio do fluxo. É o modo de trabalho mais completo do Kiro."
 
-**Transição:** "Agora os três pilares em detalhe. Começando pelos Steerings."
+**Transição:** "O Spec resolve o planejamento. O Steering resolve o contexto. Vamos ver como."
 
 ---
 
@@ -313,7 +323,9 @@ A conexão com os pilares:
 
 > "O poder não é a lista de arquivos. É que o modelo recebe contexto cirúrgico no momento certo, sem você pedir."
 
-**Transição:** "Steerings são passivos — sempre ativos. Skills são ativos — você invoca."
+> "Lembra que vimos que o modelo não raciocina — faz matching de padrão? O Steering é exatamente isso trabalhando a seu favor: você coloca os padrões certos — os termos do domínio, as regras do time, o vocabulário da Voomp — antes de qualquer pergunta. O modelo parte do cluster semântico certo. Não é mágica. É geometria, como vimos nos Embeddings."
+
+**Transição:** "E se você quiser automatizar um fluxo inteiro com uma frase? Aí entram as Skills."
 
 ---
 
@@ -330,7 +342,7 @@ A conexão com os pilares:
 
 > "O poder é esse: você invoca uma vez, o agente executa o fluxo que você executaria manualmente em 20 minutos."
 
-**Transição:** "E os Hooks — o que dispara sem você pedir."
+**Transição:** "Spec planeja. Steering contextualiza. Skill executa. E os Hooks? Automatizam sem você pedir."
 
 ---
 
@@ -345,7 +357,7 @@ A conexão com os pilares:
 
 > "O ponto é: existe uma camada de automação que fica em segundo plano e age no momento certo. Você configura uma vez e esquece."
 
-**Transição:** "Vamos copiar o prompt agora."
+**Transição:** "Temos os 4 pilares. Agora a pergunta: como isso se aplica ao SEU contexto, na Voomp, no VSUS? Aqui está o prompt."
 
 ---
 
@@ -360,6 +372,8 @@ A conexão com os pilares:
 - "O prompt vai perguntar seu nome, papel e fluxos. Depois vai consultar o Jira VSUS e o Confluence. E vai propor automações que fazem sentido pro SEU contexto."
 
 > "O resultado vai ser diferente para cada um. É ownership imediata: as automações emergem do seu contexto, não de um template genérico."
+
+> "Na capa eu disse: do hype ao controle. Esse prompt é o controle. Não é instalado de um repo de outra pessoa. São automações que emergem do SEU contexto. Você entende agora por que funciona — tokens, embeddings, janela, loops. E sabe como usar com intenção. Isso é o controle."
 
 **Se alguém perguntar sobre o kiro-playbook:**
 > "Está público no GitHub como referência. Mas o hands-on real é esse prompt. O playbook é opcional se quiser ver exemplos prontos."
