@@ -1,0 +1,50 @@
+name: Improve tour
+description: Propose a slide, presenter-doc, or hygiene fix for this Kiro tour.
+title: "[tour] "
+labels:
+  - documentation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to improve the public Kiro tour. Write in English.
+        See [CONTRIBUTING.md](https://github.com/tiagovilasboas/kiro-tour-voomp/blob/main/CONTRIBUTING.md)
+        and [AGENTS.md](https://github.com/tiagovilasboas/kiro-tour-voomp/blob/main/AGENTS.md).
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: What should change?
+      options:
+        - slide
+        - presenter-doc
+        - hygiene
+        - bug
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: gap
+    attributes:
+      label: Gap
+      description: What is inaccurate, broken, or missing? Name the slide or file when you can.
+      placeholder: Slide 4 (tokens) overstates billing; docs/GUIA-APRESENTACAO.md repeats the same claim.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Smallest fix that closes the gap. Prefer one slide or one doc over a rewrite.
+      placeholder: Correct the token-billing sentence on slide 4 and the matching line in the presenter guide.
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: This does not dump private company process, secrets, or client IP.
+          required: true
+        - label: This is not a branding rewrite unless that is the explicit request.
+          required: true
