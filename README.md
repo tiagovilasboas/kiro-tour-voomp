@@ -1,20 +1,18 @@
 # Kiro: do hype ao controle.
 
-🔗 **Live:** [kiro-tour-voomp.vercel.app](https://kiro-tour-voomp.vercel.app/)
+Onboarding deck for Cogna/Voomp Sustentação N3.
 
-Apresentação para o time de Sustentação N3 da Cogna/Voomp.
+## Start
 
----
+- **View:** [kiro-tour-voomp.vercel.app](https://kiro-tour-voomp.vercel.app/)
+- **Run:**
 
-## 🎯 O ponto central desta apresentação
+```bash
+npm install
+npm run dev
+```
 
-O Kiro não é um chatbot glorificado. Ele é um **agente** — um modelo de linguagem com acesso a ferramentas, contexto persistente e capacidade de agir no seu ambiente de desenvolvimento.
-
-Para usar Kiro bem, o time precisa entender três coisas fundamentais:
-
-1. **Como LLMs funcionam** — tokens, contexto, probabilidade. Isso explica por que um Steering bem escrito importa mais que um prompt genérico.
-2. **O que LLMs NÃO fazem** — não pensam, não raciocinam. Reconhecem padrões em escala massiva. Entender isso evita frustração e melhora a forma como damos contexto.
-3. **Steerings, Skills e Agent Hooks** — as três camadas que transformam um modelo genérico num agente especializado no contexto da Voomp.
+Open **http://localhost:3002**. Navigate with `←` `→` or `Espaço`.
 
 ---
 
@@ -41,22 +39,6 @@ Para usar Kiro bem, o time precisa entender três coisas fundamentais:
 | 17 | **Recursos** | Links diversificados (Rocketseat, Anthropic, Simon Willison, Kiro docs) | 30s |
 
 **Tempo total estimado:** 24-30 minutos (com perguntas) + prática ao vivo depois
-
----
-
-## 🚀 Como rodar
-
-```bash
-# Instalar dependências (só na primeira vez)
-npm install
-
-# Subir o servidor de desenvolvimento (porta 3002)
-npm run dev
-```
-
-Acesse: **http://localhost:3002**
-
-Navegação: `←` `→` ou `Espaço` para avançar
 
 ---
 
@@ -88,3 +70,11 @@ Os 15 Agent Hooks do time estão em `~/.kiro/hooks/` e funcionam em qualquer wor
 | **Investigação** | `bug-investigation`, `health-check-platform`, `war-room-status` |
 | **PR/Deploy** | `generate-pr-description`, `post-execution-review` |
 | **Frontend** | `eslint-frontend-save` |
+
+## Contributing
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+## License
+
+[MIT](LICENSE)
