@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Webhook, Terminal, Shield, FileText, Search, GitPullRequest, Radio, Zap, BookOpen } from 'lucide-react'
+import { Webhook, Terminal, Shield, FileText, Search, GitPullRequest, Radio, Zap } from 'lucide-react'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
