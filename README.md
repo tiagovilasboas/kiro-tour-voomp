@@ -88,3 +88,6 @@ Os 15 Agent Hooks do time estão em `~/.kiro/hooks/` e funcionam em qualquer wor
 | **Investigação** | `bug-investigation`, `health-check-platform`, `war-room-status` |
 | **PR/Deploy** | `generate-pr-description`, `post-execution-review` |
 | **Frontend** | `eslint-frontend-save` |
+
+License: [MIT](LICENSE)
+Agents: [AGENTS.md](AGENTS.md)
